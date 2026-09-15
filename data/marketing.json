@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-09-15T15:00:00.000Z",
   "stages": [
     {
@@ -34,7 +34,6 @@
     }
   ],
   "gates": {
-    "reviewStageId": "review",
     "finalStageId": "published"
   },
   "channels": [
@@ -92,7 +91,9 @@
       "id": "c_rentree",
       "name": "Rentrée 2026",
       "icon": "🎒",
-      "goal": "Remplir les créneaux du soir : +30 % de matchs en septembre",
+      "goal": "Matchs joués le soir en septembre",
+      "target": 400,
+      "actual": 265,
       "startAt": "2026-09-01",
       "endAt": "2026-10-15"
     },
@@ -100,7 +101,9 @@
       "id": "c_ligues",
       "name": "Lancement Ligues v2",
       "icon": "🏆",
-      "goal": "10 ligues créées la première semaine",
+      "goal": "Ligues créées la première semaine",
+      "target": 10,
+      "actual": 0,
       "startAt": "2026-09-25",
       "endAt": "2026-10-30"
     }
@@ -116,15 +119,17 @@
         "instagram",
         "tiktok"
       ],
-      "priority": "p1",
+      "urgent": false,
       "owner": "lea",
+      "rubric": "Ambiance",
+      "caption": "La rentrée, c’est le soir. 20 h, 5 contre 5, caméras allumées. Rejoins un match avec ton code 👇",
+      "hashtags": "#futnow #five #foot",
+      "assetUrl": "",
+      "publishTime": "18:30",
       "stageId": "published",
-      "stepProgress": 0,
       "campaignId": "c_rentree",
       "links": [],
       "dates": {
-        "reviewPlanned": "2026-08-30",
-        "reviewActual": "2026-08-30",
         "publishPlanned": "2026-09-02",
         "publishActual": "2026-09-02"
       },
@@ -142,12 +147,24 @@
       ],
       "items": [],
       "results": {
-        "views": 12400,
-        "likes": 830,
-        "comments": 41,
-        "shares": 96,
-        "clicks": 210,
-        "signups": 0,
+        "channels": {
+          "instagram": {
+            "views": 8400,
+            "likes": 610,
+            "comments": 32,
+            "shares": 71,
+            "clicks": 140,
+            "signups": 0
+          },
+          "tiktok": {
+            "views": 4000,
+            "likes": 220,
+            "comments": 9,
+            "shares": 25,
+            "clicks": 70,
+            "signups": 0
+          }
+        },
         "notes": ""
       },
       "publishedBy": {
@@ -174,15 +191,17 @@
       "channels": [
         "linkedin"
       ],
-      "priority": "p2",
+      "urgent": false,
       "owner": "nadir",
+      "rubric": "",
+      "caption": "3 chiffres de l’été chez Futnow : 1 240 matchs filmés, 9 800 replays vus, 14 centres partenaires. Et la rentrée arrive.",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "09:00",
       "stageId": "published",
-      "stepProgress": 0,
       "campaignId": "c_rentree",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "2026-09-05",
         "publishPlanned": "2026-09-07",
         "publishActual": "2026-09-07"
       },
@@ -200,12 +219,16 @@
       ],
       "items": [],
       "results": {
-        "views": 2300,
-        "likes": 64,
-        "comments": 9,
-        "shares": 7,
-        "clicks": 38,
-        "signups": 0,
+        "channels": {
+          "linkedin": {
+            "views": 2300,
+            "likes": 64,
+            "comments": 9,
+            "shares": 7,
+            "clicks": 38,
+            "signups": 0
+          }
+        },
         "notes": ""
       },
       "publishedBy": {
@@ -219,7 +242,7 @@
       },
       "updatedAt": "2026-09-13T10:00:00.000Z",
       "updatedBy": {
-        "login": "nadir",
+        "login": "lea",
         "avatar": ""
       }
     },
@@ -232,15 +255,17 @@
       "channels": [
         "instagram"
       ],
-      "priority": "p3",
+      "urgent": false,
       "owner": "lea",
+      "rubric": "Sondage du jeudi",
+      "caption": "Tu joues plutôt 19 h, 20 h ou 21 h ? Vote 👇",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "12:00",
       "stageId": "published",
-      "stepProgress": 0,
       "campaignId": "c_rentree",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "2026-09-08",
         "publishPlanned": "2026-09-09",
         "publishActual": "2026-09-08"
       },
@@ -258,12 +283,16 @@
       ],
       "items": [],
       "results": {
-        "views": 640,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {
+          "instagram": {
+            "views": 640,
+            "likes": 0,
+            "comments": 0,
+            "shares": 0,
+            "clicks": 0,
+            "signups": 0
+          }
+        },
         "notes": ""
       },
       "publishedBy": {
@@ -283,7 +312,7 @@
     },
     {
       "id": "o_tiktok_bestof",
-      "title": "TikTok best-of buts de la semaine",
+      "title": "Best-of buts de la semaine #3",
       "description": "Format récurrent : les 5 plus beaux buts filmés par les caméras Futnow, musique tendance.",
       "icon": "⚽",
       "kind": "video",
@@ -292,15 +321,17 @@
         "instagram",
         "youtube"
       ],
-      "priority": "p1",
+      "urgent": false,
       "owner": "lea",
+      "rubric": "Best-of du lundi",
+      "caption": "Les 5 plus beaux buts de la semaine, filmés par nos caméras. Le 4e est incroyable 🤯",
+      "hashtags": "#futnow #bestof #golazo",
+      "assetUrl": "",
+      "publishTime": "18:00",
       "stageId": "published",
-      "stepProgress": 0,
       "campaignId": "",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "2026-09-13",
         "publishPlanned": "2026-09-14",
         "publishActual": "2026-09-14"
       },
@@ -328,12 +359,16 @@
       ],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {
+          "tiktok": {
+            "views": 3100,
+            "likes": 260,
+            "comments": 14,
+            "shares": 40,
+            "clicks": 0,
+            "signups": 0
+          }
+        },
         "notes": ""
       },
       "publishedBy": {
@@ -345,7 +380,7 @@
         "login": "lea",
         "avatar": ""
       },
-      "updatedAt": "2026-09-14T14:00:00.000Z",
+      "updatedAt": "2026-09-15T10:00:00.000Z",
       "updatedBy": {
         "login": "lea",
         "avatar": ""
@@ -360,15 +395,17 @@
       "channels": [
         "newsletter"
       ],
-      "priority": "p1",
+      "urgent": true,
       "owner": "nadir",
+      "rubric": "Newsletter mensuelle",
+      "caption": "Objet : Ce qui change à la rentrée ⚽",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "08:30",
       "stageId": "scheduled",
-      "stepProgress": 0,
       "campaignId": "c_rentree",
       "links": [],
       "dates": {
-        "reviewPlanned": "2026-09-14",
-        "reviewActual": "2026-09-14",
         "publishPlanned": "2026-09-17",
         "publishActual": ""
       },
@@ -386,12 +423,7 @@
       ],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -417,15 +449,17 @@
         "instagram",
         "field"
       ],
-      "priority": "p0",
+      "urgent": true,
       "owner": "nadir",
+      "rubric": "",
+      "caption": "Tu ramènes ton équipe, on t’offre tes matchs. Deviens capitaine Futnow de ton centre 👑",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "19:00",
       "stageId": "review",
-      "stepProgress": 0,
       "campaignId": "c_rentree",
       "links": [],
       "dates": {
-        "reviewPlanned": "2026-09-16",
-        "reviewActual": "2026-09-14",
         "publishPlanned": "2026-09-21",
         "publishActual": ""
       },
@@ -646,12 +680,7 @@
         }
       ],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -678,15 +707,17 @@
         "youtube",
         "app"
       ],
-      "priority": "p0",
+      "urgent": true,
       "owner": "lea",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "#futnow #ligues",
+      "assetUrl": "",
+      "publishTime": "18:00",
       "stageId": "create",
-      "stepProgress": 0,
       "campaignId": "c_ligues",
       "links": [],
       "dates": {
-        "reviewPlanned": "2026-09-22",
-        "reviewActual": "",
         "publishPlanned": "2026-09-27",
         "publishActual": ""
       },
@@ -745,12 +776,7 @@
         }
       ],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -775,27 +801,24 @@
         "linkedin",
         "field"
       ],
-      "priority": "p1",
+      "urgent": false,
       "owner": "nadir",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
       "stageId": "create",
-      "stepProgress": 0,
       "campaignId": "",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "",
         "publishPlanned": "2026-09-13",
         "publishActual": ""
       },
       "reviews": [],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -811,6 +834,49 @@
       }
     },
     {
+      "id": "o_bestof_4",
+      "title": "Best-of buts de la semaine #4",
+      "description": "Format récurrent : les 5 plus beaux buts filmés par les caméras Futnow.",
+      "icon": "⚽",
+      "kind": "video",
+      "channels": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "urgent": false,
+      "owner": "lea",
+      "rubric": "Best-of du lundi",
+      "caption": "",
+      "hashtags": "#futnow #bestof #golazo",
+      "assetUrl": "",
+      "publishTime": "18:00",
+      "stageId": "create",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "publishPlanned": "2026-09-21",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T14:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
       "id": "o_ugc_replays",
       "title": "Campagne UGC : « ton plus beau replay »",
       "description": "Les joueurs partagent leur replay avec #FutnowReplay, on reposte les meilleurs. Dotation : un mois de matchs.",
@@ -821,27 +887,24 @@
         "tiktok",
         "app"
       ],
-      "priority": "p2",
+      "urgent": false,
       "owner": "",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
       "stageId": "brief",
-      "stepProgress": 0,
       "campaignId": "c_ligues",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "",
         "publishPlanned": "2026-10-05",
         "publishActual": ""
       },
       "reviews": [],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -867,27 +930,24 @@
         "instagram",
         "ambassadors"
       ],
-      "priority": "p1",
+      "urgent": false,
       "owner": "",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
       "stageId": "brief",
-      "stepProgress": 0,
       "campaignId": "c_ligues",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "",
         "publishPlanned": "2026-10-10",
         "publishActual": ""
       },
       "reviews": [],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -903,6 +963,47 @@
       }
     },
     {
+      "id": "o_story_sondage_2",
+      "title": "Story sondage : ton poste préféré ?",
+      "description": "",
+      "icon": "🗳️",
+      "kind": "story",
+      "channels": [
+        "instagram"
+      ],
+      "urgent": false,
+      "owner": "lea",
+      "rubric": "Sondage du jeudi",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "12:00",
+      "stageId": "brief",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "publishPlanned": "2026-09-17",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T14:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
       "id": "o_idea_podcast",
       "title": "Mini-podcast « vestiaire » avec des joueurs",
       "description": "Idée : 10 min avec une équipe régulière, à tester une fois.",
@@ -911,27 +1012,24 @@
       "channels": [
         "youtube"
       ],
-      "priority": "p3",
+      "urgent": false,
       "owner": "",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
       "stageId": "idea",
-      "stepProgress": 0,
       "campaignId": "",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "",
         "publishPlanned": "",
         "publishActual": ""
       },
       "reviews": [],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -955,27 +1053,24 @@
       "channels": [
         "ambassadors"
       ],
-      "priority": "p2",
+      "urgent": false,
       "owner": "",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
       "stageId": "idea",
-      "stepProgress": 0,
       "campaignId": "",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
-        "reviewActual": "",
         "publishPlanned": "",
         "publishActual": ""
       },
       "reviews": [],
       "items": [],
       "results": {
-        "views": 0,
-        "likes": 0,
-        "comments": 0,
-        "shares": 0,
-        "clicks": 0,
-        "signups": 0,
+        "channels": {},
         "notes": ""
       },
       "publishedBy": null,
@@ -1012,7 +1107,7 @@
       },
       "opId": "o_reel_rentree",
       "type": "update",
-      "text": "a modifié dates de « Reel « la rentrée c’est le soir » »"
+      "text": "a modifié dates, publishTime de « Reel « la rentrée c’est le soir » »"
     },
     {
       "id": "a_2026-08-27T14:00:00.000Z_o_reel_rentree_move",
@@ -1056,7 +1151,7 @@
       },
       "opId": "o_reel_rentree",
       "type": "review",
-      "text": "a validé « Reel « la rentrée c’est le soir » » : OK — Nickel, juste le logo à agrandir"
+      "text": "a validé « Reel « la rentrée c’est le soir » » — Nickel, juste le logo à agrandir"
     },
     {
       "id": "a_2026-08-31T14:00:00.000Z_o_reel_rentree_move",
@@ -1092,6 +1187,17 @@
       "text": "a mis à jour les résultats de « Reel « la rentrée c’est le soir » »"
     },
     {
+      "id": "a_2026-09-09T10:00:00.000Z_o_reel_rentree_update",
+      "at": "2026-09-09T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "update",
+      "text": "a mis à jour les résultats de « Reel « la rentrée c’est le soir » »"
+    },
+    {
       "id": "a_2026-08-31T10:00:00.000Z_o_post_linkedin_create",
       "at": "2026-08-31T10:00:00.000Z",
       "by": {
@@ -1111,7 +1217,7 @@
       },
       "opId": "o_post_linkedin",
       "type": "update",
-      "text": "a modifié dates de « Post LinkedIn : chiffres de l’été »"
+      "text": "a modifié dates, publishTime de « Post LinkedIn : chiffres de l’été »"
     },
     {
       "id": "a_2026-09-01T14:00:00.000Z_o_post_linkedin_move",
@@ -1155,7 +1261,7 @@
       },
       "opId": "o_post_linkedin",
       "type": "review",
-      "text": "a validé « Post LinkedIn : chiffres de l’été » : OK — GO"
+      "text": "a validé « Post LinkedIn : chiffres de l’été » — GO"
     },
     {
       "id": "a_2026-09-06T14:00:00.000Z_o_post_linkedin_move",
@@ -1183,7 +1289,7 @@
       "id": "a_2026-09-13T10:00:00.000Z_o_post_linkedin_update",
       "at": "2026-09-13T10:00:00.000Z",
       "by": {
-        "login": "nadir",
+        "login": "lea",
         "avatar": ""
       },
       "opId": "o_post_linkedin",
@@ -1210,7 +1316,7 @@
       },
       "opId": "o_story_sondage",
       "type": "update",
-      "text": "a modifié dates de « Story sondage : ton créneau préféré ? »"
+      "text": "a modifié dates, publishTime de « Story sondage : ton créneau préféré ? »"
     },
     {
       "id": "a_2026-09-07T14:00:00.000Z_o_story_sondage_move",
@@ -1243,7 +1349,7 @@
       },
       "opId": "o_story_sondage",
       "type": "review",
-      "text": "a validé « Story sondage : ton créneau préféré ? » : OK"
+      "text": "a validé « Story sondage : ton créneau préféré ? »"
     },
     {
       "id": "a_2026-09-08T14:00:00.000Z_o_story_sondage_move",
@@ -1276,7 +1382,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "create",
-      "text": "a créé « TikTok best-of buts de la semaine »"
+      "text": "a créé « Best-of buts de la semaine #3 »"
     },
     {
       "id": "a_2026-09-07T10:00:00.000Z_o_tiktok_bestof_update",
@@ -1287,7 +1393,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "update",
-      "text": "a modifié dates de « TikTok best-of buts de la semaine »"
+      "text": "a modifié dates, publishTime de « Best-of buts de la semaine #3 »"
     },
     {
       "id": "a_2026-09-08T14:00:00.000Z_o_tiktok_bestof_move",
@@ -1298,7 +1404,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "move",
-      "text": "a passé « TikTok best-of buts de la semaine » en Brief"
+      "text": "a passé « Best-of buts de la semaine #3 » en Brief"
     },
     {
       "id": "a_2026-09-10T14:00:00.000Z_o_tiktok_bestof_move",
@@ -1309,7 +1415,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "move",
-      "text": "a passé « TikTok best-of buts de la semaine » en Création"
+      "text": "a passé « Best-of buts de la semaine #3 » en Création"
     },
     {
       "id": "a_2026-09-13T14:00:00.000Z_o_tiktok_bestof_move",
@@ -1320,7 +1426,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "move",
-      "text": "a passé « TikTok best-of buts de la semaine » en Validation"
+      "text": "a passé « Best-of buts de la semaine #3 » en Validation"
     },
     {
       "id": "a_2026-09-13T12:00:00.000Z_o_tiktok_bestof_review",
@@ -1331,7 +1437,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "review",
-      "text": "a validé « TikTok best-of buts de la semaine » : KO — Le 3e but est flou, à remplacer"
+      "text": "a refusé « Best-of buts de la semaine #3 » — Le 3e but est flou, à remplacer"
     },
     {
       "id": "a_2026-09-14T12:00:00.000Z_o_tiktok_bestof_review",
@@ -1342,7 +1448,7 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "review",
-      "text": "a validé « TikTok best-of buts de la semaine » : OK — Parfait maintenant"
+      "text": "a validé « Best-of buts de la semaine #3 » — Parfait maintenant"
     },
     {
       "id": "a_2026-09-14T14:00:00.000Z_o_tiktok_bestof_move",
@@ -1353,7 +1459,18 @@
       },
       "opId": "o_tiktok_bestof",
       "type": "move",
-      "text": "a passé « TikTok best-of buts de la semaine » en Publié"
+      "text": "a passé « Best-of buts de la semaine #3 » en Publié"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_tiktok_bestof_update",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "update",
+      "text": "a mis à jour les résultats de « Best-of buts de la semaine #3 »"
     },
     {
       "id": "a_2026-09-09T10:00:00.000Z_o_newsletter_1_create",
@@ -1375,7 +1492,7 @@
       },
       "opId": "o_newsletter_1",
       "type": "update",
-      "text": "a modifié dates de « Newsletter #1 — « Ce qui change à la rentrée » »"
+      "text": "a modifié dates, publishTime de « Newsletter #1 — « Ce qui change à la rentrée » »"
     },
     {
       "id": "a_2026-09-10T14:00:00.000Z_o_newsletter_1_move",
@@ -1419,7 +1536,7 @@
       },
       "opId": "o_newsletter_1",
       "type": "review",
-      "text": "a validé « Newsletter #1 — « Ce qui change à la rentrée » » : OK — Relu, deux coquilles corrigées"
+      "text": "a validé « Newsletter #1 — « Ce qui change à la rentrée » » — Relu, deux coquilles corrigées"
     },
     {
       "id": "a_2026-09-15T14:00:00.000Z_o_newsletter_1_move",
@@ -1452,7 +1569,7 @@
       },
       "opId": "o_ambassadeurs",
       "type": "update",
-      "text": "a modifié dates de « Programme ambassadeurs : recruter 10 capitaines »"
+      "text": "a modifié dates, publishTime de « Programme ambassadeurs : recruter 10 capitaines »"
     },
     {
       "id": "a_2026-09-04T14:00:00.000Z_o_ambassadeurs_move",
@@ -1606,7 +1723,7 @@
       },
       "opId": "o_video_ligues",
       "type": "update",
-      "text": "a modifié dates de « Vidéo teaser Ligues v2 »"
+      "text": "a modifié dates, publishTime de « Vidéo teaser Ligues v2 »"
     },
     {
       "id": "a_2026-09-12T14:00:00.000Z_o_video_ligues_move",
@@ -1719,6 +1836,50 @@
       "text": "a passé « Partenariat centre Five Marseille » en Création"
     },
     {
+      "id": "a_2026-09-15T10:00:00.000Z_o_bestof_4_create",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_bestof_4",
+      "type": "create",
+      "text": "a créé « Best-of buts de la semaine #4 »"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_bestof_4_update",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_bestof_4",
+      "type": "update",
+      "text": "a modifié dates, publishTime de « Best-of buts de la semaine #4 »"
+    },
+    {
+      "id": "a_2026-09-15T14:00:00.000Z_o_bestof_4_move",
+      "at": "2026-09-15T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_bestof_4",
+      "type": "move",
+      "text": "a passé « Best-of buts de la semaine #4 » en Brief"
+    },
+    {
+      "id": "a_2026-09-15T14:00:00.000Z_o_bestof_4_move",
+      "at": "2026-09-15T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_bestof_4",
+      "type": "move",
+      "text": "a passé « Best-of buts de la semaine #4 » en Création"
+    },
+    {
       "id": "a_2026-09-13T10:00:00.000Z_o_ugc_replays_create",
       "at": "2026-09-13T10:00:00.000Z",
       "by": {
@@ -1783,6 +1944,39 @@
       "opId": "o_event_tournoi",
       "type": "move",
       "text": "a passé « Tournoi de lancement Ligues » en Brief"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_story_sondage_2_create",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage_2",
+      "type": "create",
+      "text": "a créé « Story sondage : ton poste préféré ? »"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_story_sondage_2_update",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage_2",
+      "type": "update",
+      "text": "a modifié dates, publishTime de « Story sondage : ton poste préféré ? »"
+    },
+    {
+      "id": "a_2026-09-15T14:00:00.000Z_o_story_sondage_2_move",
+      "at": "2026-09-15T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage_2",
+      "type": "move",
+      "text": "a passé « Story sondage : ton poste préféré ? » en Brief"
     },
     {
       "id": "a_2026-09-15T10:00:00.000Z_o_idea_podcast_create",

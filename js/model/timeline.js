@@ -1,5 +1,5 @@
 // Frise d'un coup : le passé vient du journal (création, déplacements,
-// validations), le futur des dates cibles pas encore atteintes.
+// validations), le futur de la date de publication pas encore atteinte.
 import { isoDay } from './doc.js';
 
 export function opTimeline(doc, op, today) {
@@ -9,11 +9,9 @@ export function opTimeline(doc, op, today) {
   if (!past.some((e) => e.kind === 'create') && op.createdAt) {
     past.unshift({ kind: 'create', day: isoDay(op.createdAt), at: op.createdAt, text: 'a créé la fiche', by: op.createdBy, future: false, late: false });
   }
-  const d = op.dates || {};
-  const planned = [
-    ['review', d.reviewPlanned, d.reviewActual, 'Validation'],
-    ['publish', d.publishPlanned, d.publishActual, 'Publication'],
-  ].filter(([, plannedDay, actual]) => plannedDay && !actual)
-    .map(([kind, day, , label]) => ({ kind, day, at: `${day}T00:00:00Z`, text: `${label} prévue`, by: null, future: day >= today, late: day < today }));
+  const { publishPlanned, publishActual } = op.dates || {};
+  const planned = publishPlanned && !publishActual
+    ? [{ kind: 'publish', day: publishPlanned, at: `${publishPlanned}T00:00:00Z`, text: 'Publication prévue', by: null, future: publishPlanned >= today, late: publishPlanned < today }]
+    : [];
   return [...past, ...planned].sort((a, b) => a.at.localeCompare(b.at));
 }

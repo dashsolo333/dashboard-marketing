@@ -3,6 +3,7 @@ import { CONFIG } from '../config.js';
 import { renameStage, recolorStage, addStage, removeStage, moveStage, setGate } from '../model/stages.js';
 import { addChannel, renameChannel, removeChannel, moveChannel } from '../model/channels.js';
 import { newId } from '../model/doc.js';
+import { addCampaign, updateCampaign, removeCampaign } from '../model/campaigns.js';
 
 const TABS = [
   { id: 'account', label: 'Compte' }, { id: 'pipeline', label: 'Pipeline' }, { id: 'channels', label: 'Canaux' },
@@ -64,17 +65,17 @@ function renderPipeline(ctx) {
     h('select', { class: 'select', disabled: ro, onChange: (e) => act(`a changé la garde ${label}`, (d) => setGate(d, gate, e.target.value)) },
       doc.stages.map((s) => h('option', { value: s.id, selected: doc.gates[gate] === s.id }, s.label))));
   return h('div', { style: { display: 'grid', gap: '16px' } },
-    h('p', { class: 'hint' }, 'Les étapes sont libres : renomme, recolore, réordonne, ajoute. La jauge d’un coup suit sa position dans ce pipeline. Deux étapes portent une garde : l’entrée en « Validation » date la validation, l’entrée en « Publié » exige un dernier GO.'),
+    h('p', { class: 'hint' }, 'Les étapes sont libres : renomme, recolore, réordonne, ajoute. L’étape « Publié » porte la garde : on n’y entre qu’avec un GO (forçable).'),
     h('div', { class: 'settings-list' }, doc.stages.map((s, i) => h('div', { class: 'settings-row' },
       h('input', { type: 'color', value: s.color, disabled: ro, 'aria-label': 'Couleur', onChange: (e) => act(`a recoloré l’étape ${s.label}`, (d) => recolorStage(d, s.id, e.target.value)) }),
       h('div', {}, h('input', { class: 'input', value: s.label, disabled: ro, 'aria-label': 'Nom de l’étape', onChange: (e) => { if (e.target.value.trim()) act(`a renommé l’étape ${s.label} en ${e.target.value.trim()}`, (d) => renameStage(d, s.id, e.target.value.trim())); } }),
-        s.id === doc.gates.reviewStageId ? h('span', { class: 'gate-tag' }, 'garde · validation') : s.id === doc.gates.finalStageId ? h('span', { class: 'gate-tag' }, 'garde · publié') : null),
+        s.id === doc.gates.finalStageId ? h('span', { class: 'gate-tag' }, 'garde · GO requis') : null),
       rowActions(ctx, { ro, i, n: doc.stages.length,
         onUp: () => act('a réordonné le pipeline', (d) => moveStage(d, s.id, i - 1)),
         onDown: () => act('a réordonné le pipeline', (d) => moveStage(d, s.id, i + 1)),
         onRemove: () => { if (confirm(`Supprimer l’étape ${s.label} ? Ses coups reculent d’une étape.`)) act(`a supprimé l’étape ${s.label}`, (d) => removeStage(d, s.id)); } })))),
     ro ? null : h('button', { type: 'button', class: 'btn', style: { justifySelf: 'start' }, onClick: () => { const label = prompt('Nom de la nouvelle étape'); if (label?.trim()) act(`a ajouté l’étape ${label.trim()}`, (d) => addStage(d, { label: label.trim() }, d.stages.length - 2)); } }, icon('plus'), 'Ajouter une étape'),
-    h('div', { class: 'grid-2' }, gateSel('reviewStageId', 'Étape « validation »'), gateSel('finalStageId', 'Étape « publié »')));
+    h('div', { class: 'grid-2' }, gateSel('finalStageId', 'Étape « publié » (GO requis)')));
 }
 
 function renderChannels(ctx) {
@@ -103,23 +104,26 @@ function renderChannels(ctx) {
 function renderCampaignsSettings(ctx) {
   const doc = ctx.doc;
   const ro = !ctx.canWrite();
-  const save = (label, campaigns) => ctx.act(label, (d) => ({ ...d, campaigns }));
-  const update = (id, patch, label) => save(label, doc.campaigns.map((c) => (c.id === id ? { ...c, ...patch } : c)));
+  const update = (id, patch, label) => ctx.act(label, (d) => updateCampaign(d, id, patch));
   const campaigns = [...doc.campaigns].sort((a, b) => (a.startAt || '9999').localeCompare(b.startAt || '9999'));
+  const field = (c, key, props, label) => h('input', { class: 'input', value: c[key] || '', disabled: ro, 'aria-label': label, title: label, ...props, onChange: (e) => update(c.id, { [key]: e.target.value.trim() }, `a modifié la campagne ${c.name}`) });
   return h('div', { style: { display: 'grid', gap: '16px' } },
-    h('p', { class: 'hint' }, 'Une campagne = un objectif et une fenêtre de temps qui regroupent plusieurs coups (rentrée, lancement d’une feature, tournoi…). Rattache les coups depuis leur fiche.'),
-    h('div', { class: 'settings-list' }, campaigns.length ? campaigns.map((c) => h('div', { class: 'settings-row', style: { gridTemplateColumns: '48px 1fr 150px 150px auto' } },
-      h('input', { class: 'input input-emoji', value: c.icon || '', maxlength: 4, placeholder: '✦', disabled: ro, 'aria-label': 'Icône', onChange: (e) => update(c.id, { icon: e.target.value.trim() }, `a changé l’icône de la campagne ${c.name}`) }),
-      h('div', { style: { display: 'grid', gap: '4px' } },
+    h('p', { class: 'hint' }, 'Une campagne = un objectif chiffré et une fenêtre de temps qui regroupent plusieurs coups (rentrée, lancement d’une feature, tournoi…). Le réalisé se met à jour depuis la vue Campagnes.'),
+    h('div', { class: 'settings-list' }, campaigns.length ? campaigns.map((c) => h('div', { class: 'settings-row settings-row-campaign' },
+      field(c, 'icon', { class: 'input input-emoji', maxlength: 4, placeholder: '✦' }, 'Icône'),
+      h('div', { style: { display: 'grid', gap: '6px' } },
         h('input', { class: 'input', value: c.name, disabled: ro, 'aria-label': 'Nom', onChange: (e) => { if (e.target.value.trim()) update(c.id, { name: e.target.value.trim() }, `a renommé la campagne ${c.name}`); } }),
-        h('input', { class: 'input', value: c.goal || '', placeholder: 'Objectif (ex. +30 % de matchs le soir)', disabled: ro, 'aria-label': 'Objectif', onChange: (e) => update(c.id, { goal: e.target.value.trim() }, `a précisé l’objectif de la campagne ${c.name}`) })),
-      h('input', { class: 'input', type: 'date', value: c.startAt || '', disabled: ro, 'aria-label': 'Début', title: 'Début', onChange: (e) => update(c.id, { startAt: e.target.value }, `a daté la campagne ${c.name} au ${fmtDay(e.target.value)}`) }),
-      h('input', { class: 'input', type: 'date', value: c.endAt || '', disabled: ro, 'aria-label': 'Fin', title: 'Fin', onChange: (e) => update(c.id, { endAt: e.target.value }, `a fixé la fin de la campagne ${c.name}`) }),
-      h('button', { type: 'button', class: 'btn btn-ghost btn-sm btn-icon', disabled: ro, 'aria-label': 'Supprimer', onClick: () => { if (confirm(`Supprimer la campagne ${c.name} ? Les coups restent, sans campagne.`)) save(`a supprimé la campagne ${c.name}`, doc.campaigns.filter((x) => x.id !== c.id)); } }, icon('trash'))))
+        h('div', { class: 'goal-fields' },
+          field(c, 'goal', { placeholder: 'Objectif (ex. ligues créées)' }, 'Objectif'),
+          h('input', { class: 'input', type: 'number', min: 0, value: c.target || '', placeholder: 'Cible', disabled: ro, 'aria-label': 'Cible', title: 'Cible chiffrée', onChange: (e) => update(c.id, { target: e.target.value }, `a fixé la cible de la campagne ${c.name}`) })),
+        h('div', { class: 'goal-fields' },
+          h('input', { class: 'input', type: 'date', value: c.startAt || '', disabled: ro, 'aria-label': 'Début', title: 'Début', onChange: (e) => update(c.id, { startAt: e.target.value }, `a daté la campagne ${c.name}`) }),
+          h('input', { class: 'input', type: 'date', value: c.endAt || '', disabled: ro, 'aria-label': 'Fin', title: 'Fin', onChange: (e) => update(c.id, { endAt: e.target.value }, `a fixé la fin de la campagne ${c.name}`) }))),
+      h('button', { type: 'button', class: 'btn btn-ghost btn-sm btn-icon', disabled: ro, 'aria-label': 'Supprimer', onClick: () => { if (confirm(`Supprimer la campagne ${c.name} ? Les coups restent, sans campagne.`)) ctx.act(`a supprimé la campagne ${c.name}`, (d) => removeCampaign(d, c.id)); } }, icon('trash'))))
       : h('div', { class: 'dim' }, 'Aucune campagne. Crée la première (ex. Rentrée 2026).')),
     ro ? null : h('button', { type: 'button', class: 'btn', style: { justifySelf: 'start' }, onClick: () => {
       const name = prompt('Nom de la campagne');
       if (!name?.trim()) return;
-      save(`a créé la campagne ${name.trim()}`, [...doc.campaigns, { id: newId('c'), name: name.trim(), icon: '', goal: '', startAt: '', endAt: '' }]);
+      ctx.act(`a créé la campagne ${name.trim()}`, (d) => addCampaign(d, { id: newId('c'), name: name.trim() }));
     } }, icon('plus'), 'Nouvelle campagne'));
 }

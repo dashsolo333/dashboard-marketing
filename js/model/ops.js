@@ -1,6 +1,7 @@
 // Un « coup » = une action marketing (post, vidéo, campagne, partenariat…).
-import { pushActivity, isoDay, normalizeOp, normalizeResults } from './doc.js';
+import { pushActivity, isoDay, normalizeOp, normalizeMetrics } from './doc.js';
 import { canMoveTo, stageById, latestReview } from './stages.js';
+import { addDays } from './calendar.js';
 
 const VERDICTS = ['ok', 'ko'];
 
@@ -52,15 +53,13 @@ export function moveOp(doc, id, stageId, { by, at, force = false }) {
   if (o.stageId === stageId) return doc;
   const gate = canMoveTo(doc, o, stageId, { force });
   if (!gate.ok) throw new Error(gate.reason);
-  const day = isoDay(at);
-  const dates = { ...o.dates };
   const isFinal = stageId === doc.gates.finalStageId;
-  if (stageId === doc.gates.reviewStageId && !dates.reviewActual) dates.reviewActual = day;
-  if (isFinal && !dates.publishActual) dates.publishActual = day;
+  const dates = { ...o.dates };
+  if (isFinal && !dates.publishActual) dates.publishActual = isoDay(at);
   const publishedBy = isFinal && !o.publishedBy ? by : o.publishedBy;
-  const next = { ...o, stageId, stepProgress: 0, dates, publishedBy, updatedAt: at, updatedBy: by };
+  const next = { ...o, stageId, dates, publishedBy, updatedAt: at, updatedBy: by };
   const forced = force && isFinal && !canMoveTo(doc, o, stageId).ok;
-  const text = `a passé « ${o.title} » en ${target.label}${forced ? ' (forcé, sans validation OK)' : ''}`;
+  const text = `a passé « ${o.title} » en ${target.label}${forced ? ' (forcé, sans validation)' : ''}`;
   return journal(replaceOp(doc, next), { type: 'move', opId: id, text, by, at });
 }
 
@@ -69,7 +68,7 @@ export function addReview(doc, id, { id: reviewId, verdict, notes = '', by, at }
   if (!VERDICTS.includes(verdict)) throw new Error('Verdict invalide (ok / ko).');
   const review = { id: reviewId, at, by, verdict, notes: String(notes || '') };
   const next = { ...o, reviews: [...o.reviews, review], updatedAt: at, updatedBy: by };
-  const text = `a validé « ${o.title} » : ${verdict.toUpperCase()}${notes ? ` — ${notes}` : ''}`;
+  const text = verdict === 'ok' ? `a validé « ${o.title} »${notes ? ` — ${notes}` : ''}` : `a refusé « ${o.title} »${notes ? ` — ${notes}` : ''}`;
   return journal(replaceOp(doc, next), { type: 'review', opId: id, text, by, at });
 }
 
@@ -78,11 +77,33 @@ export function removeReview(doc, id, reviewId, { by, at }) {
   return replaceOp(doc, { ...o, reviews: o.reviews.filter((r) => r.id !== reviewId), updatedAt: at, updatedBy: by });
 }
 
-export function setResults(doc, id, results, { by, at }) {
+/** Résultats : `{ channel, metrics }` pour un canal du coup, ou `{ notes }`. */
+export function setResults(doc, id, patch, { by, at }) {
   const o = requireOp(doc, id);
-  const next = { ...o, results: normalizeResults({ ...o.results, ...results }), updatedAt: at, updatedBy: by };
-  if (JSON.stringify(next.results) === JSON.stringify(o.results)) return doc;
+  let results = { ...o.results, channels: { ...o.results.channels } };
+  if (patch.channel !== undefined) {
+    if (!o.channels.includes(patch.channel)) throw new Error('Ce canal n’est pas coché sur ce coup.');
+    results.channels[patch.channel] = normalizeMetrics({ ...(results.channels[patch.channel] || {}), ...(patch.metrics || {}) });
+  }
+  if (patch.notes !== undefined) results = { ...results, notes: String(patch.notes || '') };
+  if (JSON.stringify(results) === JSON.stringify(o.results)) return doc;
+  const next = { ...o, results, updatedAt: at, updatedBy: by };
   return journal(replaceOp(doc, next), { type: 'update', opId: id, text: `a mis à jour les résultats de « ${o.title} »`, by, at });
+}
+
+/** Copie prête pour la semaine suivante : contenu gardé, avancement remis à zéro. */
+export function duplicateOp(doc, id, { id: newId, by, at }) {
+  const o = requireOp(doc, id);
+  const base = o.dates.publishActual || o.dates.publishPlanned;
+  const copy = normalizeOp({
+    ...o, id: newId, title: `${o.title} (copie)`, stageId: doc.stages[0].id,
+    dates: { publishPlanned: base ? addDays(base, 7) : '', publishActual: '' },
+    reviews: [], results: { channels: {}, notes: '' }, publishedBy: null,
+    items: o.items.map((i) => ({ ...i, id: `${i.id}_${newId}`, status: 'todo', done: false, doneAt: '', doneBy: null, note: '' })),
+    createdAt: at, createdBy: by, updatedAt: at, updatedBy: by,
+  }, knownChannels(doc));
+  const next = { ...doc, ops: [...doc.ops, copy] };
+  return journal(next, { type: 'create', opId: newId, text: `a dupliqué « ${o.title} »`, by, at });
 }
 
 export function deleteOp(doc, id, { by, at }) {
@@ -93,11 +114,15 @@ export function deleteOp(doc, id, { by, at }) {
 
 export const lastVerdict = latestReview;
 
-/** Retard : date prévue dépassée sans date réelle. */
+/** Jour de référence d'un coup : publié le, sinon prévu le. */
+export function opDay(op) {
+  return op.dates?.publishActual || op.dates?.publishPlanned || '';
+}
+
+/** Retard : publication prévue dépassée sans publication réelle. */
 export function isLate(op, today) {
   const d = op.dates || {};
-  const late = (planned, actual) => Boolean(planned) && !actual && planned < today;
-  return { review: late(d.reviewPlanned, d.reviewActual), publish: late(d.publishPlanned, d.publishActual) };
+  return Boolean(d.publishPlanned) && !d.publishActual && d.publishPlanned < today;
 }
 
 /* ---------- checklist de tâches ---------- */

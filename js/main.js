@@ -1,6 +1,6 @@
 import { createStore } from './store.js';
 import { CONFIG, DEV_MODE } from './config.js';
-import { h, clear } from './ui/dom.js';
+import { h, clear, today } from './ui/dom.js';
 import { toast } from './ui/toast.js';
 import { renderHeader, renderBanner, VIEWS } from './ui/header.js';
 import { renderKpis } from './ui/kpis.js';
@@ -8,37 +8,40 @@ import { renderBoard } from './ui/board.js';
 import { renderList } from './ui/list.js';
 import { renderCalendar } from './ui/calendar.js';
 import { renderCampaigns } from './ui/campaigns.js';
+import { renderChannels } from './ui/channels.js';
 import { renderJournal } from './ui/journal.js';
 import { renderOpPage } from './ui/opPage.js';
-import { renderFocus, focusList, toggleFullscreen } from './ui/focus.js';
 import { renderCreate } from './ui/create.js';
 import { renderSettings } from './ui/settings.js';
 import { moveOp, opById } from './model/ops.js';
 import { bulkMove, bulkUpdate, bulkDelete } from './model/bulk.js';
 import { stageById } from './model/stages.js';
+import { startOfWeek, addDays } from './model/calendar.js';
 
 const store = createStore();
 const $ = (id) => document.getElementById(id);
 
 const ui = {
-  view: readHash().view || localStorage.getItem(CONFIG.viewKey) || 'board',
+  view: readHash().view || localStorage.getItem(CONFIG.viewKey) || 'calendar',
+  month: readHash().month || today().slice(0, 7),
   filters: {},
   sort: null,
   journalType: '',
   opId: readHash().op || null,
-  focusId: readHash().focus || null,
   modal: null, // 'create' | 'settings'
+  createPreset: {},
   settingsTab: 'account',
   selection: new Set(),
 };
 
 const ctx = {
   store,
+  calendarHelpers: { startOfWeek, addDays },
   get doc() { return store.state.doc; },
   get view() { return ui.view; },
   get opId() { return ui.opId; },
-  get focusId() { return ui.focusId; },
-  setFocus(id) { ui.focusId = id; writeHash(); renderMain(); },
+  get month() { return ui.month; },
+  setMonth(m) { ui.month = m; writeHash(); renderMain(); },
   get filters() { return ui.filters; },
   get sort() { return ui.sort; },
   get journalType() { return ui.journalType; },
@@ -72,7 +75,7 @@ const ctx = {
   rerender: () => render(),
   retry: () => store.retry(),
   setView(v) { ui.view = v; ui.opId = null; ui.selection = new Set(); localStorage.setItem(CONFIG.viewKey, v); writeHash(); render(); window.scrollTo({ top: 0 }); },
-  setFilter(patch, { silent = false } = {}) { ui.filters = { ...ui.filters, ...patch }; if (silent) renderMain(); else render(); },
+  setFilter(patch, { silent = false, view = null } = {}) { ui.filters = { ...ui.filters, ...patch }; if (view) { ctx.setView(view); return; } if (silent) renderMain(); else render(); },
   toggleKpi(key, filter) {
     ui.filters = ui.filters.kpi === key ? {} : { q: ui.filters.q, channel: ui.filters.channel, kpi: key, ...filter };
     render();
@@ -81,7 +84,7 @@ const ctx = {
   setJournalType(t) { ui.journalType = t; renderMain(); },
   openOp(id) { ui.opId = id; writeHash(); render(); window.scrollTo({ top: 0 }); },
   closeOp() { ui.opId = null; writeHash(); render(); },
-  openCreate() { if (!guardWrite()) return; ui.modal = 'create'; renderLayer(); },
+  openCreate(preset = {}) { if (!guardWrite()) return; ui.modal = 'create'; ui.createPreset = preset; renderLayer(); },
   openSettings(tab = 'account') { ui.modal = 'settings'; ui.settingsTab = tab; renderLayer(); },
   closeModal() { ui.modal = null; renderLayer(); },
   /** Applique une opération ; renvoie true si acceptée. */
@@ -111,13 +114,13 @@ function guardWrite() {
 
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
-  return { view: VIEWS.some((v) => v.id === p.get('v')) ? p.get('v') : null, op: p.get('c'), focus: p.get('a') };
+  return { view: VIEWS.some((v) => v.id === p.get('v')) ? p.get('v') : null, op: p.get('c'), month: /^\d{4}-\d{2}$/.test(p.get('m') || '') ? p.get('m') : null };
 }
 function writeHash() {
   const p = new URLSearchParams();
-  if (ui.view !== 'board') p.set('v', ui.view);
+  if (ui.view !== 'calendar') p.set('v', ui.view);
+  if (ui.view === 'calendar' && ui.month !== today().slice(0, 7)) p.set('m', ui.month);
   if (ui.opId) p.set('c', ui.opId);
-  if (ui.view === 'focus' && ui.focusId) p.set('a', ui.focusId);
   const next = p.toString() ? `#${p}` : '';
   if (location.hash !== next) history.replaceState(null, '', `${location.pathname}${next}`);
 }
@@ -138,16 +141,16 @@ function renderMainNow() {
     ui.opId = null;
     writeHash();
   }
-  kpis.hidden = ui.view === 'focus';
+  kpis.hidden = ui.view === 'channels';
   if (!kpis.hidden) kpis.append(h('div', { class: 'kpi-row' }, ...(renderKpis(ctx) || [])));
-  const renderers = { board: renderBoard, focus: renderFocus, list: renderList, calendar: renderCalendar, campaigns: renderCampaigns, journal: renderJournal };
-  view.append((renderers[ui.view] || renderBoard)(ctx));
+  const renderers = { calendar: renderCalendar, board: renderBoard, list: renderList, campaigns: renderCampaigns, channels: renderChannels, journal: renderJournal };
+  view.append((renderers[ui.view] || renderCalendar)(ctx));
 }
 
 function renderLayer() {
   const layer = clear($('layer'));
   const doc = store.state.doc;
-  if (ui.modal === 'create' && doc) layer.append(renderCreate(ctx));
+  if (ui.modal === 'create' && doc) layer.append(renderCreate(ctx, ui.createPreset));
   if (ui.modal === 'settings') layer.append(renderSettings(ctx));
   document.body.style.overflow = layer.childElementCount ? 'hidden' : '';
   const focus = layer.querySelector('[autofocus]');
@@ -168,7 +171,7 @@ function measureChrome() {
 //     clic tombe sur un nœud remplacé et se perd ;
 //  3. un rendu demandé pendant un rendu est rejoué après ;
 //  4. la position de défilement est conservée.
-const TEXT_TYPES = new Set(['text', 'search', 'url', 'email', 'number', 'date', 'password']);
+const TEXT_TYPES = new Set(['text', 'search', 'url', 'email', 'number', 'date', 'time', 'password']);
 const isTextField = (el) => el && (el.tagName === 'TEXTAREA' || (el.tagName === 'INPUT' && TEXT_TYPES.has(el.type)));
 let pointerDown = false;
 let rendering = false;
@@ -238,26 +241,22 @@ document.addEventListener('keydown', (e) => {
   if (e.key === '/') { e.preventDefault(); $('search-input')?.focus(); }
   if (e.key === 'n') ctx.openCreate();
   if (/^[1-6]$/.test(e.key)) ctx.setView(VIEWS[Number(e.key) - 1].id);
-  if (ui.view === 'focus' && !ui.opId) {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-      const list = focusList(ctx); if (!list.length) return;
-      let i = list.findIndex((o) => o.id === ui.focusId); if (i < 0) i = 0;
-      ctx.setFocus(list[(i + (e.key === 'ArrowRight' ? 1 : -1) + list.length) % list.length].id);
-    }
-    if (e.key === 'f') toggleFullscreen();
-  }
 });
-window.addEventListener('hashchange', () => { const hsh = readHash(); if (hsh.view) ui.view = hsh.view; ui.opId = hsh.op; if (hsh.focus) ui.focusId = hsh.focus; render(); });
-document.addEventListener('fullscreenchange', () => document.body.classList.toggle('is-fullscreen', Boolean(document.fullscreenElement)));
+window.addEventListener('hashchange', () => { const hsh = readHash(); if (hsh.view) ui.view = hsh.view; if (hsh.month) ui.month = hsh.month; ui.opId = hsh.op; render(); });
 document.addEventListener('visibilitychange', () => { if (!document.hidden) store.reload(); });
 window.addEventListener('beforeunload', (e) => { if (store.state.pending.length) { e.preventDefault(); e.returnValue = ''; } });
 
 let lastStatus = '';
+let lastWrite = null;
 store.subscribe((s, kind) => {
   if (s.status === 'error' && lastStatus !== 'error' && s.error) toast(s.error, { kind: 'error' });
   if (s.status === 'conflict' && lastStatus !== 'conflict') toast('Conflit avec une modification distante. Recharge pour voir la version à jour.', { kind: 'error', action: { label: 'Recharger', onClick: () => location.reload() } });
   lastStatus = s.status;
-  if (kind === 'doc') render(); else renderChrome();
+  // Le droit d'écriture change ce que les vues affichent (glisser-déposer, boutons) : rendu complet.
+  const canWrite = store.canWrite();
+  const writeChanged = lastWrite !== null && canWrite !== lastWrite;
+  lastWrite = canWrite;
+  if (kind === 'doc' || writeChanged) render(); else renderChrome();
 });
 render();
 new ResizeObserver(() => measureChrome()).observe($('topbar'));

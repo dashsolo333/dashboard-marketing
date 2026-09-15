@@ -1,18 +1,20 @@
-import { h, icon } from './dom.js';
-import { KINDS, PRIORITIES, newId } from '../model/doc.js';
+import { h, icon, fmtDay } from './dom.js';
+import { KINDS, newId } from '../model/doc.js';
 import { createOp } from '../model/ops.js';
 
-/** Fiche vierge : un coup créé à la main, au stade idée. */
-export function renderCreate(ctx) {
+/** Fiche vierge : un coup créé à la main, au stade idée (ou pré-daté depuis le calendrier). */
+export function renderCreate(ctx, preset = {}) {
   const doc = ctx.doc;
-  let title; let kind; let priority; let iconEl; let desc; let stage; let campaign;
+  let title; let kind; let iconEl; let desc; let campaign; let date; let time; let rubric;
   const channels = new Set();
+  const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
   const submit = (e) => {
     e.preventDefault();
     const id = newId('o');
     const ok = ctx.act(`a créé « ${title.value.trim()} »`, (d) => createOp(d, {
       id, title: title.value, description: desc.value.trim(), icon: iconEl.value.trim(), kind: kind.value, channels: [...channels],
-      priority: priority.value, stageId: stage.value, campaignId: campaign.value, owner: ctx.store.state.user?.login || '', ...ctx.meta(),
+      rubric: rubric.value.trim(), campaignId: campaign.value, owner: ctx.store.state.user?.login || '',
+      dates: { publishPlanned: date.value }, publishTime: time.value, ...ctx.meta(),
     }));
     if (ok) { ctx.closeModal(); ctx.openOp(id); }
   };
@@ -23,18 +25,18 @@ export function renderCreate(ctx) {
   };
   return h('div', { class: 'overlay', onClick: (e) => { if (e.target === e.currentTarget) ctx.closeModal(); } },
     h('form', { class: 'modal glass', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'create-title', onSubmit: submit },
-      h('div', { class: 'modal-head' }, h('h2', { id: 'create-title' }, 'Nouveau coup'), h('button', { type: 'button', class: 'btn btn-ghost btn-icon', 'aria-label': 'Fermer', onClick: ctx.closeModal }, icon('close'))),
-      h('p', { class: 'hint', style: { marginBottom: '16px' } }, 'Un post, une vidéo, une campagne, un partenariat… Une fiche au stade idée par défaut, tu complètes le reste ensuite.'),
+      h('div', { class: 'modal-head' }, h('h2', { id: 'create-title' }, preset.publishPlanned ? `Nouveau coup le ${fmtDay(preset.publishPlanned)}` : 'Nouveau coup'), h('button', { type: 'button', class: 'btn btn-ghost btn-icon', 'aria-label': 'Fermer', onClick: ctx.closeModal }, icon('close'))),
       h('div', { style: { display: 'grid', gridTemplateColumns: '64px 1fr', gap: '12px' } },
         h('div', { class: 'field' }, h('label', { for: 'c-icon' }, 'Icône'), iconEl = h('input', { id: 'c-icon', class: 'input', placeholder: '✦', maxlength: 4, style: { textAlign: 'center', fontSize: '18px' } })),
         h('div', { class: 'field' }, h('label', { for: 'c-title' }, 'Titre'), title = h('input', { id: 'c-title', class: 'input', required: true, placeholder: 'Ex. Reel lancement Ligues, Newsletter #2, Tournoi…', autofocus: true }))),
       h('div', { class: 'field', style: { marginTop: '12px' } }, h('span', { class: 'field-label' }, 'Canaux'), h('div', { class: 'toggle-row' }, doc.channels.map(channelBtn))),
       h('div', { class: 'modal-grid', style: { marginTop: '12px' } },
         h('div', { class: 'field' }, h('label', { for: 'c-kind' }, 'Format'), kind = h('select', { id: 'c-kind', class: 'select' }, KINDS.map((k) => h('option', { value: k.id, selected: k.id === 'post' }, k.label)))),
-        h('div', { class: 'field' }, h('label', { for: 'c-priority' }, 'Priorité'), priority = h('select', { id: 'c-priority', class: 'select' }, PRIORITIES.map((p) => h('option', { value: p.id, selected: p.id === 'p2' }, p.label)))),
-        h('div', { class: 'field' }, h('label', { for: 'c-campaign' }, 'Campagne'), campaign = h('select', { id: 'c-campaign', class: 'select' }, h('option', { value: '' }, 'Aucune'), doc.campaigns.map((c) => h('option', { value: c.id }, c.name)))),
-        h('div', { class: 'field' }, h('label', { for: 'c-stage' }, 'Étape de départ'), stage = h('select', { id: 'c-stage', class: 'select' }, doc.stages.filter((s) => s.id !== doc.gates.finalStageId).map((s) => h('option', { value: s.id }, s.label))))),
-      h('div', { class: 'field', style: { marginTop: '12px' } }, h('label', { for: 'c-desc' }, 'Description'), desc = h('textarea', { id: 'c-desc', class: 'textarea', placeholder: 'L’idée en une phrase. Le brief viendra après.' })),
+        h('div', { class: 'field' }, h('label', { for: 'c-rubric' }, 'Rubrique'), rubric = h('input', { id: 'c-rubric', class: 'input', list: 'rubric-list', placeholder: 'Best-of du lundi, Sondage…' }), h('datalist', { id: 'rubric-list' }, rubrics.map((r) => h('option', { value: r })))),
+        h('div', { class: 'field' }, h('label', { for: 'c-date' }, 'Publication'), date = h('input', { id: 'c-date', class: 'input', type: 'date', value: preset.publishPlanned || '' })),
+        h('div', { class: 'field' }, h('label', { for: 'c-time' }, 'Heure'), time = h('input', { id: 'c-time', class: 'input', type: 'time', value: '' })),
+        h('div', { class: 'field' }, h('label', { for: 'c-campaign' }, 'Campagne'), campaign = h('select', { id: 'c-campaign', class: 'select' }, h('option', { value: '' }, 'Aucune'), doc.campaigns.map((c) => h('option', { value: c.id }, c.name))))),
+      h('div', { class: 'field', style: { marginTop: '12px' } }, h('label', { for: 'c-desc' }, 'L’idée en une phrase'), desc = h('textarea', { id: 'c-desc', class: 'textarea', placeholder: 'Le brief viendra après.' })),
       h('div', { class: 'modal-actions' },
         h('button', { type: 'button', class: 'btn', onClick: ctx.closeModal }, 'Annuler'),
         h('button', { type: 'submit', class: 'btn btn-cta' }, icon('plus'), 'Créer le coup'))));

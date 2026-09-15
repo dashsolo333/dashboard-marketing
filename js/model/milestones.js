@@ -1,5 +1,5 @@
 // Jalons datés (prod test, prod final) : état lisible et raccourcis de dates.
-import { dayOffset, addDays } from './roadmap.js';
+import { dayOffset, addDays } from './calendar.js';
 
 export function milestoneStatus({ planned, actual }, today) {
   if (actual) {

@@ -1,5 +1,5 @@
-// Pipeline modulable : les étapes sont éditables, deux d'entre elles portent
-// une "garde" (validation / publié) référencée par id dans `gates`.
+// Pipeline modulable : les étapes sont éditables ; l'étape finale porte une
+// garde (dernier GO requis) référencée par id dans `gates`.
 
 export const DEFAULT_STAGES = [
   { id: 'idea', label: 'Idée', color: '#8b8fa8' },
@@ -10,7 +10,7 @@ export const DEFAULT_STAGES = [
   { id: 'published', label: 'Publié', color: '#b5f03a' },
 ];
 
-export const DEFAULT_GATES = { reviewStageId: 'review', finalStageId: 'published' };
+export const DEFAULT_GATES = { finalStageId: 'published' };
 
 export function stageIndex(doc, stageId) {
   return doc.stages.findIndex((s) => s.id === stageId);
@@ -20,28 +20,18 @@ export function stageById(doc, stageId) {
   return doc.stages.find((s) => s.id === stageId) || null;
 }
 
-/** Jauge 0..100 : position dans le pipeline + avancement dans l'étape. */
-export function gaugeOf(doc, op) {
-  const idx = stageIndex(doc, op.stageId);
-  if (idx < 0) return 0;
-  const n = doc.stages.length;
-  if (idx === n - 1) return 100;
-  const step = Math.min(100, Math.max(0, Number(op.stepProgress) || 0)) / 100;
-  return Math.round(((idx + step) / n) * 100);
-}
-
 export function latestReview(op) {
   const reviews = op.reviews || [];
   if (!reviews.length) return null;
   return [...reviews].sort((a, b) => String(a.at).localeCompare(String(b.at))).at(-1);
 }
 
-/** Garde : publier exige une dernière validation OK. */
+/** Garde : publier exige un dernier GO. */
 export function canMoveTo(doc, op, stageId, { force = false } = {}) {
   if (stageId !== doc.gates.finalStageId || force) return { ok: true, reason: '' };
   const last = latestReview(op);
-  if (!last) return { ok: false, reason: 'Aucune validation enregistrée. Ajoute une validation OK ou force le passage.' };
-  if (last.verdict !== 'ok') return { ok: false, reason: 'La dernière validation est KO. Enregistre une validation OK ou force le passage.' };
+  if (!last) return { ok: false, reason: 'Pas encore validé. Clique « Valider » sur la fiche, ou force le passage.' };
+  if (last.verdict !== 'ok') return { ok: false, reason: 'La dernière validation est un refus. Valide à nouveau ou force le passage.' };
   return { ok: true, reason: '' };
 }
 
@@ -70,8 +60,8 @@ export function moveStage(doc, stageId, to) {
 }
 
 export function removeStage(doc, stageId) {
-  if (stageId === doc.gates.finalStageId || stageId === doc.gates.reviewStageId) {
-    throw new Error('Cette étape porte une garde (validation / publié) : change la garde avant de la supprimer.');
+  if (stageId === doc.gates.finalStageId) {
+    throw new Error('Cette étape porte la garde « publié » : change la garde avant de la supprimer.');
   }
   const idx = stageIndex(doc, stageId);
   if (idx < 0) return doc;
@@ -84,7 +74,7 @@ export function removeStage(doc, stageId) {
 }
 
 export function setGate(doc, gate, stageId) {
-  if (!['reviewStageId', 'finalStageId'].includes(gate)) throw new Error('Garde inconnue');
+  if (gate !== 'finalStageId') throw new Error('Garde inconnue');
   if (stageIndex(doc, stageId) < 0) throw new Error('Étape inconnue');
   return { ...doc, gates: { ...doc.gates, [gate]: stageId } };
 }

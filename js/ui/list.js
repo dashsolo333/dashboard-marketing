@@ -1,27 +1,27 @@
 import { h, icon, avatar, fmtDay, relTime, today } from './dom.js';
-import { PRIORITIES, kindById } from '../model/doc.js';
-import { gaugeOf, stageById } from '../model/stages.js';
-import { isLate, checklistProgress } from '../model/ops.js';
+import { kindById } from '../model/doc.js';
+import { stageById } from '../model/stages.js';
+import { isLate, checklistProgress, opDay } from '../model/ops.js';
 import { verdictBadge, channelDots } from './card.js';
 import { visibleOps } from './filters.js';
 
 const COLS = [
   { id: 'title', label: 'Coup', get: (o) => o.title.toLowerCase() },
-  { id: 'kind', label: 'Format', get: (o) => kindById(o.kind).label },
+  { id: 'kind', label: 'Format', get: (o) => (o.rubric || kindById(o.kind).label).toLowerCase() },
   { id: 'channels', label: 'Canaux', get: (o) => o.channels.length },
   { id: 'stage', label: 'Étape', get: (o, doc) => doc.stages.findIndex((s) => s.id === o.stageId) },
-  { id: 'gauge', label: 'Avancement', get: (o, doc) => gaugeOf(doc, o) },
-  { id: 'publish', label: 'Publication', get: (o) => o.dates.publishActual || o.dates.publishPlanned || '9999' },
+  { id: 'publish', label: 'Publication', get: (o) => (opDay(o) || '9999') + (o.publishTime || '') },
   { id: 'verdict', label: 'Validation', get: (o) => (o.reviews.at(-1)?.verdict || 'zz') },
-  { id: 'owner', label: 'Resp.', get: (o) => o.owner || 'zz' },
   { id: 'tasks', label: 'Checklist', get: (o) => { const p = checklistProgress(o); return p.total ? p.done / p.total : -1; } },
+  { id: 'campaign', label: 'Campagne', get: (o, doc) => doc.campaigns.find((c) => c.id === o.campaignId)?.name || 'zz' },
+  { id: 'owner', label: 'Resp.', get: (o) => o.owner || 'zz' },
   { id: 'updated', label: 'Mis à jour', get: (o) => o.updatedAt },
 ];
 
 export function renderList(ctx) {
   const doc = ctx.doc;
-  const sort = ctx.sort || { col: 'stage', dir: -1 };
-  const col = COLS.find((c) => c.id === sort.col) || COLS[3];
+  const sort = ctx.sort || { col: 'publish', dir: 1 };
+  const col = COLS.find((c) => c.id === sort.col) || COLS[4];
   const ops = [...visibleOps(doc, ctx.filters)].sort((a, b) => {
     const va = col.get(a, doc); const vb = col.get(b, doc);
     return (va > vb ? 1 : va < vb ? -1 : 0) * sort.dir;
@@ -44,28 +44,26 @@ export function renderList(ctx) {
       }, c.label, sort.col === c.id ? (sort.dir > 0 ? ' ↑' : ' ↓') : '')))),
       h('tbody', {}, ops.map((o) => {
         const stage = stageById(doc, o.stageId);
-        const g = gaugeOf(doc, o);
-        const late = isLate(o, t);
         const selected = sel.has(o.id);
-        const tasks = checklistProgress(o);
-        return h('tr', { class: selected ? 'is-selected' : '', onClick: (e) => { if (e.shiftKey && canSelect) { e.preventDefault(); ctx.toggleSelect(o.id); } else ctx.openOp(o.id); }, tabindex: 0,
+        const campaign = doc.campaigns.find((c) => c.id === o.campaignId);
+        return h('tr', { class: `${selected ? 'is-selected' : ''}${o.urgent ? ' is-urgent' : ''}`, onClick: (e) => { if (e.shiftKey && canSelect) { e.preventDefault(); ctx.toggleSelect(o.id); } else ctx.openOp(o.id); }, tabindex: 0,
           onKeydown: (e) => { if (e.key === 'Enter') ctx.openOp(o.id); if (e.key === ' ' && canSelect) { e.preventDefault(); ctx.toggleSelect(o.id); } } },
           h('td', { class: 'td-check', onClick: (e) => e.stopPropagation() },
             h('input', { type: 'checkbox', class: 'check', 'aria-label': `Sélectionner ${o.title}`, checked: selected, disabled: !canSelect, onChange: (e) => ctx.toggleSelect(o.id, e.target.checked) })),
-          h('td', {}, h('div', { class: 'cell-title' }, h('span', {}, o.icon || '•'), o.title)),
-          h('td', { class: 'muted' }, kindById(o.kind).label),
+          h('td', {}, h('div', { class: 'cell-title' }, h('span', {}, o.icon || '•'), o.title, o.urgent ? h('span', { class: 'badge badge-urgent' }, '🔥') : null)),
+          h('td', { class: 'muted' }, o.rubric ? [o.rubric, h('span', { class: 'dim' }, ` · ${kindById(o.kind).label}`)] : kindById(o.kind).label),
           h('td', {}, channelDots(doc, o, { max: 5 }) || h('span', { class: 'dim' }, '—')),
           h('td', {}, h('span', { class: 'chip chip-stage', style: { '--dot': stage?.color } }, h('i', { class: 'chip-dot' }), stage?.label)),
-          h('td', {}, h('div', { class: 'cell-gauge' }, h('div', { class: 'bar', style: { '--bar': stage?.color } }, h('i', { style: { width: `${g}%` } })), h('b', {}, `${g} %`))),
-          h('td', {}, dateCell(o.dates.publishPlanned, o.dates.publishActual, late.publish)),
+          h('td', {}, dateCell(o, t)),
           h('td', {}, verdictBadge(o) || h('span', { class: 'dim' }, '—')),
+          h('td', {}, tasksCell(checklistProgress(o))),
+          h('td', { class: 'muted' }, campaign ? `${campaign.icon ? `${campaign.icon} ` : ''}${campaign.name}` : '—'),
           h('td', { class: 'muted' }, o.owner || '—'),
-          h('td', {}, tasksCell(tasks)),
           h('td', {}, h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px' } }, avatar(o.updatedBy, 20), h('span', { class: 'muted' }, relTime(o.updatedAt)))));
       })),
     ),
     !ops.length ? h('div', { class: 'empty' }, h('b', {}, 'Aucun coup'), 'Change les filtres ou crée un coup.') : null),
-    canSelect && !sel.size ? h('p', { class: 'hint', style: { marginTop: '10px' } }, 'Coche des coups (ou Maj + clic sur une ligne) pour changer leur étape, leur campagne ou leur priorité d’un coup, ou les supprimer.') : null);
+    canSelect && !sel.size ? h('p', { class: 'hint', style: { marginTop: '10px' } }, 'Coche des coups (ou Maj + clic sur une ligne) pour changer leur étape ou leur campagne d’un coup, les marquer urgents, ou les supprimer.') : null);
 }
 
 function renderBulkBar(ctx, ops) {
@@ -78,7 +76,7 @@ function renderBulkBar(ctx, ops) {
     h('b', { class: 'bulkbar-count' }, `${n} sélectionné${n > 1 ? 's' : ''}`),
     pick('Passer à l’étape…', doc.stages, (v) => ctx.bulkMove(ids, v)),
     pick('Campagne…', [{ id: '__none', label: 'Sans campagne' }, ...doc.campaigns.map((c) => ({ id: c.id, label: c.name }))], (v) => ctx.bulkUpdate(ids, { campaignId: v === '__none' ? '' : v }, 'la campagne')),
-    pick('Priorité…', PRIORITIES, (v) => ctx.bulkUpdate(ids, { priority: v }, 'la priorité')),
+    pick('Urgence…', [{ id: 'on', label: '🔥 Marquer urgent' }, { id: 'off', label: 'Retirer l’urgence' }], (v) => ctx.bulkUpdate(ids, { urgent: v === 'on' }, 'l’urgence')),
     h('button', { type: 'button', class: 'btn btn-sm btn-danger', onClick: () => ctx.bulkDelete(ids) }, icon('trash'), 'Supprimer'),
     h('button', { type: 'button', class: 'btn btn-sm btn-ghost', style: { marginLeft: 'auto' }, onClick: ctx.clearSelection }, 'Tout désélectionner', h('span', { class: 'dim' }, ' · Échap')),
     ops.length > n ? h('button', { type: 'button', class: 'btn btn-sm btn-ghost', onClick: () => ctx.setSelection(ops.map((o) => o.id)) }, `Sélectionner les ${ops.length} visibles`) : null);
@@ -92,9 +90,12 @@ function tasksCell({ done, total }) {
     h('div', { class: 'bar bar-tasks' }, h('i', { style: { width: `${pct}%` } })));
 }
 
-function dateCell(planned, actual, late) {
-  if (!planned && !actual) return h('span', { class: 'dim' }, '—');
+function dateCell(o, t) {
+  const { publishPlanned, publishActual } = o.dates;
+  if (!publishPlanned && !publishActual) return h('span', { class: 'dim' }, 'à planifier');
+  const late = isLate(o, t);
   return h('div', { class: 'cell-dates' },
-    actual ? h('span', { style: { color: '#6fe3a0' } }, `✓ ${fmtDay(actual)}`) : null,
-    planned ? h('span', { class: late ? 'badge badge-late' : 'muted' }, `${actual ? 'cible ' : ''}${fmtDay(planned)}${late ? ' · retard' : ''}`) : null);
+    publishActual ? h('span', { style: { color: '#6fe3a0' } }, `✓ ${fmtDay(publishActual)}`)
+      : h('span', { class: late ? 'badge badge-late' : '' }, `${fmtDay(publishPlanned)}${o.publishTime ? ` · ${o.publishTime}` : ''}${late ? ' · retard' : ''}`),
+    publishActual && publishPlanned && publishPlanned !== publishActual ? h('span', { class: 'muted' }, `prévu ${fmtDay(publishPlanned)}`) : null);
 }

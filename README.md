@@ -1,6 +1,6 @@
 # Futnow · Marketing
 
-Dashboard d'équipe pour suivre tous les coups marketing Futnow (posts, vidéos, TikTok,
+Dashboard d'équipe pour piloter tous les coups marketing Futnow (posts, vidéos, TikTok,
 newsletter, partenariats, programme d'ambassadeurs, événements…) de l'idée à la publication.
 
 Page statique hébergée sur GitHub Pages, données dans `data/marketing.json` versionnées
@@ -9,24 +9,30 @@ connectée. Même architecture que `futnow-features-dashboard`.
 
 ## Ce que ça fait
 
-- **Six vues** : **Tableau** kanban par étape (glisser-déposer), **Avancement** (plein
-  écran, un coup à la fois, flèches ← → et touche `f`), **Liste** triable avec sélection
-  multiple et colonne checklist x/x, **Calendrier** éditorial semaine par semaine,
-  **Campagnes** (objectif + fenêtre qui regroupent des coups), **Journal**.
-- **Pipeline** : Idée → Brief → Création → Validation → Programmé → Publié. Modulable dans
-  les réglages (renommer, recolorer, réordonner, ajouter). Deux gardes :
-  - entrer en **Validation** date automatiquement la validation ;
-  - entrer en **Publié** exige un **dernier GO** (forçable, journalisé).
+- **Calendrier éditorial** (vue d'accueil) : un mois, une case par jour, chaque coup posé sur
+  sa date de publication avec la couleur de ses canaux et son heure. Glisser une carte
+  replanifie. Le « + » d'une case crée un coup déjà daté. À droite : les coups à planifier
+  (sans date) et l'agenda de la semaine.
+- **Tableau** kanban par étape (glisser-déposer), **Liste** triable avec checklist `x/x`,
+  actions groupées (étape, campagne, urgence, suppression), **Campagnes**, **Canaux**,
+  **Journal**.
+- **Pipeline** Idée → Brief → Création → Validation → Programmé → Publié, modulable dans
+  les réglages. Entrer en **Publié** exige un **GO** (forçable, journalisé) et date la
+  publication automatiquement.
 - **Canaux libres** (réglages → Canaux) : Instagram, TikTok, LinkedIn, YouTube, Newsletter,
-  Ambassadeurs, App / Site, Terrain par défaut ; ajoute ce qui vous sert (Discord, affichage,
-  podcast…).
-- **Page par coup** (lien `#c=<id>` partageable) : jauge et pipeline, bouton « Passer en … »,
-  canaux, format, priorité, campagne, responsable, **checklist** groupée par étape
-  (checklist type brief → publié), brief, **validations** GO/KO avec retour, **résultats**
-  (vues, likes, clics, inscriptions…), dates cible/réelles, frise, liens, historique.
-- **Suivi** : jauge = position dans le pipeline + avancement dans l'étape ; checklist x/x
-  visible sur les cartes, dans la Liste et dans les Campagnes ; retard en rouge dès qu'une
-  date cible est dépassée.
+  Ambassadeurs, App / Site, Terrain par défaut ; ajoute ce qui vous sert.
+- **Fiche par coup** (lien `#c=<id>` partageable) : étape + checklist groupée par étape
+  (checklist type brief → publié), **contenu** (légende, hashtags, lien du visuel), brief,
+  **publication** (date + heure, raccourcis +1 j / +1 sem), **validation en un clic**
+  (Valider / Refuser avec commentaire, qui et quand), **résultats par canal** (vues, likes,
+  commentaires, partages, clics, inscriptions + total), liens, frise, historique.
+  Rubrique (« Best-of du lundi »…), responsable, drapeau **Urgent**, bouton **Dupliquer**
+  (copie prête pour la semaine suivante).
+- **Campagnes** : objectif chiffré (cible / réalisé, barre), fenêtre, coups rattachés avec
+  date et étape, résultats cumulés.
+- **Canaux** : par canal, ce qui sort cette semaine, ce mois, dans les 30 jours, les coups
+  sans date, le rythme des 8 dernières semaines et les prochaines sorties. Un canal sans
+  rien de prévu ressort en orange.
 
 ## Écrire depuis la page
 
@@ -51,8 +57,7 @@ npm run seed -- --force   # régénérer data/marketing.json avec le jeu de dém
 npm run seed -- --force --empty   # repartir d'un document vide
 ```
 
-Raccourcis : `n` nouveau coup · `/` recherche · `1`–`6` vues · `← →` coup suivant en
-Avancement · `f` plein écran · `Échap` fermer / désélectionner.
+Raccourcis : `n` nouveau coup · `/` recherche · `1`–`6` vues · `Échap` fermer / désélectionner.
 
 ## Mise en ligne
 
@@ -65,8 +70,8 @@ Avancement · `f` plein écran · `Échap` fermer / désélectionner.
 
 ```
 index.html            coquille
-styles/               tokens, base, composants, vues, marketing
-js/model/             modèle pur (doc, stages, ops, channels, checklist, roadmap…) — testé
+styles/               tokens, base, composants, vues, marketing (calendrier, canaux, fiche)
+js/model/             modèle pur (doc, stages, ops, channels, campaigns, checklist, calendar, stats) — testé
 js/github.js          API GitHub Contents (lecture ETag, écriture avec sha)
 js/store.js           état + file d'opérations optimistes + rejeu sur conflit
 js/ui/                vues et composants (aucun innerHTML)

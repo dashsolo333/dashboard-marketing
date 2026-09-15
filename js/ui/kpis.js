@@ -1,20 +1,20 @@
 import { h, today } from './dom.js';
-import { isLate } from '../model/ops.js';
-import { startOfWeek, addDays } from '../model/roadmap.js';
+import { isLate, opDay } from '../model/ops.js';
+import { startOfWeek, addDays } from '../model/calendar.js';
 
 export function renderKpis(ctx) {
   const doc = ctx.doc;
   if (!doc) return null;
   const t = today();
-  const { reviewStageId, finalStageId } = doc.gates;
-  const midStages = doc.stages.filter((s) => s.id !== finalStageId && s.id !== reviewStageId && s.id !== doc.stages[0].id).map((s) => s.id);
+  const { finalStageId } = doc.gates;
+  const reviewStage = doc.stages.find((s) => s.id === 'review');
   const ops = doc.ops;
   const count = (fn) => ops.filter(fn).length;
-  const late = count((o) => { const l = isLate(o, t); return l.review || l.publish; });
   const ws = startOfWeek(t); const we = addDays(ws, 6);
-  const thisWeek = (o) => o.stageId !== finalStageId && o.dates.publishPlanned && o.dates.publishPlanned >= ws && o.dates.publishPlanned <= we;
+  const isOpen = (o) => o.stageId !== finalStageId;
+  const thisWeek = (o) => { const d = opDay(o); return d >= ws && d <= we; };
+  const late = count((o) => isLate(o, t));
   const monthStart = `${t.slice(0, 7)}-01`;
-  const publishedMonth = count((o) => o.stageId === finalStageId && o.dates.publishActual >= monthStart);
 
   const tile = (key, label, value, sub, color, filter) => h('button', {
     type: 'button', class: `kpi glass kpi-${key}`, 'aria-pressed': ctx.filters.kpi === key ? 'true' : 'false',
@@ -26,11 +26,11 @@ export function renderKpis(ctx) {
   sub ? h('div', { class: 'kpi-sub' }, sub) : null);
 
   return [
-    tile('all', 'Coups', ops.length, `${count((o) => o.stageId === doc.stages[0].id)} au stade idée`, '#8b8fa8', {}),
-    tile('wip', 'En chantier', count((o) => midStages.includes(o.stageId)), 'brief → programmé', '#8b5cf6', { stageSet: midStages }),
-    tile('review', 'À valider', count((o) => o.stageId === reviewStageId), 'en attente d’un GO', '#f59e0b', { stage: reviewStageId }),
-    tile('week', 'Cette semaine', count(thisWeek), 'publications prévues', '#22d3ee', { week: true }),
-    tile('month', 'Publiés ce mois', publishedMonth, `${count((o) => o.stageId === finalStageId)} au total`, '#b5f03a', { stage: finalStageId }),
-    tile('late', 'En retard', late, late ? 'date cible dépassée' : 'tout est à l’heure', '#f87171', { late: true }),
+    tile('week', 'Cette semaine', count(thisWeek), `${count((o) => thisWeek(o) && !isOpen(o))} publié${count((o) => thisWeek(o) && !isOpen(o)) > 1 ? 's' : ''} · ${count((o) => thisWeek(o) && isOpen(o))} à sortir`, '#22d3ee', { week: true }),
+    tile('late', 'En retard', late, late ? 'date de publication dépassée' : 'tout est à l’heure', '#f87171', { late: true }),
+    reviewStage ? tile('review', 'À valider', count((o) => o.stageId === reviewStage.id), 'en attente d’un GO', reviewStage.color, { stage: reviewStage.id }) : null,
+    tile('unscheduled', 'À planifier', count((o) => isOpen(o) && !o.dates.publishPlanned), 'sans date de publication', '#a78bfa', { unscheduled: true }),
+    tile('month', 'Publiés ce mois', count((o) => !isOpen(o) && o.dates.publishActual >= monthStart), `${count((o) => !isOpen(o))} au total`, '#b5f03a', { stage: finalStageId }),
+    tile('urgent', 'Urgents', count((o) => o.urgent && isOpen(o)), 'à traiter en priorité', '#fb923c', { urgent: true }),
   ];
 }

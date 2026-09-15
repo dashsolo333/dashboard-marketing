@@ -1,11 +1,11 @@
 import { h, icon, avatar, relTime } from './dom.js';
 
 export const VIEWS = [
-  { id: 'board', label: 'Tableau' },
-  { id: 'focus', label: 'Avancement' },
-  { id: 'list', label: 'Liste' },
   { id: 'calendar', label: 'Calendrier' },
+  { id: 'board', label: 'Tableau' },
+  { id: 'list', label: 'Liste' },
   { id: 'campaigns', label: 'Campagnes' },
+  { id: 'channels', label: 'Canaux' },
   { id: 'journal', label: 'Journal' },
 ];
 
@@ -33,7 +33,7 @@ export function renderHeader(ctx) {
         h('input', { class: 'input', type: 'search', placeholder: 'Rechercher…', title: 'Raccourci : /', value: ctx.filters.q || '', id: 'search-input', dataset: { key: 'search' },
           onInput: (e) => ctx.setFilter({ q: e.target.value }, { silent: true }) })),
       ctx.doc ? h('select', { class: 'select select-pill', 'aria-label': 'Canal', onChange: (e) => ctx.setFilter({ channel: e.target.value }) },
-        h('option', { value: '' }, 'Canaux'),
+        h('option', { value: '' }, 'Tous les canaux'),
         ctx.doc.channels.map((c) => h('option', { value: c.id, selected: ctx.filters.channel === c.id }, `${c.icon} ${c.label}`))) : null,
       h('button', { type: 'button', class: 'btn btn-cta', onClick: ctx.openCreate, title: 'Nouveau coup (n)' }, icon('plus'), 'Coup'),
       h('div', { class: 'sync', title: state.error || (state.lastSync ? `Dernière synchro ${relTime(state.lastSync)}` : '') },

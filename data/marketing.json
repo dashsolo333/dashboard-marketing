@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:41:19.335Z",
+  "updatedAt": "2026-09-15T15:42:21.726Z",
   "stages": [
     {
       "id": "idea",
@@ -160,7 +160,7 @@
       "urgent": false,
       "owner": "dashsolo333",
       "rubric": "",
-      "caption": "\"Futnow réunit 1000 joueurs et va construire le futur de l'experience football blabla...\"\nDemi A4 avec : \n-principes de la boite\n-ambitions\n-technique\n-pq bons choix ont été faits par futnow\n-pq c'est le futur ? (tendances, data foot, strava)\n-pq ça n'a pas été fait avant ?\n\n\nNotes : \nLister les objectifs \nCibles invests/clients/notoriété ?\nRebondir sur actualité\nLes journalistes définissent les angles\nDifférents supports :\nCommuniqué de presse : 1500 caractères\nUne seule info\nDossier de presse\nTribune d'expert\nConférence de presse\nPitch perso : pour rebondir sur une actualité\n\nConseils pour les communiqués de presse :\nFournir un panel de visuels avec les crédits photos\nMettre des chiffres sectoriels + citer ses sources\n1 info clé, 1 titre, être bref\nMettre un contact presse\nEnvoyer le communiqué de presse plutôt le jeu et mardi (éviter vacances scolaires)\nLire les médias sélectionnés, bien les cibler, médias régionaux intéressants\nPersonnaliser le message/mail adressés aux journalistes\n\nInterview :\nSe préparer et demander le format de l'interview en amont\nPréparer 3 messages clés pour l'interview\nEn plus, deux anecdotes et deux chiffres\nAnticiper les questions pièges\nFaire un médiatraining flash avec quelqu'un qui ne connait pas le sujet -> simuler une interview\nDemander l'angle au journaliste en amont\nEtre clair sur ce qui est dit en OFF ou non",
+      "caption": "\"Futnow réunit 1000 joueurs et va construire le futur de l'experience football blabla...\"\nDemi A4 avec : \n-principes de la boite\n-ambitions\n-technique\n-pq bons choix ont été faits par futnow\n-pq c'est le futur ? (tendances, data foot, strava)\n-pq ça n'a pas été fait avant ?\n\n\nNotes : \nLister les objectifs \nCibles invests/clients/notoriété ?\nRebondir sur actualité\nLes journalistes définissent les angles\nDifférents supports :\nCommuniqué de presse : 1500 caractères\nUne seule info\nDossier de presse\nTribune d'expert\nConférence de presse\nPitch perso : pour rebondir sur une actualité\n\nConseils pour les communiqués de presse :\nFournir un panel de visuels avec les crédits photos\nMettre des chiffres sectoriels + citer ses sources\n1 info clé, 1 titre, être bref\nMettre un contact presse\nEnvoyer le communiqué de presse plutôt le jeu et mardi (éviter vacances scolaires)\nLire les médias sélectionnés, bien les cibler, médias régionaux intéressants\nPersonnaliser le message/mail adressés aux journalistes\n",
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
@@ -191,15 +191,15 @@
           }
         },
         {
-          "id": "i_mu2ua92f1hzgvp",
-          "text": "utiliser notes pour contexte (hors itw)",
           "group": "create",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mu2ua92f1hzgvp",
+          "text": "utiliser notes pour contexte (hors itw)",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-09-15T15:41:19.335Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -222,7 +222,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:41:19.335Z",
+      "updatedAt": "2026-09-15T15:42:21.726Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1375,6 +1375,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a ajouté la tâche « utiliser notes pour contexte (hors itw) » à « Communiqué Lancement v1 [cloture béta] »"
+    },
+    {
+      "id": "a_2026-09-15T15:42:21.726Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:42:21.726Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié caption de « Communiqué Lancement v1 [cloture béta] »"
     }
   ]
 }

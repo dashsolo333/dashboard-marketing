@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:21:34.723Z",
+  "updatedAt": "2026-09-15T15:21:38.171Z",
   "stages": [
     {
       "id": "idea",
@@ -527,7 +527,7 @@
       "icon": "🎬",
       "kind": "video",
       "channels": [],
-      "urgent": false,
+      "urgent": true,
       "owner": "dashsolo333",
       "rubric": "",
       "caption": "",
@@ -555,7 +555,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:17:26.675Z",
+      "updatedAt": "2026-09-15T15:21:38.171Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1431,6 +1431,17 @@
       "opId": null,
       "type": "update",
       "text": "a réordonné la liste"
+    },
+    {
+      "id": "a_2026-09-15T15:21:38.171Z_o_mu2tfjmbxj7trl_update",
+      "at": "2026-09-15T15:21:38.171Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2tfjmbxj7trl",
+      "type": "update",
+      "text": "a modifié urgent de « Bannière snapchat F8 »"
     }
   ]
 }

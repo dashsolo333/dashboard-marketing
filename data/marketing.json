@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:36:34.081Z",
+  "updatedAt": "2026-09-15T15:37:00.675Z",
   "stages": [
     {
       "id": "idea",
@@ -152,7 +152,7 @@
     },
     {
       "id": "o_mu2paoc9nqvk3w",
-      "title": "Communiqué de presse [lancement v1]",
+      "title": "Communiqué Lancement v1 [cloture béta]",
       "description": "",
       "icon": "📰",
       "kind": "article",
@@ -206,7 +206,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:36:34.081Z",
+      "updatedAt": "2026-09-15T15:37:00.675Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1315,6 +1315,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié title de « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T15:37:00.675Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:37:00.675Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié title de « Communiqué de presse [lancement v1] »"
     }
   ]
 }

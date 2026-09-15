@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:17:25.694Z",
+  "updatedAt": "2026-09-15T14:17:31.957Z",
   "stages": [
     {
       "id": "idea",
@@ -373,7 +373,7 @@
       "id": "o_mu2qg8irrw74i4",
       "title": "Articles Linkedin",
       "description": "",
-      "icon": "",
+      "icon": "📝",
       "kind": "post",
       "channels": [
         "linkedin"
@@ -404,7 +404,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:54:00.099Z",
+      "updatedAt": "2026-09-15T14:17:31.957Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -967,6 +967,17 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "update",
       "text": "a modifié icon de « Brochure France Indépendants »"
+    },
+    {
+      "id": "a_2026-09-15T14:17:31.957Z_o_mu2qg8irrw74i4_update",
+      "at": "2026-09-15T14:17:31.957Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qg8irrw74i4",
+      "type": "update",
+      "text": "a modifié icon de « Articles Linkedin »"
     }
   ]
 }

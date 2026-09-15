@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:49:59.095Z",
+  "updatedAt": "2026-09-15T13:51:00.424Z",
   "stages": [
     {
       "id": "idea",
@@ -265,15 +265,15 @@
       "reviews": [],
       "items": [
         {
-          "id": "i_mu2qb2k7dmicxp",
-          "text": "Brainstormer tone",
           "group": "idea",
           "due": "",
           "note": "Meme",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mu2qb2k7dmicxp",
+          "text": "Brainstormer tone",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-09-15T13:49:59.095Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -292,6 +292,45 @@
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
       "updatedAt": "2026-09-15T13:50:09.695Z",
+      "updatedBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      }
+    },
+    {
+      "id": "o_mu2qcdvs663q78",
+      "title": "Brochure France",
+      "description": "Envoyer la brochure à tous les indépendants",
+      "icon": "",
+      "kind": "post",
+      "channels": [],
+      "urgent": false,
+      "owner": "dashsolo333",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
+      "stageId": "idea",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T13:51:00.424Z",
+      "createdBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "updatedAt": "2026-09-15T13:51:00.424Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -573,6 +612,17 @@
       "opId": "o_mu2pbypbydw99g",
       "type": "update",
       "text": "a ajouté la tâche « Brainstormer tone » à « Vidéo Tiktok 1 »"
+    },
+    {
+      "id": "a_2026-09-15T13:51:00.424Z_o_mu2qcdvs663q78_create",
+      "at": "2026-09-15T13:51:00.424Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "create",
+      "text": "a créé « Brochure France »"
     }
   ]
 }

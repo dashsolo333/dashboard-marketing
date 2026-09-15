@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:54:43.900Z",
+  "updatedAt": "2026-09-15T14:05:06.822Z",
   "stages": [
     {
       "id": "idea",
@@ -151,7 +151,7 @@
       "icon": "",
       "kind": "ambassador",
       "channels": [],
-      "urgent": false,
+      "urgent": true,
       "owner": "dashsolo333",
       "rubric": "",
       "caption": "",
@@ -194,7 +194,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:47:31.480Z",
+      "updatedAt": "2026-09-15T14:05:06.822Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -846,6 +846,17 @@
       "opId": "o_mu2qgz1snyo80f",
       "type": "update",
       "text": "a modifié kind de « Partenariat Nolt »"
+    },
+    {
+      "id": "a_2026-09-15T14:05:06.822Z_o_mu2p9u4wq53i96_update",
+      "at": "2026-09-15T14:05:06.822Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p9u4wq53i96",
+      "type": "update",
+      "text": "a modifié urgent de « Progamme ambassadeur »"
     }
   ]
 }

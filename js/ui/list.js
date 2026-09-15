@@ -76,7 +76,7 @@ export function renderList(ctx) {
       })),
     ),
     !ops.length ? h('div', { class: 'empty' }, h('b', {}, 'Aucun coup'), 'Change les filtres ou crée un coup.') : null),
-    canSelect && !sel.size ? h('p', { class: 'hint', style: { marginTop: '10px' } }, 'Coche des coups (ou Maj + clic sur une ligne) pour changer leur étape ou leur campagne d’un coup, les marquer urgents, ou les supprimer.') : null);
+    canSelect && !sel.size ? h('p', { class: 'hint', style: { marginTop: '10px' } }, 'Coche des coups (ou Maj + clic sur une ligne) pour changer leur étape d’un coup, les marquer urgents, ou les supprimer.') : null);
 }
 
 function renderBulkBar(ctx, ops) {

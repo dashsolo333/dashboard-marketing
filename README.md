@@ -52,6 +52,8 @@ locales sur la version distante.
 npm test               # tests du modèle (node --test)
 npm run test:coverage
 npm run serve          # http://127.0.0.1:4173/?dev=1  (utilisateur simulé, rien n'est écrit)
+                       # sans ?dev=1 : lecture du fichier local ; avec un vrai token, la page
+                       # lit et écrit sur GitHub, exactement comme la version en ligne
                        # …&fail=1 : les écritures échouent, pour tester le bandeau d'alerte
 npm run seed -- --force   # régénérer data/marketing.json avec le jeu de démo
 npm run seed -- --force --empty   # repartir d'un document vide

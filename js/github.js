@@ -40,9 +40,15 @@ async function readError(res) {
   return new GitHubError(res.status, msg);
 }
 
+/** En local sans vrai token (ou en ?dev=1), on lit le fichier servi par le serveur statique.
+ *  Avec un vrai token, on lit GitHub : c'est le seul moyen d'avoir un sha valide pour écrire. */
+export function readsLocalFile(token) {
+  return IS_LOCAL && (DEV_MODE || !token);
+}
+
 /** Lit le JSON. Renvoie { doc, sha, etag } ou { unchanged: true } si l'ETag est intact. */
 export async function loadDoc({ token, etag } = {}) {
-  if (IS_LOCAL) return loadLocal(etag);
+  if (readsLocalFile(token)) return loadLocal(etag);
   const res = await fetch(contentsUrl(), {
     headers: headers(token, etag ? { 'If-None-Match': etag } : {}),
     cache: 'no-store',

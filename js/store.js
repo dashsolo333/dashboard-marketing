@@ -3,7 +3,7 @@
 // suite localement, puis on pousse. En cas de conflit de sha on recharge et
 // on rejoue les opérations en attente sur la version distante.
 import { CONFIG, DEV_MODE } from './config.js';
-import { loadDoc, saveDoc, isConflict, whoAmI } from './github.js';
+import { loadDoc, saveDoc, isConflict, whoAmI, readsLocalFile } from './github.js';
 import { normalizeDoc } from './model/doc.js';
 import { replayOps, stripMeta } from './model/merge.js';
 
@@ -54,8 +54,13 @@ export function createStore() {
       return null;
     }
     localStorage.setItem(CONFIG.tokenKey, clean);
+    const wasLocal = readsLocalFile(state.token);
     state.token = clean;
-    return refreshUser();
+    const user = await refreshUser();
+    // En local, le document lu avant le token venait du fichier statique (sha « local ») :
+    // on le recharge depuis GitHub pour pouvoir écrire.
+    if (wasLocal && !readsLocalFile(clean) && !state.pending.length) await boot();
+    return user;
   }
 
   function canWrite() {

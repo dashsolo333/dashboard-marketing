@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:21:49.961Z",
+  "updatedAt": "2026-09-15T13:22:41.135Z",
   "stages": [
     {
       "id": "idea",
@@ -204,6 +204,47 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       }
+    },
+    {
+      "id": "o_mu2pbypbydw99g",
+      "title": "Tiktok",
+      "description": "",
+      "icon": "",
+      "kind": "post",
+      "channels": [
+        "tiktok"
+      ],
+      "urgent": false,
+      "owner": "dashsolo333",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
+      "stageId": "idea",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T13:22:41.135Z",
+      "createdBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "updatedAt": "2026-09-15T13:22:41.135Z",
+      "updatedBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      }
     }
   ],
   "activity": [
@@ -305,6 +346,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié kind de « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T13:22:41.135Z_o_mu2pbypbydw99g_create",
+      "at": "2026-09-15T13:22:41.135Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2pbypbydw99g",
+      "type": "create",
+      "text": "a créé « Tiktok »"
     }
   ]
 }

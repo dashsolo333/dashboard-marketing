@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:13:43.584Z",
+  "updatedAt": "2026-09-15T15:14:25.978Z",
   "stages": [
     {
       "id": "idea",
@@ -147,7 +147,7 @@
     },
     {
       "id": "o_mu2p9u4wq53i96",
-      "title": "Progamme ambassadeur",
+      "title": "Inauguration programme mail",
       "description": "",
       "icon": "🤝",
       "kind": "ambassador",
@@ -196,7 +196,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:17:10.558Z",
+      "updatedAt": "2026-09-15T15:14:25.978Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1338,6 +1338,17 @@
       "opId": "o_mu2syra6jmqmyp",
       "type": "delete",
       "text": "a supprimé « TEST »"
+    },
+    {
+      "id": "a_2026-09-15T15:14:25.978Z_o_mu2p9u4wq53i96_update",
+      "at": "2026-09-15T15:14:25.978Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p9u4wq53i96",
+      "type": "update",
+      "text": "a modifié title de « Progamme ambassadeur »"
     }
   ]
 }

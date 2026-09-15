@@ -104,7 +104,7 @@ export async function probeWrite(token) {
   return { ok: false, reason: `Réponse inattendue de GitHub (${res.status}).` };
 }
 
-/** Recette locale : lit data/features.json servi par le serveur statique. */
+/** Recette locale : lit data/marketing.json servi par le serveur statique. */
 async function loadLocal(etag) {
   const res = await fetch(`${CONFIG.dataPath}?t=${Date.now()}`, { cache: 'no-store' });
   if (!res.ok) throw new GitHubError(res.status, `fichier local introuvable (${res.status})`);

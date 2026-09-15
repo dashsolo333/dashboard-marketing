@@ -148,3 +148,5 @@
 .release-progress > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .release-name { overflow-wrap: anywhere; }
 .campaign.is-live { border-color: rgba(139,92,246,.35); }
+
+.cell-gauge b { white-space: nowrap; }

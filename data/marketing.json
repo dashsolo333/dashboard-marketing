@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:00:43.803Z",
+  "updatedAt": "2026-09-15T15:02:36.457Z",
   "stages": [
     {
       "id": "idea",
@@ -479,7 +479,7 @@
       "campaignId": "",
       "links": [],
       "dates": {
-        "publishPlanned": "",
+        "publishPlanned": "2026-09-29",
         "publishActual": ""
       },
       "reviews": [],
@@ -495,7 +495,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:59:42.888Z",
+      "updatedAt": "2026-09-15T15:02:36.457Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1261,6 +1261,17 @@
       "opId": "o_mu2qg8irrw74i4",
       "type": "move",
       "text": "a passé « Articles Linkedin » en Publié (forcé, sans validation)"
+    },
+    {
+      "id": "a_2026-09-15T15:02:36.457Z_o_mu2ssqsnr4lxsp_update",
+      "at": "2026-09-15T15:02:36.457Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2ssqsnr4lxsp",
+      "type": "update",
+      "text": "a modifié dates de « Linkedin 2 »"
     }
   ]
 }

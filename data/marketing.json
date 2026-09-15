@@ -1,0 +1,1819 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-15T15:00:00.000Z",
+  "stages": [
+    {
+      "id": "idea",
+      "label": "Idée",
+      "color": "#8b8fa8"
+    },
+    {
+      "id": "brief",
+      "label": "Brief",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "create",
+      "label": "Création",
+      "color": "#f472b6"
+    },
+    {
+      "id": "review",
+      "label": "Validation",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "scheduled",
+      "label": "Programmé",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "published",
+      "label": "Publié",
+      "color": "#b5f03a"
+    }
+  ],
+  "gates": {
+    "reviewStageId": "review",
+    "finalStageId": "published"
+  },
+  "channels": [
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "icon": "📸",
+      "color": "#f472b6"
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "icon": "🎵",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "icon": "💼",
+      "color": "#4f8cff"
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "icon": "▶️",
+      "color": "#f87171"
+    },
+    {
+      "id": "newsletter",
+      "label": "Newsletter",
+      "icon": "✉️",
+      "color": "#f5c451"
+    },
+    {
+      "id": "ambassadors",
+      "label": "Ambassadeurs",
+      "icon": "🤝",
+      "color": "#b5f03a"
+    },
+    {
+      "id": "app",
+      "label": "App / Site",
+      "icon": "📱",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "field",
+      "label": "Terrain",
+      "icon": "⚽",
+      "color": "#fb923c"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "c_rentree",
+      "name": "Rentrée 2026",
+      "icon": "🎒",
+      "goal": "Remplir les créneaux du soir : +30 % de matchs en septembre",
+      "startAt": "2026-09-01",
+      "endAt": "2026-10-15"
+    },
+    {
+      "id": "c_ligues",
+      "name": "Lancement Ligues v2",
+      "icon": "🏆",
+      "goal": "10 ligues créées la première semaine",
+      "startAt": "2026-09-25",
+      "endAt": "2026-10-30"
+    }
+  ],
+  "ops": [
+    {
+      "id": "o_reel_rentree",
+      "title": "Reel « la rentrée c’est le soir »",
+      "description": "Reel 20 s : ambiance d’un match du soir, montage rapide, CTA « rejoins un match avec ton code ».",
+      "icon": "🎬",
+      "kind": "video",
+      "channels": [
+        "instagram",
+        "tiktok"
+      ],
+      "priority": "p1",
+      "owner": "lea",
+      "stageId": "published",
+      "stepProgress": 0,
+      "campaignId": "c_rentree",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "2026-08-30",
+        "reviewActual": "2026-08-30",
+        "publishPlanned": "2026-09-02",
+        "publishActual": "2026-09-02"
+      },
+      "reviews": [
+        {
+          "id": "r_o_reel_rentree_2026-08-31",
+          "at": "2026-08-31T12:00:00.000Z",
+          "by": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "verdict": "ok",
+          "notes": "Nickel, juste le logo à agrandir"
+        }
+      ],
+      "items": [],
+      "results": {
+        "views": 12400,
+        "likes": 830,
+        "comments": 41,
+        "shares": 96,
+        "clicks": 210,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "createdAt": "2026-08-26T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-09T10:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_post_linkedin",
+      "title": "Post LinkedIn : chiffres de l’été",
+      "description": "3 chiffres clés de l’été + ce qui arrive à la rentrée.",
+      "icon": "📊",
+      "kind": "post",
+      "channels": [
+        "linkedin"
+      ],
+      "priority": "p2",
+      "owner": "nadir",
+      "stageId": "published",
+      "stepProgress": 0,
+      "campaignId": "c_rentree",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "2026-09-05",
+        "publishPlanned": "2026-09-07",
+        "publishActual": "2026-09-07"
+      },
+      "reviews": [
+        {
+          "id": "r_o_post_linkedin_2026-09-06",
+          "at": "2026-09-06T12:00:00.000Z",
+          "by": {
+            "login": "lea",
+            "avatar": ""
+          },
+          "verdict": "ok",
+          "notes": "GO"
+        }
+      ],
+      "items": [],
+      "results": {
+        "views": 2300,
+        "likes": 64,
+        "comments": 9,
+        "shares": 7,
+        "clicks": 38,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "createdAt": "2026-08-31T10:00:00.000Z",
+      "createdBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-13T10:00:00.000Z",
+      "updatedBy": {
+        "login": "nadir",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_story_sondage",
+      "title": "Story sondage : ton créneau préféré ?",
+      "description": "",
+      "icon": "🗳️",
+      "kind": "story",
+      "channels": [
+        "instagram"
+      ],
+      "priority": "p3",
+      "owner": "lea",
+      "stageId": "published",
+      "stepProgress": 0,
+      "campaignId": "c_rentree",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "2026-09-08",
+        "publishPlanned": "2026-09-09",
+        "publishActual": "2026-09-08"
+      },
+      "reviews": [
+        {
+          "id": "r_o_story_sondage_2026-09-08",
+          "at": "2026-09-08T12:00:00.000Z",
+          "by": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "verdict": "ok",
+          "notes": ""
+        }
+      ],
+      "items": [],
+      "results": {
+        "views": 640,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "createdAt": "2026-09-06T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-10T10:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_tiktok_bestof",
+      "title": "TikTok best-of buts de la semaine",
+      "description": "Format récurrent : les 5 plus beaux buts filmés par les caméras Futnow, musique tendance.",
+      "icon": "⚽",
+      "kind": "video",
+      "channels": [
+        "tiktok",
+        "instagram",
+        "youtube"
+      ],
+      "priority": "p1",
+      "owner": "lea",
+      "stageId": "published",
+      "stepProgress": 0,
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "2026-09-13",
+        "publishPlanned": "2026-09-14",
+        "publishActual": "2026-09-14"
+      },
+      "reviews": [
+        {
+          "id": "r_o_tiktok_bestof_2026-09-13",
+          "at": "2026-09-13T12:00:00.000Z",
+          "by": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "verdict": "ko",
+          "notes": "Le 3e but est flou, à remplacer"
+        },
+        {
+          "id": "r_o_tiktok_bestof_2026-09-14",
+          "at": "2026-09-14T12:00:00.000Z",
+          "by": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "verdict": "ok",
+          "notes": "Parfait maintenant"
+        }
+      ],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "createdAt": "2026-09-07T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-14T14:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_newsletter_1",
+      "title": "Newsletter #1 — « Ce qui change à la rentrée »",
+      "description": "Première newsletter joueurs : nouveautés, replays, code promo centre partenaire.",
+      "icon": "✉️",
+      "kind": "article",
+      "channels": [
+        "newsletter"
+      ],
+      "priority": "p1",
+      "owner": "nadir",
+      "stageId": "scheduled",
+      "stepProgress": 0,
+      "campaignId": "c_rentree",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "2026-09-14",
+        "reviewActual": "2026-09-14",
+        "publishPlanned": "2026-09-17",
+        "publishActual": ""
+      },
+      "reviews": [
+        {
+          "id": "r_o_newsletter_1_2026-09-14",
+          "at": "2026-09-14T12:00:00.000Z",
+          "by": {
+            "login": "lea",
+            "avatar": ""
+          },
+          "verdict": "ok",
+          "notes": "Relu, deux coquilles corrigées"
+        }
+      ],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "createdBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T14:00:00.000Z",
+      "updatedBy": {
+        "login": "nadir",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_ambassadeurs",
+      "title": "Programme ambassadeurs : recruter 10 capitaines",
+      "description": "Un capitaine par centre partenaire : il ramène ses équipes, on lui offre des matchs + un maillot. Kit : visuel, message DM, page d’inscription.",
+      "icon": "🤝",
+      "kind": "ambassador",
+      "channels": [
+        "ambassadors",
+        "instagram",
+        "field"
+      ],
+      "priority": "p0",
+      "owner": "nadir",
+      "stageId": "review",
+      "stepProgress": 0,
+      "campaignId": "c_rentree",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "2026-09-16",
+        "reviewActual": "2026-09-14",
+        "publishPlanned": "2026-09-21",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_1",
+          "text": "Objectif et cible écrits (pourquoi ce coup, pour qui)",
+          "group": "brief",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-06T10:00:00.000Z",
+          "doneBy": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_2",
+          "text": "Message clé + appel à l’action choisis",
+          "group": "brief",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-07T10:00:00.000Z",
+          "doneBy": {
+            "login": "lea",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_3",
+          "text": "Canaux et format tranchés",
+          "group": "brief",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-08T10:00:00.000Z",
+          "doneBy": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_4",
+          "text": "Visuel / vidéo produit",
+          "group": "create",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-09T10:00:00.000Z",
+          "doneBy": {
+            "login": "lea",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_5",
+          "text": "Texte, légende et hashtags rédigés",
+          "group": "create",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-10T10:00:00.000Z",
+          "doneBy": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_6",
+          "text": "Lien / code de suivi prêt",
+          "group": "create",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-11T10:00:00.000Z",
+          "doneBy": {
+            "login": "lea",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_7",
+          "text": "Relecture ortho + ton Futnow",
+          "group": "review",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-12T10:00:00.000Z",
+          "doneBy": {
+            "login": "nadir",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_8",
+          "text": "Validation OK enregistrée",
+          "group": "review",
+          "due": "",
+          "note": "",
+          "status": "doing",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_9",
+          "text": "Programmé dans l’outil (date + heure)",
+          "group": "scheduled",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_10",
+          "text": "Équipe prévenue pour relayer",
+          "group": "scheduled",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_11",
+          "text": "Publié et vérifié en ligne",
+          "group": "published",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_2026-09-04T10:00:00.000Z_12",
+          "text": "Résultats saisis à J+7",
+          "group": "published",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-04T10:00:00.000Z",
+          "createdBy": {
+            "login": "nadir",
+            "avatar": ""
+          }
+        }
+      ],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "createdBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-14T10:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_video_ligues",
+      "title": "Vidéo teaser Ligues v2",
+      "description": "Teaser 30 s : classement en direct, calendrier, cérémonie du tirage. Sortie le jour du lancement.",
+      "icon": "🏆",
+      "kind": "video",
+      "channels": [
+        "instagram",
+        "tiktok",
+        "youtube",
+        "app"
+      ],
+      "priority": "p0",
+      "owner": "lea",
+      "stageId": "create",
+      "stepProgress": 0,
+      "campaignId": "c_ligues",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "2026-09-22",
+        "reviewActual": "",
+        "publishPlanned": "2026-09-27",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [
+        {
+          "id": "i_vl_1",
+          "text": "Tournage au centre de Lyon",
+          "group": "create",
+          "due": "2026-09-18",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-14T10:00:00.000Z",
+          "createdBy": {
+            "login": "lea",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_vl_2",
+          "text": "Montage + sous-titres",
+          "group": "create",
+          "due": "2026-09-21",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-14T10:00:00.000Z",
+          "createdBy": {
+            "login": "lea",
+            "avatar": ""
+          }
+        },
+        {
+          "id": "i_vl_3",
+          "text": "Musique libre de droits choisie",
+          "group": "create",
+          "due": "",
+          "note": "",
+          "status": "done",
+          "done": true,
+          "doneAt": "2026-09-15T10:00:00.000Z",
+          "doneBy": {
+            "login": "lea",
+            "avatar": ""
+          },
+          "createdAt": "2026-09-14T10:00:00.000Z",
+          "createdBy": {
+            "login": "lea",
+            "avatar": ""
+          }
+        }
+      ],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-11T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T10:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_partenariat_centre",
+      "title": "Partenariat centre Five Marseille",
+      "description": "Annonce croisée avec le centre : affiche sur place + post LinkedIn commun.",
+      "icon": "🤝",
+      "kind": "partnership",
+      "channels": [
+        "linkedin",
+        "field"
+      ],
+      "priority": "p1",
+      "owner": "nadir",
+      "stageId": "create",
+      "stepProgress": 0,
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "",
+        "publishPlanned": "2026-09-13",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "createdBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-09T14:00:00.000Z",
+      "updatedBy": {
+        "login": "nadir",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_ugc_replays",
+      "title": "Campagne UGC : « ton plus beau replay »",
+      "description": "Les joueurs partagent leur replay avec #FutnowReplay, on reposte les meilleurs. Dotation : un mois de matchs.",
+      "icon": "📱",
+      "kind": "campaign",
+      "channels": [
+        "instagram",
+        "tiktok",
+        "app"
+      ],
+      "priority": "p2",
+      "owner": "",
+      "stageId": "brief",
+      "stepProgress": 0,
+      "campaignId": "c_ligues",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "",
+        "publishPlanned": "2026-10-05",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-13T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-14T14:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_event_tournoi",
+      "title": "Tournoi de lancement Ligues",
+      "description": "Un tournoi d’un soir dans un centre partenaire pour lancer la saison des ligues.",
+      "icon": "🎉",
+      "kind": "event",
+      "channels": [
+        "field",
+        "instagram",
+        "ambassadors"
+      ],
+      "priority": "p1",
+      "owner": "",
+      "stageId": "brief",
+      "stepProgress": 0,
+      "campaignId": "c_ligues",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "",
+        "publishPlanned": "2026-10-10",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-14T10:00:00.000Z",
+      "createdBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T14:00:00.000Z",
+      "updatedBy": {
+        "login": "nadir",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_idea_podcast",
+      "title": "Mini-podcast « vestiaire » avec des joueurs",
+      "description": "Idée : 10 min avec une équipe régulière, à tester une fois.",
+      "icon": "🎙️",
+      "kind": "other",
+      "channels": [
+        "youtube"
+      ],
+      "priority": "p3",
+      "owner": "",
+      "stageId": "idea",
+      "stepProgress": 0,
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "",
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T10:00:00.000Z",
+      "createdBy": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T10:00:00.000Z",
+      "updatedBy": {
+        "login": "lea",
+        "avatar": ""
+      }
+    },
+    {
+      "id": "o_idea_maillot",
+      "title": "Maillot collector pour les ambassadeurs",
+      "description": "À chiffrer : 50 maillots numérotés.",
+      "icon": "👕",
+      "kind": "other",
+      "channels": [
+        "ambassadors"
+      ],
+      "priority": "p2",
+      "owner": "",
+      "stageId": "idea",
+      "stepProgress": 0,
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "reviewActual": "",
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "clicks": 0,
+        "signups": 0,
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T10:00:00.000Z",
+      "createdBy": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "updatedAt": "2026-09-15T10:00:00.000Z",
+      "updatedBy": {
+        "login": "nadir",
+        "avatar": ""
+      }
+    }
+  ],
+  "activity": [
+    {
+      "id": "a_2026-08-26T10:00:00.000Z_o_reel_rentree_create",
+      "at": "2026-08-26T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "create",
+      "text": "a créé « Reel « la rentrée c’est le soir » »"
+    },
+    {
+      "id": "a_2026-08-26T10:00:00.000Z_o_reel_rentree_update",
+      "at": "2026-08-26T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "update",
+      "text": "a modifié dates de « Reel « la rentrée c’est le soir » »"
+    },
+    {
+      "id": "a_2026-08-27T14:00:00.000Z_o_reel_rentree_move",
+      "at": "2026-08-27T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "move",
+      "text": "a passé « Reel « la rentrée c’est le soir » » en Brief"
+    },
+    {
+      "id": "a_2026-08-28T14:00:00.000Z_o_reel_rentree_move",
+      "at": "2026-08-28T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "move",
+      "text": "a passé « Reel « la rentrée c’est le soir » » en Création"
+    },
+    {
+      "id": "a_2026-08-30T14:00:00.000Z_o_reel_rentree_move",
+      "at": "2026-08-30T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "move",
+      "text": "a passé « Reel « la rentrée c’est le soir » » en Validation"
+    },
+    {
+      "id": "a_2026-08-31T12:00:00.000Z_o_reel_rentree_review",
+      "at": "2026-08-31T12:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "review",
+      "text": "a validé « Reel « la rentrée c’est le soir » » : OK — Nickel, juste le logo à agrandir"
+    },
+    {
+      "id": "a_2026-08-31T14:00:00.000Z_o_reel_rentree_move",
+      "at": "2026-08-31T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "move",
+      "text": "a passé « Reel « la rentrée c’est le soir » » en Programmé"
+    },
+    {
+      "id": "a_2026-09-02T14:00:00.000Z_o_reel_rentree_move",
+      "at": "2026-09-02T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "move",
+      "text": "a passé « Reel « la rentrée c’est le soir » » en Publié"
+    },
+    {
+      "id": "a_2026-09-09T10:00:00.000Z_o_reel_rentree_update",
+      "at": "2026-09-09T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_reel_rentree",
+      "type": "update",
+      "text": "a mis à jour les résultats de « Reel « la rentrée c’est le soir » »"
+    },
+    {
+      "id": "a_2026-08-31T10:00:00.000Z_o_post_linkedin_create",
+      "at": "2026-08-31T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "create",
+      "text": "a créé « Post LinkedIn : chiffres de l’été »"
+    },
+    {
+      "id": "a_2026-08-31T10:00:00.000Z_o_post_linkedin_update",
+      "at": "2026-08-31T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "update",
+      "text": "a modifié dates de « Post LinkedIn : chiffres de l’été »"
+    },
+    {
+      "id": "a_2026-09-01T14:00:00.000Z_o_post_linkedin_move",
+      "at": "2026-09-01T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "move",
+      "text": "a passé « Post LinkedIn : chiffres de l’été » en Brief"
+    },
+    {
+      "id": "a_2026-09-03T14:00:00.000Z_o_post_linkedin_move",
+      "at": "2026-09-03T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "move",
+      "text": "a passé « Post LinkedIn : chiffres de l’été » en Création"
+    },
+    {
+      "id": "a_2026-09-05T14:00:00.000Z_o_post_linkedin_move",
+      "at": "2026-09-05T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "move",
+      "text": "a passé « Post LinkedIn : chiffres de l’été » en Validation"
+    },
+    {
+      "id": "a_2026-09-06T12:00:00.000Z_o_post_linkedin_review",
+      "at": "2026-09-06T12:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "review",
+      "text": "a validé « Post LinkedIn : chiffres de l’été » : OK — GO"
+    },
+    {
+      "id": "a_2026-09-06T14:00:00.000Z_o_post_linkedin_move",
+      "at": "2026-09-06T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "move",
+      "text": "a passé « Post LinkedIn : chiffres de l’été » en Programmé"
+    },
+    {
+      "id": "a_2026-09-07T14:00:00.000Z_o_post_linkedin_move",
+      "at": "2026-09-07T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "move",
+      "text": "a passé « Post LinkedIn : chiffres de l’été » en Publié"
+    },
+    {
+      "id": "a_2026-09-13T10:00:00.000Z_o_post_linkedin_update",
+      "at": "2026-09-13T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_post_linkedin",
+      "type": "update",
+      "text": "a mis à jour les résultats de « Post LinkedIn : chiffres de l’été »"
+    },
+    {
+      "id": "a_2026-09-06T10:00:00.000Z_o_story_sondage_create",
+      "at": "2026-09-06T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "create",
+      "text": "a créé « Story sondage : ton créneau préféré ? »"
+    },
+    {
+      "id": "a_2026-09-06T10:00:00.000Z_o_story_sondage_update",
+      "at": "2026-09-06T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "update",
+      "text": "a modifié dates de « Story sondage : ton créneau préféré ? »"
+    },
+    {
+      "id": "a_2026-09-07T14:00:00.000Z_o_story_sondage_move",
+      "at": "2026-09-07T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "move",
+      "text": "a passé « Story sondage : ton créneau préféré ? » en Création"
+    },
+    {
+      "id": "a_2026-09-08T14:00:00.000Z_o_story_sondage_move",
+      "at": "2026-09-08T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "move",
+      "text": "a passé « Story sondage : ton créneau préféré ? » en Validation"
+    },
+    {
+      "id": "a_2026-09-08T12:00:00.000Z_o_story_sondage_review",
+      "at": "2026-09-08T12:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "review",
+      "text": "a validé « Story sondage : ton créneau préféré ? » : OK"
+    },
+    {
+      "id": "a_2026-09-08T14:00:00.000Z_o_story_sondage_move",
+      "at": "2026-09-08T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "move",
+      "text": "a passé « Story sondage : ton créneau préféré ? » en Publié"
+    },
+    {
+      "id": "a_2026-09-10T10:00:00.000Z_o_story_sondage_update",
+      "at": "2026-09-10T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_story_sondage",
+      "type": "update",
+      "text": "a mis à jour les résultats de « Story sondage : ton créneau préféré ? »"
+    },
+    {
+      "id": "a_2026-09-07T10:00:00.000Z_o_tiktok_bestof_create",
+      "at": "2026-09-07T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "create",
+      "text": "a créé « TikTok best-of buts de la semaine »"
+    },
+    {
+      "id": "a_2026-09-07T10:00:00.000Z_o_tiktok_bestof_update",
+      "at": "2026-09-07T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "update",
+      "text": "a modifié dates de « TikTok best-of buts de la semaine »"
+    },
+    {
+      "id": "a_2026-09-08T14:00:00.000Z_o_tiktok_bestof_move",
+      "at": "2026-09-08T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "move",
+      "text": "a passé « TikTok best-of buts de la semaine » en Brief"
+    },
+    {
+      "id": "a_2026-09-10T14:00:00.000Z_o_tiktok_bestof_move",
+      "at": "2026-09-10T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "move",
+      "text": "a passé « TikTok best-of buts de la semaine » en Création"
+    },
+    {
+      "id": "a_2026-09-13T14:00:00.000Z_o_tiktok_bestof_move",
+      "at": "2026-09-13T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "move",
+      "text": "a passé « TikTok best-of buts de la semaine » en Validation"
+    },
+    {
+      "id": "a_2026-09-13T12:00:00.000Z_o_tiktok_bestof_review",
+      "at": "2026-09-13T12:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "review",
+      "text": "a validé « TikTok best-of buts de la semaine » : KO — Le 3e but est flou, à remplacer"
+    },
+    {
+      "id": "a_2026-09-14T12:00:00.000Z_o_tiktok_bestof_review",
+      "at": "2026-09-14T12:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "review",
+      "text": "a validé « TikTok best-of buts de la semaine » : OK — Parfait maintenant"
+    },
+    {
+      "id": "a_2026-09-14T14:00:00.000Z_o_tiktok_bestof_move",
+      "at": "2026-09-14T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_tiktok_bestof",
+      "type": "move",
+      "text": "a passé « TikTok best-of buts de la semaine » en Publié"
+    },
+    {
+      "id": "a_2026-09-09T10:00:00.000Z_o_newsletter_1_create",
+      "at": "2026-09-09T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "create",
+      "text": "a créé « Newsletter #1 — « Ce qui change à la rentrée » »"
+    },
+    {
+      "id": "a_2026-09-09T10:00:00.000Z_o_newsletter_1_update",
+      "at": "2026-09-09T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "update",
+      "text": "a modifié dates de « Newsletter #1 — « Ce qui change à la rentrée » »"
+    },
+    {
+      "id": "a_2026-09-10T14:00:00.000Z_o_newsletter_1_move",
+      "at": "2026-09-10T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "move",
+      "text": "a passé « Newsletter #1 — « Ce qui change à la rentrée » » en Brief"
+    },
+    {
+      "id": "a_2026-09-11T14:00:00.000Z_o_newsletter_1_move",
+      "at": "2026-09-11T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "move",
+      "text": "a passé « Newsletter #1 — « Ce qui change à la rentrée » » en Création"
+    },
+    {
+      "id": "a_2026-09-14T14:00:00.000Z_o_newsletter_1_move",
+      "at": "2026-09-14T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "move",
+      "text": "a passé « Newsletter #1 — « Ce qui change à la rentrée » » en Validation"
+    },
+    {
+      "id": "a_2026-09-14T12:00:00.000Z_o_newsletter_1_review",
+      "at": "2026-09-14T12:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "review",
+      "text": "a validé « Newsletter #1 — « Ce qui change à la rentrée » » : OK — Relu, deux coquilles corrigées"
+    },
+    {
+      "id": "a_2026-09-15T14:00:00.000Z_o_newsletter_1_move",
+      "at": "2026-09-15T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_newsletter_1",
+      "type": "move",
+      "text": "a passé « Newsletter #1 — « Ce qui change à la rentrée » » en Programmé"
+    },
+    {
+      "id": "a_2026-09-03T10:00:00.000Z_o_ambassadeurs_create",
+      "at": "2026-09-03T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "create",
+      "text": "a créé « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-03T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-03T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a modifié dates de « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-04T14:00:00.000Z_o_ambassadeurs_move",
+      "at": "2026-09-04T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "move",
+      "text": "a passé « Programme ambassadeurs : recruter 10 capitaines » en Brief"
+    },
+    {
+      "id": "a_2026-09-06T14:00:00.000Z_o_ambassadeurs_move",
+      "at": "2026-09-06T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "move",
+      "text": "a passé « Programme ambassadeurs : recruter 10 capitaines » en Création"
+    },
+    {
+      "id": "a_2026-09-14T14:00:00.000Z_o_ambassadeurs_move",
+      "at": "2026-09-14T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "move",
+      "text": "a passé « Programme ambassadeurs : recruter 10 capitaines » en Validation"
+    },
+    {
+      "id": "a_2026-09-04T10:00:00.000Z_o_ambassadeurs_template",
+      "at": "2026-09-04T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a ajouté la checklist type (12 tâches) à « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-06T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-06T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Objectif et cible écrits (pourquoi ce coup, pour qui) » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-07T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-07T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Message clé + appel à l’action choisis » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-08T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-08T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Canaux et format tranchés » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-09T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-09T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Visuel / vidéo produit » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-10T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-10T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Texte, légende et hashtags rédigés » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-11T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-11T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Lien / code de suivi prêt » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-12T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-12T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Relecture ortho + ton Futnow » faite sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-14T10:00:00.000Z_o_ambassadeurs_update",
+      "at": "2026-09-14T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_ambassadeurs",
+      "type": "update",
+      "text": "a passé « Validation OK enregistrée » en cours sur « Programme ambassadeurs : recruter 10 capitaines »"
+    },
+    {
+      "id": "a_2026-09-11T10:00:00.000Z_o_video_ligues_create",
+      "at": "2026-09-11T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "create",
+      "text": "a créé « Vidéo teaser Ligues v2 »"
+    },
+    {
+      "id": "a_2026-09-11T10:00:00.000Z_o_video_ligues_update",
+      "at": "2026-09-11T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "update",
+      "text": "a modifié dates de « Vidéo teaser Ligues v2 »"
+    },
+    {
+      "id": "a_2026-09-12T14:00:00.000Z_o_video_ligues_move",
+      "at": "2026-09-12T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "move",
+      "text": "a passé « Vidéo teaser Ligues v2 » en Brief"
+    },
+    {
+      "id": "a_2026-09-14T14:00:00.000Z_o_video_ligues_move",
+      "at": "2026-09-14T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "move",
+      "text": "a passé « Vidéo teaser Ligues v2 » en Création"
+    },
+    {
+      "id": "a_2026-09-14T10:00:00.000Z_o_video_ligues_update",
+      "at": "2026-09-14T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "update",
+      "text": "a ajouté la tâche « Tournage au centre de Lyon » à « Vidéo teaser Ligues v2 »"
+    },
+    {
+      "id": "a_2026-09-14T10:00:00.000Z_o_video_ligues_update",
+      "at": "2026-09-14T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "update",
+      "text": "a ajouté la tâche « Montage + sous-titres » à « Vidéo teaser Ligues v2 »"
+    },
+    {
+      "id": "a_2026-09-14T10:00:00.000Z_o_video_ligues_update",
+      "at": "2026-09-14T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "update",
+      "text": "a ajouté la tâche « Musique libre de droits choisie » à « Vidéo teaser Ligues v2 »"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_video_ligues_update",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_video_ligues",
+      "type": "update",
+      "text": "a passé « Musique libre de droits choisie » faite sur « Vidéo teaser Ligues v2 »"
+    },
+    {
+      "id": "a_2026-09-05T10:00:00.000Z_o_partenariat_centre_create",
+      "at": "2026-09-05T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_partenariat_centre",
+      "type": "create",
+      "text": "a créé « Partenariat centre Five Marseille »"
+    },
+    {
+      "id": "a_2026-09-05T10:00:00.000Z_o_partenariat_centre_update",
+      "at": "2026-09-05T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_partenariat_centre",
+      "type": "update",
+      "text": "a modifié dates de « Partenariat centre Five Marseille »"
+    },
+    {
+      "id": "a_2026-09-06T14:00:00.000Z_o_partenariat_centre_move",
+      "at": "2026-09-06T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_partenariat_centre",
+      "type": "move",
+      "text": "a passé « Partenariat centre Five Marseille » en Brief"
+    },
+    {
+      "id": "a_2026-09-09T14:00:00.000Z_o_partenariat_centre_move",
+      "at": "2026-09-09T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_partenariat_centre",
+      "type": "move",
+      "text": "a passé « Partenariat centre Five Marseille » en Création"
+    },
+    {
+      "id": "a_2026-09-13T10:00:00.000Z_o_ugc_replays_create",
+      "at": "2026-09-13T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_ugc_replays",
+      "type": "create",
+      "text": "a créé « Campagne UGC : « ton plus beau replay » »"
+    },
+    {
+      "id": "a_2026-09-13T10:00:00.000Z_o_ugc_replays_update",
+      "at": "2026-09-13T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_ugc_replays",
+      "type": "update",
+      "text": "a modifié dates de « Campagne UGC : « ton plus beau replay » »"
+    },
+    {
+      "id": "a_2026-09-14T14:00:00.000Z_o_ugc_replays_move",
+      "at": "2026-09-14T14:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_ugc_replays",
+      "type": "move",
+      "text": "a passé « Campagne UGC : « ton plus beau replay » » en Brief"
+    },
+    {
+      "id": "a_2026-09-14T10:00:00.000Z_o_event_tournoi_create",
+      "at": "2026-09-14T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_event_tournoi",
+      "type": "create",
+      "text": "a créé « Tournoi de lancement Ligues »"
+    },
+    {
+      "id": "a_2026-09-14T10:00:00.000Z_o_event_tournoi_update",
+      "at": "2026-09-14T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_event_tournoi",
+      "type": "update",
+      "text": "a modifié dates de « Tournoi de lancement Ligues »"
+    },
+    {
+      "id": "a_2026-09-15T14:00:00.000Z_o_event_tournoi_move",
+      "at": "2026-09-15T14:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_event_tournoi",
+      "type": "move",
+      "text": "a passé « Tournoi de lancement Ligues » en Brief"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_idea_podcast_create",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "lea",
+        "avatar": ""
+      },
+      "opId": "o_idea_podcast",
+      "type": "create",
+      "text": "a créé « Mini-podcast « vestiaire » avec des joueurs »"
+    },
+    {
+      "id": "a_2026-09-15T10:00:00.000Z_o_idea_maillot_create",
+      "at": "2026-09-15T10:00:00.000Z",
+      "by": {
+        "login": "nadir",
+        "avatar": ""
+      },
+      "opId": "o_idea_maillot",
+      "type": "create",
+      "text": "a créé « Maillot collector pour les ambassadeurs »"
+    }
+  ],
+  "game": {
+    "weeklyGoal": 3,
+    "season": {
+      "name": "Rentrée 2026",
+      "startAt": "2026-08-26",
+      "endAt": "2026-12-24",
+      "xpGoal": 1500
+    }
+  }
+}

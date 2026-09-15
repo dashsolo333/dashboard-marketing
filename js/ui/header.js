@@ -1,0 +1,64 @@
+import { h, icon, avatar, relTime } from './dom.js';
+
+export const VIEWS = [
+  { id: 'board', label: 'Tableau' },
+  { id: 'focus', label: 'Avancement' },
+  { id: 'list', label: 'Liste' },
+  { id: 'calendar', label: 'Calendrier' },
+  { id: 'campaigns', label: 'Campagnes' },
+  { id: 'season', label: 'Saison' },
+  { id: 'journal', label: 'Journal' },
+];
+
+const STATUS_LABEL = {
+  loading: 'Chargement…', ready: 'Synchronisé', saving: 'Enregistrement…',
+  offline: 'Hors ligne', error: 'Erreur', conflict: 'Conflit',
+};
+
+export function renderHeader(ctx) {
+  const { state } = ctx.store;
+  const st = state.status;
+  return h('div', { class: 'topbar-inner', style: { display: 'contents' } },
+    h('div', { class: 'brand' },
+      h('div', { class: 'brand-mark' }, 'F'),
+      h('div', { class: 'brand-name' }, 'Futnow ', h('span', {}, '· Marketing'))),
+    h('nav', { class: 'tabs', role: 'tablist', 'aria-label': 'Vues' },
+      VIEWS.map((v) => h('button', {
+        type: 'button', class: 'tab', role: 'tab', 'aria-selected': ctx.view === v.id && !ctx.opId ? 'true' : 'false',
+        onClick: () => ctx.setView(v.id),
+      }, v.label, v.id === 'board' && ctx.doc ? h('span', { class: 'tab-count' }, ctx.doc.ops.length) : null))),
+    h('div', { class: 'topbar-right' },
+      h('label', { class: 'search' },
+        icon('search'),
+        h('span', { class: 'sr-only' }, 'Rechercher'),
+        h('input', { class: 'input', type: 'search', placeholder: 'Rechercher…', title: 'Raccourci : /', value: ctx.filters.q || '', id: 'search-input', dataset: { key: 'search' },
+          onInput: (e) => ctx.setFilter({ q: e.target.value }, { silent: true }) })),
+      ctx.doc ? h('select', { class: 'select select-pill', 'aria-label': 'Canal', onChange: (e) => ctx.setFilter({ channel: e.target.value }) },
+        h('option', { value: '' }, 'Canaux'),
+        ctx.doc.channels.map((c) => h('option', { value: c.id, selected: ctx.filters.channel === c.id }, `${c.icon} ${c.label}`))) : null,
+      h('button', { type: 'button', class: 'btn btn-cta', onClick: ctx.openCreate, title: 'Nouveau coup (n)' }, icon('plus'), 'Coup'),
+      h('div', { class: 'sync', title: state.error || (state.lastSync ? `Dernière synchro ${relTime(state.lastSync)}` : '') },
+        h('span', { class: `pulse is-${st}` }),
+        STATUS_LABEL[st] || st,
+        (st === 'error' || st === 'conflict' || st === 'offline') ? h('button', { type: 'button', class: 'btn btn-ghost btn-sm btn-icon', title: 'Réessayer', onClick: ctx.retry }, icon('refresh')) : null),
+      h('button', { type: 'button', class: 'sync-user', onClick: () => ctx.openSettings(), title: 'Compte & réglages' },
+        state.user ? [avatar(state.user, 24), state.user.login] : [icon('gear'), 'Connexion'])));
+}
+
+export function renderBanner(ctx) {
+  const { state } = ctx.store;
+  if (!state.doc) return null;
+  const n = state.pending.length;
+  if (n && (state.status === 'error' || state.status === 'conflict' || state.status === 'offline')) {
+    return h('div', { class: 'readonly-bar is-danger', role: 'alert' }, icon('warn'),
+      h('span', { style: { flex: 1 } }, h('b', {}, `${n} modification${n > 1 ? 's' : ''} non enregistrée${n > 1 ? 's' : ''}.`), ` ${state.error || ''} Ne ferme pas la page : `),
+      h('button', { type: 'button', onClick: ctx.retry }, 'Réessayer maintenant'),
+      h('button', { type: 'button', onClick: () => ctx.openSettings() }, 'Vérifier le token'));
+  }
+  if (ctx.canWrite()) return null;
+  const text = state.user && !state.user.canWrite
+    ? `${state.user.login} est connecté mais ne peut pas écrire : ${state.user.writeIssue || 'droits insuffisants.'}`
+    : 'Mode lecture. Ajoute ton token GitHub pour créer et déplacer des coups.';
+  return h('div', { class: 'readonly-bar' }, icon('warn'), h('span', {}, text),
+    h('button', { type: 'button', onClick: () => ctx.openSettings() }, state.user ? 'Changer de compte' : 'Se connecter'));
+}

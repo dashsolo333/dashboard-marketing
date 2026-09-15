@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:17:10.558Z",
+  "updatedAt": "2026-09-15T14:17:16.732Z",
   "stages": [
     {
       "id": "idea",
@@ -204,7 +204,7 @@
       "id": "o_mu2paoc9nqvk3w",
       "title": "Communiqué de presse",
       "description": "",
-      "icon": "",
+      "icon": "📰",
       "kind": "article",
       "channels": [],
       "urgent": false,
@@ -233,7 +233,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:49:42.487Z",
+      "updatedAt": "2026-09-15T14:17:16.732Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -934,6 +934,17 @@
       "opId": "o_mu2p9u4wq53i96",
       "type": "update",
       "text": "a modifié icon de « Progamme ambassadeur »"
+    },
+    {
+      "id": "a_2026-09-15T14:17:16.732Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T14:17:16.732Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié icon de « Communiqué de presse »"
     }
   ]
 }

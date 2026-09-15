@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:23:18.616Z",
+  "updatedAt": "2026-09-15T13:26:56.981Z",
   "stages": [
     {
       "id": "idea",
@@ -176,7 +176,7 @@
       "urgent": false,
       "owner": "dashsolo333",
       "rubric": "",
-      "caption": "",
+      "caption": "\"Futnow réunit 1000 joueurs...\"\nDemi A4 avec : \n-principes de la boite\n-ambitions\n-technique\n-pq c'est le futur ? (tendances, data foot, strava)\n-pq ça n'a pas été fait avant ?",
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
@@ -199,7 +199,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:21:49.961Z",
+      "updatedAt": "2026-09-15T13:26:56.981Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -390,6 +390,17 @@
       "opId": "o_mu2pbypbydw99g",
       "type": "update",
       "text": "a modifié title de « Tiktok »"
+    },
+    {
+      "id": "a_2026-09-15T13:26:56.981Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T13:26:56.981Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié caption de « Communiqué de presse »"
     }
   ]
 }

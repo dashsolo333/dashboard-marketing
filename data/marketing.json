@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:16:41.387Z",
+  "updatedAt": "2026-09-15T14:17:10.558Z",
   "stages": [
     {
       "id": "idea",
@@ -148,7 +148,7 @@
       "id": "o_mu2p9u4wq53i96",
       "title": "Progamme ambassadeur",
       "description": "",
-      "icon": "",
+      "icon": "🤝",
       "kind": "ambassador",
       "channels": [],
       "urgent": false,
@@ -194,7 +194,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:05:11.924Z",
+      "updatedAt": "2026-09-15T14:17:10.558Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -923,6 +923,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a modifié icon de « Motion design »"
+    },
+    {
+      "id": "a_2026-09-15T14:17:10.558Z_o_mu2p9u4wq53i96_update",
+      "at": "2026-09-15T14:17:10.558Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p9u4wq53i96",
+      "type": "update",
+      "text": "a modifié icon de « Progamme ambassadeur »"
     }
   ]
 }

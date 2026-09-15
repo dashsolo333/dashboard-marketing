@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:02:36.457Z",
+  "updatedAt": "2026-09-15T15:02:40.630Z",
   "stages": [
     {
       "id": "idea",
@@ -482,7 +482,18 @@
         "publishPlanned": "2026-09-29",
         "publishActual": ""
       },
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "r_mu2swjxykokv3w",
+          "at": "2026-09-15T15:02:40.630Z",
+          "by": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
+          "verdict": "ok",
+          "notes": ""
+        }
+      ],
       "items": [],
       "results": {
         "channels": {},
@@ -495,7 +506,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:02:36.457Z",
+      "updatedAt": "2026-09-15T15:02:40.630Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1272,6 +1283,17 @@
       "opId": "o_mu2ssqsnr4lxsp",
       "type": "update",
       "text": "a modifié dates de « Linkedin 2 »"
+    },
+    {
+      "id": "a_2026-09-15T15:02:40.630Z_o_mu2ssqsnr4lxsp_review",
+      "at": "2026-09-15T15:02:40.630Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2ssqsnr4lxsp",
+      "type": "review",
+      "text": "a validé « Linkedin 2 »"
     }
   ]
 }

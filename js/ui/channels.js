@@ -10,7 +10,7 @@ export function renderChannels(ctx) {
   const stats = channelStats(doc, t);
   const max = Math.max(1, ...stats.flatMap((s) => s.weeks));
   return h('div', { class: 'channels-view' },
-    h('p', { class: 'hint channels-intro' }, 'Une ligne par canal : ce qui est sorti ou prévu cette semaine, ce mois, dans les 30 jours, et le rythme des 8 dernières semaines. Un canal sans rien de prévu apparaît en orange.'),
+    h('p', { class: 'hint channels-intro' }, 'Une ligne par canal : ce qui est sorti ou prévu cette semaine, dans les 30 jours, et le rythme des 8 dernières semaines. Un canal sans rien de prévu apparaît en orange.'),
     h('div', { class: 'channel-grid' }, stats.map((s) => renderChannel(ctx, s, max, t))));
 }
 
@@ -30,7 +30,6 @@ function renderChannel(ctx, s, max, t) {
       h('button', { type: 'button', class: 'btn btn-ghost btn-sm channel-cal', title: 'Voir ce canal dans le calendrier', onClick: () => ctx.setFilter({ channel: s.channel.id }, { view: 'calendar' }) }, 'Calendrier', icon('arrow'))),
     h('div', { class: 'channel-figures' },
       figure(s.week, 'cette semaine'),
-      figure(s.month, 'ce mois'),
       figure(s.next30, '30 prochains jours'),
       figure(s.unscheduled, 'sans date', s.unscheduled > 0 ? 'is-warn' : '')),
     s.weeks.every((n) => !n) ? h('div', { class: 'spark is-empty' }, 'Aucune publication sur les 8 dernières semaines')

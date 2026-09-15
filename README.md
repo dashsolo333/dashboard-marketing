@@ -31,7 +31,7 @@ connectée. Même architecture que `futnow-features-dashboard`.
   (copie prête pour la semaine suivante).
 - **Campagnes** : objectif chiffré (cible / réalisé, barre), fenêtre, coups rattachés avec
   date et étape, résultats cumulés.
-- **Canaux** : par canal, ce qui sort cette semaine, ce mois, dans les 30 jours, les coups
+- **Canaux** : par canal, ce qui sort cette semaine, dans les 30 jours, les coups
   sans date, le rythme des 8 dernières semaines et les prochaines sorties. Un canal sans
   rien de prévu ressort en orange.
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:37:00.675Z",
+  "updatedAt": "2026-09-15T15:37:42.941Z",
   "stages": [
     {
       "id": "idea",
@@ -160,7 +160,7 @@
       "urgent": false,
       "owner": "dashsolo333",
       "rubric": "",
-      "caption": "\"Futnow réunit 1000 joueurs...\"\nDemi A4 avec : \n-principes de la boite\n-ambitions\n-technique\n-pq bons choix ont été faits par futnow\n-pq c'est le futur ? (tendances, data foot, strava)\n-pq ça n'a pas été fait avant ?",
+      "caption": "\"Futnow réunit 1000 joueurs et va construire le futur de l'experience football blabla...\"\nDemi A4 avec : \n-principes de la boite\n-ambitions\n-technique\n-pq bons choix ont été faits par futnow\n-pq c'est le futur ? (tendances, data foot, strava)\n-pq ça n'a pas été fait avant ?",
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
@@ -206,7 +206,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:37:00.675Z",
+      "updatedAt": "2026-09-15T15:37:42.941Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1326,6 +1326,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié title de « Communiqué de presse [lancement v1] »"
+    },
+    {
+      "id": "a_2026-09-15T15:37:42.941Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:37:42.941Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié caption de « Communiqué Lancement v1 [cloture béta] »"
     }
   ]
 }

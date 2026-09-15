@@ -62,9 +62,9 @@
       "color": "#f87171"
     },
     {
-      "id": "newsletter",
-      "label": "Newsletter",
-      "icon": "✉️",
+      "id": "blog",
+      "label": "Blog Futnow",
+      "icon": "📝",
       "color": "#f5c451"
     },
     {

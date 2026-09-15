@@ -9,7 +9,7 @@ const now = '2026-09-14T00:00:00Z';
 
 test('default channels include the social networks and the ambassador program', () => {
   const ids = DEFAULT_CHANNELS.map((c) => c.id);
-  for (const id of ['instagram', 'tiktok', 'linkedin', 'newsletter', 'ambassadors']) assert.ok(ids.includes(id), id);
+  for (const id of ['instagram', 'tiktok', 'linkedin', 'blog', 'ambassadors']) assert.ok(ids.includes(id), id);
 });
 
 test('addChannel creates an id from the label and refuses duplicates', () => {

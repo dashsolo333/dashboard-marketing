@@ -184,6 +184,12 @@ document.addEventListener('pointercancel', () => { pointerDown = false; if (queu
 
 function flushQueued() { if (!queued || rendering || pointerDown) return; const next = queued; queued = null; next(); }
 
+// Les blocs dépliés (<details data-key>) restent dépliés à travers un rendu.
+const openDetails = () => [...document.querySelectorAll('details[open][data-key]')].map((d) => d.dataset.key);
+function restoreDetails(keys) {
+  for (const key of keys) { const d = document.querySelector(`details[data-key="${key.replace(/"/g, '\\"')}"]`); if (d) d.open = true; }
+}
+
 function snapshotFocus() {
   const el = document.activeElement;
   if (!isTextField(el) || !el.dataset.key) return null;
@@ -203,9 +209,11 @@ function guarded(fn, weight) {
     if (rendering || pointerDown) { queued = queued && queued.weight > weight ? queued : Object.assign(() => run(), { weight }); return; }
     rendering = true;
     const snap = snapshotFocus();
+    const opened = openDetails();
     const y = window.scrollY;
     try { fn(); } finally {
       rendering = false;
+      restoreDetails(opened);
       restoreFocus(snap);
       if (Math.abs(window.scrollY - y) > 1) window.scrollTo({ top: y });
       if (queued) setTimeout(flushQueued, 0);

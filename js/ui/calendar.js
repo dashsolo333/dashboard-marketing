@@ -85,8 +85,9 @@ function renderChip(ctx, o, t, { full = false } = {}) {
     onDragstart: (e) => { e.dataTransfer.setData('text/plain', o.id); e.dataTransfer.effectAllowed = 'move'; el.classList.add('is-dragging'); },
     onDragend: () => el.classList.remove('is-dragging'),
   },
-  h('span', { class: 'cal-chip-dots' }, ch.slice(0, 3).map((c) => h('i', { style: { background: c.color } }))),
-  o.publishTime && !done ? h('span', { class: 'cal-chip-time' }, o.publishTime) : null,
+  (o.publishTime && !done) || ch.length > 1 ? h('span', { class: 'cal-chip-meta' },
+    o.publishTime && !done ? h('span', { class: 'cal-chip-time' }, o.publishTime) : null,
+    ch.length > 1 ? h('span', { class: 'cal-chip-dots' }, ch.slice(0, 3).map((c) => h('i', { style: { background: c.color } }))) : null) : null,
   h('span', { class: 'cal-chip-title' }, `${o.icon ? `${o.icon} ` : ''}${o.title}`),
   done ? h('span', { class: 'cal-chip-check' }, icon('check')) : null);
   return el;

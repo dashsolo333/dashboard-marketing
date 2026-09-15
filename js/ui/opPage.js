@@ -7,7 +7,7 @@ import { renderChecklist } from './checklist.js';
 import { stageIndex, canMoveTo } from '../model/stages.js';
 import { opTimeline } from '../model/timeline.js';
 import { renderJournal } from './journal.js';
-import { pillSelect, renderPublication, renderContent, renderValidation, renderResults, renderLinks } from './opParts.js';
+import { pillSelect, inlineText, renderPublication, renderContent, renderValidation, renderResults, renderLinks } from './opParts.js';
 import { publishPill } from './card.js';
 
 export function renderOpPage(ctx, op) {
@@ -74,8 +74,9 @@ export function renderOpPage(ctx, op) {
       h('div', { class: 'fpage-main' },
         renderContent(ctx, op, ro),
         h('section', { class: 'panel glass' },
-          h('div', { class: 'section-head' }, h('h3', {}, 'Brief')),
-          h('textarea', { class: 'textarea fpage-desc', placeholder: 'Objectif, cible, message clé, appel à l’action, ton…', disabled: ro, dataset: { key: `desc:${op.id}` }, onChange: (e) => patch({ description: e.target.value }) }, op.description)),
+          h('div', { class: 'section-head' }, h('h3', {}, 'Brief'), ro ? null : h('span', { class: 'hint' }, 'cliquer pour modifier')),
+          inlineText({ key: `desc:${op.id}`, value: op.description, placeholder: 'Objectif, cible, message clé, appel à l’action, ton…', disabled: ro, className: 'fpage-desc',
+            onSave: (v) => patch({ description: v }, `a modifié le brief de « ${op.title} »`) })),
         renderResults(ctx, op, ro),
         h('section', { class: 'panel glass' },
           h('div', { class: 'section-head' }, h('h3', {}, 'Historique')),

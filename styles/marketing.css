@@ -199,3 +199,95 @@
 .cal-day, .cal-items, .cal-chip { min-width: 0; overflow: hidden; }
 .cal-chip { max-width: 100%; }
 .cal-legend span { white-space: nowrap; }
+
+/* ---------- Texte long : lecture en clair, zone de texte au clic ---------- */
+.text-view { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.55; font-size: 14.5px; color: var(--ink); padding: 10px 12px; margin: -10px -12px; border-radius: 12px; border: 1px solid transparent; cursor: text; min-height: 24px; transition: background var(--dur-fast, .15s), border-color var(--dur-fast, .15s); }
+.text-view:hover, .text-view:focus-visible { background: rgba(255,255,255,.03); border-color: var(--hairline-strong); outline: none; }
+.text-view.is-empty { color: var(--ink-3); font-style: italic; }
+.text-view.is-ro { cursor: default; }
+.text-view.is-ro:hover { background: transparent; border-color: transparent; }
+
+/* =====================================================================
+   Responsive & stabilité (largeurs 375 → 1440)
+   ===================================================================== */
+
+/* Barre du haut : largeur de la pastille de synchro figée pour que le
+   passage Synchronisé → Enregistrement… ne fasse pas bouger la page. */
+.sync { min-width: 148px; justify-content: center; }
+.sync-label { white-space: nowrap; }
+.topbar-right { flex-wrap: nowrap; }
+.topbar .select-pill { max-width: 190px; }
+.tab { white-space: nowrap; }
+.tab-count { display: inline-block; min-width: 14px; }
+
+/* Chips du calendrier : ligne méta (heure, pastilles) puis titre sur deux lignes. */
+.cal-chip { display: block; position: relative; padding: 3px 7px 4px 6px; }
+.cal-chip-meta { display: flex; align-items: center; gap: 6px; min-height: 14px; margin-bottom: 1px; }
+.cal-chip-dots { margin: 0; }
+.cal-chip-title { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.25; }
+.cal-chip.is-done { padding-right: 20px; }
+.cal-chip-check { position: absolute; top: 4px; right: 5px; }
+.cal-chip.is-full .cal-chip-title { -webkit-line-clamp: 3; }
+
+
+@media (max-width: 1380px) {
+  .tab { padding: 0 10px; font-size: 13.5px; }
+  .search .input, .search .input:focus { width: 132px; }
+  .sync { min-width: 0; padding: 0 10px; }
+  .sync-label { display: none; }
+  .topbar .select-pill { max-width: 160px; }
+}
+
+@media (max-width: 1100px) {
+  /* Onglets sur leur propre ligne : deux lignes stables, jamais de re-wrap. */
+  .topbar { row-gap: 8px; }
+  .tabs { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .topbar-right { margin-left: auto; }
+  .fpage-cols { grid-template-columns: 1fr; }
+  .cal-chip-dots { display: none; }
+  .input-metric { width: 68px; }
+  .results-table th, .results-table td { padding: 5px 6px; font-size: 13px; }
+}
+
+@media (max-width: 900px) {
+  .kpi-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kpi { padding: 12px 12px; }
+  .kpi-value { font-size: 28px; }
+  .kpi-sub { font-size: 12.5px; }
+  .cal-chip-check { display: none; }
+  .check-add { grid-template-columns: 1fr auto; }
+  .check-add .check-add-input { grid-column: 1 / -1; }
+  .check-add .select { justify-self: start; }
+  .fpage-title-input { font-size: 26px; }
+}
+
+@media (max-width: 720px) {
+  /* Barre du haut en trois rangées : marque + actions / recherche + canal / onglets. */
+  .topbar-right { display: contents; }
+  .topbar .btn-cta { order: 1; margin-left: auto; }
+  .topbar .sync, .topbar .sync-user { order: 1; }
+  .search { order: 2; flex: 1 1 140px; }
+  .search .input, .search .input:focus { width: 100%; }
+  .topbar .select-pill { order: 2; flex: 1 1 140px; max-width: none; }
+  .tabs { order: 3; }
+  .cal-chip { padding: 2px 4px; }
+  .cal-chip-title, .cal-chip-meta, .cal-chip-check { display: none; }
+  .release-item { flex-wrap: wrap; row-gap: 4px; }
+  .release-item .name { flex-basis: calc(100% - 32px); white-space: normal; }
+  .release-item .release-item-icon + .name { flex-basis: calc(100% - 32px); }
+  .release-item .badge, .release-item .date-pill, .release-item .chip { margin-left: 32px; }
+  .release-item .badge ~ .badge, .release-item .badge ~ .date-pill, .release-item .badge ~ .chip,
+  .release-item .date-pill ~ .chip { margin-left: 0; }
+  .release-head { flex-wrap: wrap; gap: 6px; }
+  .release-date { text-align: left; }
+}
+
+@media (max-width: 520px) {
+  .kpi-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .kpi { padding: 10px 8px; text-align: center; }
+  .kpi-label { font-size: 12px; }
+  .kpi-value { font-size: 24px; }
+  .kpi-sub { display: none; }
+  .fpage-title-input { font-size: 22px; }
+}

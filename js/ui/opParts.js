@@ -21,6 +21,41 @@ export function datePicker(value, onChange, { disabled = false, placeholder = 'C
   return h('span', { class: 'dp' }, btn, input);
 }
 
+// Clés des textes en cours d'édition : survivent aux rendus (sondage GitHub,
+// autre champ modifié) pour que la zone de texte ne redevienne pas du texte figé.
+const editingKeys = new Set();
+
+/** Texte long affiché en clair ; devient une zone de texte au clic, redevient du texte à la sortie. */
+export function inlineText({ key, value = '', placeholder = '', disabled = false, className = '', onSave }) {
+  const wrap = h('div', { class: 'inline-text' });
+  const view = () => h('div', {
+    class: `text-view${value ? '' : ' is-empty'}${disabled ? ' is-ro' : ''}`, role: disabled ? null : 'button', tabindex: disabled ? null : 0,
+    title: disabled ? null : 'Cliquer pour modifier',
+    onClick: () => { if (!disabled) edit(); },
+    onKeydown: (e) => { if (!disabled && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); edit(); } },
+  }, value || placeholder);
+  const edit = () => {
+    editingKeys.add(key);
+    const ta = h('textarea', { class: `textarea ${className}`.trim(), placeholder, dataset: { key },
+      onKeydown: (e) => {
+        if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); ta.value = value; ta.dataset.dirty = ''; ta.blur(); } // stopPropagation : sinon Échap ferme aussi la fiche
+        if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); ta.blur(); }
+      },
+      onBlur: () => {
+        editingKeys.delete(key);
+        const next = ta.value;
+        if (next !== value) onSave(next); // le rendu qui suit ré-affiche le texte
+        else wrap.replaceChildren(view());
+      },
+    }, value);
+    wrap.replaceChildren(ta);
+    ta.focus({ preventScroll: true });
+    ta.setSelectionRange(ta.value.length, ta.value.length);
+  };
+  if (editingKeys.has(key) && !disabled) edit(); else wrap.append(view());
+  return wrap;
+}
+
 /** Publication : date + heure prévues, date réelle, état lisible, raccourcis. */
 export function renderPublication(ctx, op, ro) {
   const planned = op.dates.publishPlanned || '';
@@ -79,7 +114,7 @@ export function renderValidation(ctx, op, ro) {
       ro ? null : h('div', { class: 'validation-actions' },
         h('button', { type: 'button', class: 'btn btn-ok', onClick: () => review('ok', '') }, icon('check'), last?.verdict === 'ok' ? 'Revalider' : 'Valider'),
         h('button', { type: 'button', class: 'btn btn-danger', onClick: refuse }, icon('close'), 'Refuser'))),
-    history.length > 1 ? h('details', { class: 'validation-history' },
+    history.length > 1 ? h('details', { class: 'validation-history', dataset: { key: `vhist:${op.id}` } },
       h('summary', {}, `${history.length} décisions`),
       h('div', { class: 'test-list', style: { marginTop: '8px' } }, history.map((r) => h('div', { class: 'test-item' },
         h('span', { class: `badge badge-${r.verdict}` }, r.verdict === 'ok' ? 'GO' : 'KO'),

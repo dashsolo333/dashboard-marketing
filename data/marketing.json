@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:17:16.732Z",
+  "updatedAt": "2026-09-15T14:17:20.779Z",
   "stages": [
     {
       "id": "idea",
@@ -243,7 +243,7 @@
       "id": "o_mu2pbypbydw99g",
       "title": "Vidéo Tiktok 1",
       "description": "",
-      "icon": "",
+      "icon": "🎬",
       "kind": "post",
       "channels": [
         "tiktok"
@@ -291,7 +291,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:50:09.695Z",
+      "updatedAt": "2026-09-15T14:17:20.779Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -945,6 +945,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié icon de « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T14:17:20.779Z_o_mu2pbypbydw99g_update",
+      "at": "2026-09-15T14:17:20.779Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2pbypbydw99g",
+      "type": "update",
+      "text": "a modifié icon de « Vidéo Tiktok 1 »"
     }
   ]
 }

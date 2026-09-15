@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:52:16.666Z",
+  "updatedAt": "2026-09-15T13:54:00.099Z",
   "stages": [
     {
       "id": "idea",
@@ -321,15 +321,15 @@
       "reviews": [],
       "items": [
         {
-          "id": "i_mu2qdrc3ie4jkp",
-          "text": "Lister toutes les adresses des indépendants",
           "group": "brief",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mu2qdrc3ie4jkp",
+          "text": "Lister toutes les adresses des indépendants",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-09-15T13:52:04.515Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -337,15 +337,15 @@
           }
         },
         {
-          "id": "i_mu2qe0pmlcpzhk",
-          "text": "Définir une date d'envoi",
           "group": "brief",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mu2qe0pmlcpzhk",
+          "text": "Définir une date d'envoi",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-09-15T13:52:16.666Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -364,6 +364,47 @@
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
       "updatedAt": "2026-09-15T13:52:16.666Z",
+      "updatedBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      }
+    },
+    {
+      "id": "o_mu2qg8irrw74i4",
+      "title": "Articles Linkedin",
+      "description": "",
+      "icon": "",
+      "kind": "post",
+      "channels": [
+        "linkedin"
+      ],
+      "urgent": false,
+      "owner": "dashsolo333",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
+      "stageId": "idea",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "createdAt": "2026-09-15T13:54:00.099Z",
+      "createdBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "updatedAt": "2026-09-15T13:54:00.099Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -722,6 +763,17 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "update",
       "text": "a ajouté la tâche « Définir une date d'envoi » à « Brochure France Indépendants »"
+    },
+    {
+      "id": "a_2026-09-15T13:54:00.099Z_o_mu2qg8irrw74i4_create",
+      "at": "2026-09-15T13:54:00.099Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qg8irrw74i4",
+      "type": "create",
+      "text": "a créé « Articles Linkedin »"
     }
   ]
 }

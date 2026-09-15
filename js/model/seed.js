@@ -23,7 +23,7 @@ export function demoDoc({ today }) {
   const move = (id, stage, when, by = NADIR) => { d = moveOp(d, id, stage, { by, at: at(when, 14) }); };
   const go = (id, when, notes = '', by = LEA) => { d = addReview(d, id, { id: `r_${id}_${when}`, verdict: 'ok', notes, by, at: at(when, 12) }); };
   const ko = (id, when, notes, by = LEA) => { d = addReview(d, id, { id: `r_${id}_${when}`, verdict: 'ko', notes, by, at: at(when, 12) }); };
-  const plan = (id, publishPlanned, publishTime = '', when = day(-17)) => { d = updateOp(d, id, { dates: { publishPlanned }, publishTime }, { by: NADIR, at: at(when) }); };
+  const plan = (id, publishPlanned, publishTime = '', when = day(-17), reviewPlanned = '') => { d = updateOp(d, id, { dates: { publishPlanned, reviewPlanned }, publishTime }, { by: NADIR, at: at(when) }); };
   const res = (id, channel, metrics, when) => { d = setResults(d, id, { channel, metrics }, { by: LEA, at: at(when) }); };
 
   // Publiés
@@ -58,7 +58,7 @@ export function demoDoc({ today }) {
   res('o_tiktok_bestof', 'tiktok', { views: 3100, likes: 260, comments: 14, shares: 40 }, day(0));
 
   // Programmé
-  make('o_newsletter_1', { title: 'Newsletter #1 — « Ce qui change à la rentrée »', icon: '✉️', kind: 'article', channels: ['newsletter'], urgent: true, campaignId: 'c_rentree', owner: 'nadir', rubric: 'Newsletter mensuelle', caption: 'Objet : Ce qui change à la rentrée ⚽', description: 'Première newsletter joueurs : nouveautés, replays, code promo centre partenaire.' }, NADIR, day(-6));
+  make('o_newsletter_1', { title: 'Article blog — « Ce qui change à la rentrée »', icon: '📝', kind: 'article', channels: ['blog'], urgent: true, campaignId: 'c_rentree', owner: 'nadir', rubric: 'Newsletter mensuelle', caption: 'Objet : Ce qui change à la rentrée ⚽', description: 'Première newsletter joueurs : nouveautés, replays, code promo centre partenaire.' }, NADIR, day(-6));
   plan('o_newsletter_1', day(2), '08:30', day(-6));
   move('o_newsletter_1', 'brief', day(-5)); move('o_newsletter_1', 'create', day(-4)); move('o_newsletter_1', 'review', day(-1));
   go('o_newsletter_1', day(-1), 'Relu, deux coquilles corrigées');
@@ -66,7 +66,7 @@ export function demoDoc({ today }) {
 
   // Validation
   make('o_ambassadeurs', { title: 'Programme ambassadeurs : recruter 10 capitaines', icon: '🤝', kind: 'ambassador', channels: ['ambassadors', 'instagram', 'field'], urgent: true, campaignId: 'c_rentree', owner: 'nadir', caption: 'Tu ramènes ton équipe, on t’offre tes matchs. Deviens capitaine Futnow de ton centre 👑', description: 'Un capitaine par centre partenaire : il ramène ses équipes, on lui offre des matchs + un maillot. Kit : visuel, message DM, page d’inscription.' }, NADIR, day(-12));
-  plan('o_ambassadeurs', day(6), '19:00', day(-12));
+  plan('o_ambassadeurs', day(6), '19:00', day(-12), day(3));
   move('o_ambassadeurs', 'brief', day(-11)); move('o_ambassadeurs', 'create', day(-9)); move('o_ambassadeurs', 'review', day(-1));
   d = applyTemplate(d, 'o_ambassadeurs', { by: NADIR, at: at(day(-11)) });
   for (const [i, it] of d.ops.find((o) => o.id === 'o_ambassadeurs').items.entries()) {
@@ -76,7 +76,7 @@ export function demoDoc({ today }) {
 
   // Création
   make('o_video_ligues', { title: 'Vidéo teaser Ligues v2', icon: '🏆', kind: 'video', channels: ['instagram', 'tiktok', 'youtube', 'app'], urgent: true, campaignId: 'c_ligues', owner: 'lea', hashtags: '#futnow #ligues', description: 'Teaser 30 s : classement en direct, calendrier, cérémonie du tirage. Sortie le jour du lancement.' }, LEA, day(-4));
-  plan('o_video_ligues', day(12), '18:00', day(-4));
+  plan('o_video_ligues', day(12), '18:00', day(-4), day(8));
   move('o_video_ligues', 'brief', day(-3), LEA); move('o_video_ligues', 'create', day(-1), LEA);
   d = addChecklistItem(d, 'o_video_ligues', { id: 'i_vl_1', text: 'Tournage au centre de Lyon', group: 'create', due: day(3), by: LEA, at: at(day(-1)) });
   d = addChecklistItem(d, 'o_video_ligues', { id: 'i_vl_2', text: 'Montage + sous-titres', group: 'create', due: day(6), by: LEA, at: at(day(-1)) });
@@ -84,24 +84,24 @@ export function demoDoc({ today }) {
   d = setChecklistStatus(d, 'o_video_ligues', 'i_vl_3', 'done', { by: LEA, at: at(day(0)) });
 
   make('o_partenariat_centre', { title: 'Partenariat centre Five Marseille', icon: '🤝', kind: 'partnership', channels: ['linkedin', 'field'], owner: 'nadir', description: 'Annonce croisée avec le centre : affiche sur place + post LinkedIn commun.' }, NADIR, day(-10));
-  plan('o_partenariat_centre', day(-2), '', day(-10));
+  plan('o_partenariat_centre', day(-2), '', day(-10), day(-4));
   move('o_partenariat_centre', 'brief', day(-9)); move('o_partenariat_centre', 'create', day(-6));
 
   make('o_bestof_4', { title: 'Best-of buts de la semaine #4', icon: '⚽', kind: 'video', channels: ['tiktok', 'instagram', 'youtube'], owner: 'lea', rubric: 'Best-of du lundi', hashtags: '#futnow #bestof #golazo', description: 'Format récurrent : les 5 plus beaux buts filmés par les caméras Futnow.' }, LEA, day(0));
-  plan('o_bestof_4', day(6), '18:00', day(0));
+  plan('o_bestof_4', day(6), '18:00', day(0), day(4));
   move('o_bestof_4', 'brief', day(0), LEA); move('o_bestof_4', 'create', day(0), LEA);
 
   // Brief
   make('o_ugc_replays', { title: 'Campagne UGC : « ton plus beau replay »', icon: '📱', kind: 'campaign', channels: ['instagram', 'tiktok', 'app'], campaignId: 'c_ligues', description: 'Les joueurs partagent leur replay avec #FutnowReplay, on reposte les meilleurs. Dotation : un mois de matchs.' }, LEA, day(-2));
-  plan('o_ugc_replays', day(20), '', day(-2));
+  plan('o_ugc_replays', day(20), '', day(-2), day(15));
   move('o_ugc_replays', 'brief', day(-1), LEA);
 
   make('o_event_tournoi', { title: 'Tournoi de lancement Ligues', icon: '🎉', kind: 'event', channels: ['field', 'instagram', 'ambassadors'], campaignId: 'c_ligues', description: 'Un tournoi d’un soir dans un centre partenaire pour lancer la saison des ligues.' }, NADIR, day(-1));
-  plan('o_event_tournoi', day(25), '', day(-1));
+  plan('o_event_tournoi', day(25), '', day(-1), day(19));
   move('o_event_tournoi', 'brief', day(0));
 
   make('o_story_sondage_2', { title: 'Story sondage : ton poste préféré ?', icon: '🗳️', kind: 'story', channels: ['instagram'], owner: 'lea', rubric: 'Sondage du jeudi' }, LEA, day(0));
-  plan('o_story_sondage_2', day(2), '12:00', day(0));
+  plan('o_story_sondage_2', day(2), '12:00', day(0), day(1));
   move('o_story_sondage_2', 'brief', day(0), LEA);
 
   // Idées (sans date : à planifier)

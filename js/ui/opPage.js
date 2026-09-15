@@ -2,7 +2,7 @@
 import { h, icon, avatar, fmtDay, fmtDayFull, relTime, today } from './dom.js';
 import { stageStepper } from './gauge.js';
 import { emojiPicker } from './emoji.js';
-import { KINDS, newId } from '../model/doc.js';
+import { newId } from '../model/doc.js';
 import { updateOp, deleteOp, duplicateOp } from '../model/ops.js';
 import { renderChecklist } from './checklist.js';
 import { stageIndex, canMoveTo } from '../model/stages.js';
@@ -44,7 +44,6 @@ export function renderOpPage(ctx, op) {
         h('input', { class: 'input input-title fpage-title-input', value: op.title, 'aria-label': 'Titre', disabled: ro, dataset: { key: `title:${op.id}` },
           onChange: (e) => { if (e.target.value.trim()) patch({ title: e.target.value.trim() }, `a renommé « ${op.title} » en « ${e.target.value.trim()} »`); else e.target.value = op.title; } }),
         h('div', { class: 'drawer-meta' },
-          pillSelect(KINDS, op.kind, ro, (v) => patch({ kind: v })),
           h('input', { class: 'input input-pill', list: 'rubric-list', value: op.rubric, placeholder: 'Rubrique (Best-of du lundi…)', disabled: ro, 'aria-label': 'Rubrique', dataset: { key: `rubric:${op.id}` }, onChange: (e) => patch({ rubric: e.target.value.trim() }, `a classé « ${op.title} » dans la rubrique ${e.target.value.trim() || '—'}`) }),
           h('datalist', { id: 'rubric-list' }, rubrics.map((r) => h('option', { value: r }))),
           pillSelect([{ id: '', label: 'Sans campagne' }, ...doc.campaigns.map((c) => ({ id: c.id, label: `${c.icon ? `${c.icon} ` : ''}${c.name}` }))], op.campaignId, ro, (v) => patch({ campaignId: v }, `a rattaché « ${op.title} » à une campagne`)),

@@ -138,6 +138,18 @@ export function opDay(op) {
 }
 
 /** Retard : publication prévue dépassée sans publication réelle. */
+/** Date de la dernière validation (GO), ou '' si le coup n'est pas validé. */
+export function reviewedAt(op) {
+  const last = latestReview(op);
+  return last?.verdict === 'ok' ? String(last.at || '').slice(0, 10) : '';
+}
+
+/** Validation prévue dépassée sans GO. */
+export function isReviewLate(op, today) {
+  const planned = op.dates?.reviewPlanned;
+  return Boolean(planned && planned < today && !reviewedAt(op));
+}
+
 export function isLate(op, today) {
   const d = op.dates || {};
   return Boolean(d.publishPlanned) && !d.publishActual && d.publishPlanned < today;

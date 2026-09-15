@@ -1,8 +1,7 @@
 import { h, icon, avatar, fmtDay, relTime, today } from './dom.js';
-import { kindById } from '../model/doc.js';
 import { stageById } from '../model/stages.js';
 import { isLate, checklistProgress, opDay, byRank } from '../model/ops.js';
-import { verdictBadge, channelDots } from './card.js';
+import { verdictBadge, channelDots, channelNames } from './card.js';
 import { visibleOps } from './filters.js';
 
 const COLS = [
@@ -63,7 +62,7 @@ export function renderList(ctx) {
               onPointerdown: () => { tr.draggable = true; }, onPointerup: () => { tr.draggable = false; } }, icon('grip')) : null),
           h('td', {}, h('div', { class: 'cell-title' },
             h('span', { class: 'cell-title-icon' }, o.icon || ''),
-            h('div', { class: 'cell-title-text', title: o.title }, h('b', {}, o.title), h('small', {}, o.rubric ? `${o.rubric} · ${kindById(o.kind).label}` : kindById(o.kind).label)),
+            h('div', { class: 'cell-title-text', title: o.title }, h('b', {}, o.title), h('small', {}, o.rubric || channelNames(doc, o) || '—')),
             o.urgent ? h('span', { class: 'badge badge-urgent', title: 'Urgent' }, '🔥') : null)),
           h('td', {}, channelDots(doc, o, { max: 5 }) || h('span', { class: 'dim' }, '—')),
           h('td', {}, h('span', { class: 'chip chip-stage', style: { '--dot': stage?.color } }, h('i', { class: 'chip-dot' }), stage?.label)),

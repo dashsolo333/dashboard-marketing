@@ -6,6 +6,7 @@ import { renderHeader, renderBanner, VIEWS } from './ui/header.js';
 import { renderKpis } from './ui/kpis.js';
 import { renderBoard } from './ui/board.js';
 import { renderList } from './ui/list.js';
+import { renderGantt } from './ui/gantt.js';
 import { renderCalendar } from './ui/calendar.js';
 import { renderCampaigns } from './ui/campaigns.js';
 import { renderChannels } from './ui/channels.js';
@@ -151,7 +152,7 @@ function renderMainNow() {
   }
   kpis.hidden = ui.view === 'channels';
   if (!kpis.hidden) kpis.append(h('div', { class: 'kpi-row' }, ...(renderKpis(ctx) || [])));
-  const renderers = { calendar: renderCalendar, board: renderBoard, list: renderList, campaigns: renderCampaigns, channels: renderChannels, journal: renderJournal };
+  const renderers = { calendar: renderCalendar, board: renderBoard, list: renderList, gantt: renderGantt, campaigns: renderCampaigns, channels: renderChannels, journal: renderJournal };
   view.append((renderers[ui.view] || renderCalendar)(ctx));
 }
 
@@ -256,7 +257,7 @@ document.addEventListener('keydown', (e) => {
   if (typing) return;
   if (e.key === '/') { e.preventDefault(); $('search-input')?.focus(); }
   if (e.key === 'n') ctx.openCreate();
-  if (/^[1-6]$/.test(e.key)) ctx.setView(VIEWS[Number(e.key) - 1].id);
+  if (/^[1-7]$/.test(e.key)) ctx.setView(VIEWS[Number(e.key) - 1].id);
 });
 window.addEventListener('hashchange', () => { const hsh = readHash(); if (hsh.view) ui.view = hsh.view; if (hsh.month) ui.month = hsh.month; ui.opId = hsh.op; render(); });
 document.addEventListener('visibilitychange', () => { if (!document.hidden) store.reload(); });

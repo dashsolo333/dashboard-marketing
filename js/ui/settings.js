@@ -83,7 +83,7 @@ function renderChannels(ctx) {
   const ro = !ctx.canWrite();
   const act = (label, op) => ctx.act(label, op);
   return h('div', { style: { display: 'grid', gap: '16px' } },
-    h('p', { class: 'hint' }, 'Un canal = un endroit où un coup se diffuse : réseau social, newsletter, programme d’ambassadeurs, terrain, événement… Ajoute ce qui vous sert, retire le reste.'),
+    h('p', { class: 'hint' }, 'Un canal = un endroit où un coup se diffuse : réseau social, blog, programme d’ambassadeurs, terrain, événement… Ajoute ce qui vous sert, retire le reste.'),
     h('div', { class: 'settings-list' }, doc.channels.map((c, i) => h('div', { class: 'settings-row settings-row-channel' },
       h('input', { type: 'color', value: c.color, disabled: ro, 'aria-label': 'Couleur', onChange: (e) => act(`a recoloré le canal ${c.label}`, (d) => renameChannel(d, c.id, { color: e.target.value })) }),
       h('input', { class: 'input input-emoji', value: c.icon, maxlength: 4, disabled: ro, 'aria-label': 'Icône', onChange: (e) => act(`a changé l’icône du canal ${c.label}`, (d) => renameChannel(d, c.id, { icon: e.target.value.trim() || '•' })) }),

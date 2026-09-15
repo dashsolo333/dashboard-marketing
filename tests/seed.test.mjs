@@ -29,7 +29,8 @@ test('normalizeDoc migrates old-shaped documents (priority, flat results, review
   const d = normalizeDoc({ ops: [{ id: 'x', title: 'X', priority: 'p0', channels: ['instagram'], results: { views: 12 }, dates: { reviewPlanned: '2026-01-01', publishPlanned: '2026-02-01' } }], gates: { reviewStageId: 'review', finalStageId: 'published' } });
   const o = d.ops[0];
   assert.equal(o.urgent, true);
-  assert.deepEqual(Object.keys(o.dates), ['publishPlanned', 'publishActual']);
+  assert.deepEqual(Object.keys(o.dates), ['reviewPlanned', 'publishPlanned', 'publishActual']);
+  assert.equal(o.dates.reviewPlanned, '2026-01-01');
   assert.deepEqual(o.results, { channels: {}, notes: '' });
   assert.deepEqual(Object.keys(d.gates), ['finalStageId']);
 });

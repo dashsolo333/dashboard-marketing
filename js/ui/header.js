@@ -4,6 +4,7 @@ export const VIEWS = [
   { id: 'calendar', label: 'Calendrier' },
   { id: 'board', label: 'Tableau' },
   { id: 'list', label: 'Liste' },
+  { id: 'gantt', label: 'Gantt' },
   { id: 'campaigns', label: 'Campagnes' },
   { id: 'channels', label: 'Canaux' },
   { id: 'journal', label: 'Journal' },

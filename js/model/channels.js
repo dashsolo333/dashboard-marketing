@@ -1,4 +1,4 @@
-// Canaux : liste libre portée par le document (réseaux, newsletter,
+// Canaux : liste libre portée par le document (réseaux, blog,
 // programme d'ambassadeurs, terrain… tout ce qu'on juge utile).
 import { normalizeChannel } from './doc.js';
 

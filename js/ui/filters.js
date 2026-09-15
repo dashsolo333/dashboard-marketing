@@ -6,7 +6,7 @@ export function matches(op, filters, doc) {
   const q = (filters.q || '').trim().toLowerCase();
   if (q) {
     const channels = op.channels.map((id) => doc.channels.find((c) => c.id === id)?.label || id).join(' ');
-    const hay = [op.title, op.description, op.caption, op.hashtags, op.rubric, op.kind, op.owner, channels].join(' ').toLowerCase();
+    const hay = [op.title, op.description, op.caption, op.hashtags, op.rubric, op.owner, channels].join(' ').toLowerCase();
     if (!hay.includes(q)) return false;
   }
   if (filters.channel && !op.channels.includes(filters.channel)) return false;

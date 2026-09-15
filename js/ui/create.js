@@ -1,19 +1,19 @@
 import { emojiPicker } from './emoji.js';
 import { h, icon, fmtDay } from './dom.js';
-import { KINDS, newId } from '../model/doc.js';
+import { newId } from '../model/doc.js';
 import { createOp } from '../model/ops.js';
 
 /** Fiche vierge : un coup créé à la main, au stade idée (ou pré-daté depuis le calendrier). */
 export function renderCreate(ctx, preset = {}) {
   const doc = ctx.doc;
-  let title; let kind; let desc; let iconValue = preset.icon || ''; let campaign; let date; let time; let rubric;
+  let title; let desc; let iconValue = preset.icon || ''; let campaign; let date; let time; let rubric;
   const channels = new Set((preset.channels || []).filter((id) => doc.channels.some((c) => c.id === id)));
   const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
   const submit = (e) => {
     e.preventDefault();
     const id = newId('o');
     const ok = ctx.act(`a créé « ${title.value.trim()} »`, (d) => createOp(d, {
-      id, title: title.value, description: desc.value.trim(), icon: iconValue, kind: kind.value, channels: [...channels],
+      id, title: title.value, description: desc.value.trim(), icon: iconValue, channels: [...channels],
       rubric: rubric.value.trim(), campaignId: campaign.value, owner: ctx.store.state.user?.login || '',
       dates: { publishPlanned: date.value }, publishTime: time.value, ...ctx.meta(),
     }));
@@ -32,7 +32,6 @@ export function renderCreate(ctx, preset = {}) {
         h('div', { class: 'field' }, h('label', { for: 'c-title' }, 'Titre'), title = h('input', { id: 'c-title', class: 'input', required: true, placeholder: 'Ex. Reel lancement Ligues, Newsletter #2, Tournoi…', autofocus: true }))),
       h('div', { class: 'field', style: { marginTop: '12px' } }, h('span', { class: 'field-label' }, 'Canaux'), h('div', { class: 'toggle-row' }, doc.channels.map(channelBtn))),
       h('div', { class: 'modal-grid', style: { marginTop: '12px' } },
-        h('div', { class: 'field' }, h('label', { for: 'c-kind' }, 'Format'), kind = h('select', { id: 'c-kind', class: 'select' }, KINDS.map((k) => h('option', { value: k.id, selected: k.id === 'post' }, k.label)))),
         h('div', { class: 'field' }, h('label', { for: 'c-rubric' }, 'Rubrique'), rubric = h('input', { id: 'c-rubric', class: 'input', list: 'rubric-list', placeholder: 'Best-of du lundi, Sondage…' }), h('datalist', { id: 'rubric-list' }, rubrics.map((r) => h('option', { value: r })))),
         h('div', { class: 'field' }, h('label', { for: 'c-date' }, 'Publication'), date = h('input', { id: 'c-date', class: 'input', type: 'date', value: preset.publishPlanned || '' })),
         h('div', { class: 'field' }, h('label', { for: 'c-time' }, 'Heure'), time = h('input', { id: 'c-time', class: 'input', type: 'time', value: '' })),

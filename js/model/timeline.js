@@ -9,9 +9,10 @@ export function opTimeline(doc, op, today) {
   if (!past.some((e) => e.kind === 'create') && op.createdAt) {
     past.unshift({ kind: 'create', day: isoDay(op.createdAt), at: op.createdAt, text: 'a créé la fiche', by: op.createdBy, future: false, late: false });
   }
-  const { publishPlanned, publishActual } = op.dates || {};
-  const planned = publishPlanned && !publishActual
-    ? [{ kind: 'publish', day: publishPlanned, at: `${publishPlanned}T00:00:00Z`, text: 'Publication prévue', by: null, future: publishPlanned >= today, late: publishPlanned < today }]
-    : [];
+  const { reviewPlanned, publishPlanned, publishActual } = op.dates || {};
+  const validated = (op.reviews || []).some((r) => r.verdict === 'ok');
+  const planned = [];
+  if (reviewPlanned && !validated) planned.push({ kind: 'review', day: reviewPlanned, at: `${reviewPlanned}T00:00:00Z`, text: 'Validation prévue', by: null, future: reviewPlanned >= today, late: reviewPlanned < today });
+  if (publishPlanned && !publishActual) planned.push({ kind: 'publish', day: publishPlanned, at: `${publishPlanned}T00:00:00Z`, text: 'Publication prévue', by: null, future: publishPlanned >= today, late: publishPlanned < today });
   return [...past, ...planned].sort((a, b) => a.at.localeCompare(b.at));
 }

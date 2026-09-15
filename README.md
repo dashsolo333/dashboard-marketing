@@ -1,7 +1,7 @@
 # Futnow · Marketing
 
 Dashboard d'équipe pour piloter tous les coups marketing Futnow (posts, vidéos, TikTok,
-newsletter, partenariats, programme d'ambassadeurs, événements…) de l'idée à la publication.
+blog, partenariats, programme d'ambassadeurs, événements…) de l'idée à la publication.
 
 Page statique hébergée sur GitHub Pages, données dans `data/marketing.json` versionnées
 par Git : chaque modification faite depuis la page devient un commit au nom de la personne
@@ -15,17 +15,18 @@ connectée. Même architecture que `futnow-features-dashboard`.
   (sans date) et l'agenda de la semaine.
 - **Tableau** kanban par étape (glisser-déposer), **Liste** triable avec checklist `x/x`,
   ordre manuel en glissant les lignes par leur poignée (enregistré pour toute l'équipe),
-  actions groupées (étape, campagne, urgence, suppression), **Campagnes**, **Canaux**,
-  **Journal**.
+  actions groupées (étape, campagne, urgence, suppression), **Gantt** (une barre par coup
+  de la création à la publication, repères validation et publication, ligne d'aujourd'hui),
+  **Campagnes**, **Canaux**, **Journal**.
 - **Pipeline** Idée → Brief → Création → Validation → Programmé → Publié, modulable dans
   les réglages. Entrer en **Publié** exige un **GO** (forçable, journalisé) et date la
   publication automatiquement.
-- **Canaux libres** (réglages → Canaux) : Instagram, TikTok, LinkedIn, YouTube, Newsletter,
+- **Canaux libres** (réglages → Canaux) : Instagram, TikTok, LinkedIn, YouTube, Blog Futnow,
   Ambassadeurs, App / Site, Terrain par défaut ; ajoute ce qui vous sert.
 - **Fiche par coup** (lien `#c=<id>` partageable) : étape + checklist groupée par étape
   (checklist type brief → publié), **contenu** (légende, hashtags, lien du visuel), brief,
-  **publication** (date + heure, raccourcis +1 j / +1 sem), **validation en un clic**
-  (Valider / Refuser avec commentaire, qui et quand), **résultats par canal** (vues, likes,
+  **publication** (date + heure, raccourcis +1 j / +1 sem), **validation** avec date
+  prévue et décision en un clic (Valider / Refuser avec commentaire, qui et quand), **résultats par canal** (vues, likes,
   commentaires, partages, clics, inscriptions + total), liens, frise, historique.
   Rubrique (« Best-of du lundi »…), responsable, drapeau **Urgent**, bouton **Dupliquer**
   (copie prête pour la semaine suivante).
@@ -60,7 +61,7 @@ npm run seed -- --force   # régénérer data/marketing.json avec le jeu de dém
 npm run seed -- --force --empty   # repartir d'un document vide
 ```
 
-Raccourcis : `n` nouveau coup · `/` recherche · `1`–`6` vues · `Échap` fermer / désélectionner.
+Raccourcis : `n` nouveau coup · `/` recherche · `1`–`7` vues · `Échap` fermer / désélectionner.
 
 ## Mise en ligne
 

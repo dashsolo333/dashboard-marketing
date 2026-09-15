@@ -107,8 +107,19 @@ export function renderValidation(ctx, op, ro) {
   const history = [...op.reviews].sort((a, b) => String(b.at).localeCompare(String(a.at)));
   const review = (verdict, notes) => ctx.act(verdict === 'ok' ? `a validé « ${op.title} »` : `a refusé « ${op.title} »`, (d) => addReview(d, op.id, { id: newId('r'), verdict, notes, ...ctx.meta() }));
   const refuse = () => { const notes = prompt('Qu’est-ce qui doit changer ?'); if (notes !== null) review('ko', notes.trim()); };
-  return h('section', { class: `panel glass validation${last ? ` is-${last.verdict}` : ''}` },
-    h('div', { class: 'section-head' }, h('h3', {}, 'Validation'), h('span', { class: 'hint' }, 'un GO débloque « Publié »')),
+  const t = today();
+  const reviewPlanned = op.dates.reviewPlanned || '';
+  const reviewedOn = last?.verdict === 'ok' ? String(last.at).slice(0, 10) : '';
+  const rst = milestoneStatus({ planned: reviewPlanned, actual: reviewedOn }, t);
+  const setPlanned = (v) => ctx.act(v ? `a prévu la validation de « ${op.title} » le ${fmtDay(v)}` : `a retiré la date de validation de « ${op.title} »`, (d) => updateOp(d, op.id, { dates: { reviewPlanned: v } }, ctx.meta()));
+  const quick = (txt, opts) => h('button', { type: 'button', class: 'chip chip-btn', disabled: ro, onClick: () => setPlanned(shiftDay(reviewPlanned || t, opts)) }, txt);
+  return h('section', { class: `panel glass validation${last ? ` is-${last.verdict}` : ''}${rst.state === 'late' ? ' is-review-late' : ''}` },
+    h('div', { class: 'section-head' }, h('h3', {}, 'Validation'), reviewPlanned || reviewedOn ? h('span', { class: `badge badge-ms badge-ms-${rst.state}` }, rst.label) : h('span', { class: 'hint' }, 'un GO débloque « Publié »')),
+    h('div', { class: 'milestone-row' },
+      h('span', { class: 'milestone-k' }, 'Prévue'),
+      datePicker(reviewPlanned, setPlanned, { disabled: ro, placeholder: 'Fixer une date' }),
+      ro ? null : h('span', { class: 'milestone-quick' }, quick('+1 j', { weeks: 0 }), quick('+1 sem', { weeks: 1 }),
+        reviewPlanned ? h('button', { type: 'button', class: 'chip chip-btn', onClick: () => setPlanned('') }, 'Effacer') : null)),
     h('div', { class: 'validation-state' },
       last ? [avatar(last.by, 30), h('div', {}, h('b', {}, last.verdict === 'ok' ? `Validé par ${last.by?.login || '—'}` : `Refusé par ${last.by?.login || '—'}`), h('div', { class: 'muted' }, `${fmtDay(last.at)} · ${relTime(last.at)}`), last.notes ? h('p', { class: 'validation-notes' }, last.notes) : null)]
         : h('div', { class: 'muted' }, 'Pas encore validé.'),

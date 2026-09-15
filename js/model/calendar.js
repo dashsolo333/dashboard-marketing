@@ -61,3 +61,18 @@ export function monthGrid(month, today) {
   }
   return { month, first, last, weeks };
 }
+
+/** Fenêtre de semaines autour d'aujourd'hui, pour le Gantt. */
+export function weekRange(today, { before = 2, after = 8 } = {}) {
+  const current = startOfWeek(today);
+  const weeks = [];
+  for (let i = -before; i <= after; i += 1) {
+    const start = addDays(current, i * 7);
+    weeks.push({ start, end: addDays(start, 6), isCurrent: i === 0 });
+  }
+  return weeks;
+}
+
+export function weekLabel(start) {
+  return new Date(`${start}T00:00:00Z`).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+}

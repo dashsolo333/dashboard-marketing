@@ -1,6 +1,5 @@
 import { h, icon, avatar, fmtDay, today } from './dom.js';
 import { isLate, lastVerdict, checklistProgress } from '../model/ops.js';
-import { kindById } from '../model/doc.js';
 
 /** Date de publication : prévue (drapeau), faite (coche), en retard (rouge). */
 export function publishPill(op, t = today()) {
@@ -42,6 +41,11 @@ export function channelDots(doc, op, { max = 4 } = {}) {
     list.length > max ? h('span', { class: 'channel-more' }, `+${list.length - max}`) : null);
 }
 
+/** Libellés des canaux d'un coup : « Instagram · TikTok ». */
+export function channelNames(doc, op) {
+  return op.channels.map((id) => doc.channels.find((c) => c.id === id)?.label).filter(Boolean).join(' · ');
+}
+
 export function renderCard(ctx, op) {
   const doc = ctx.doc;
   const done = op.stageId === doc.gates.finalStageId; // un coup publié ne se déplace plus (comme dans le calendrier)
@@ -58,7 +62,7 @@ export function renderCard(ctx, op) {
     op.icon ? h('span', { class: 'card-icon' }, op.icon) : null,
     h('div', { style: { flex: 1, minWidth: 0 } },
       h('div', { class: 'card-title' }, op.title),
-      h('div', { class: 'card-sub' }, op.rubric || kindById(op.kind).label, channelDots(doc, op)))),
+      h('div', { class: 'card-sub' }, op.rubric || channelNames(doc, op) || 'sans canal', op.rubric ? channelDots(doc, op) : null))),
   h('div', { class: 'card-foot' },
     publishPill(op),
     urgentBadge(op),

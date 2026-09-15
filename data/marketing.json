@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:39:06.659Z",
+  "updatedAt": "2026-09-15T14:47:15.860Z",
   "stages": [
     {
       "id": "idea",
@@ -315,7 +315,7 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "brief",
+      "stageId": "scheduled",
       "campaignId": "",
       "links": [],
       "dates": {
@@ -368,7 +368,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:39:06.659Z",
+      "updatedAt": "2026-09-15T14:47:15.860Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1095,6 +1095,39 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "update",
       "text": "a modifié channels de « Brochure France Indépendants »"
+    },
+    {
+      "id": "a_2026-09-15T14:47:14.612Z_o_mu2qcdvs663q78_move",
+      "at": "2026-09-15T14:47:14.612Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "move",
+      "text": "a passé « Brochure France Indépendants » en Création"
+    },
+    {
+      "id": "a_2026-09-15T14:47:15.184Z_o_mu2qcdvs663q78_move",
+      "at": "2026-09-15T14:47:15.184Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "move",
+      "text": "a passé « Brochure France Indépendants » en Validation"
+    },
+    {
+      "id": "a_2026-09-15T14:47:15.860Z_o_mu2qcdvs663q78_move",
+      "at": "2026-09-15T14:47:15.860Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "move",
+      "text": "a passé « Brochure France Indépendants » en Programmé"
     }
   ]
 }

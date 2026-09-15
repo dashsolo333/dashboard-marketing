@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:17:51.161Z",
+  "updatedAt": "2026-09-15T14:28:50.015Z",
   "stages": [
     {
       "id": "idea",
@@ -133,6 +133,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 20,
       "createdAt": "2026-09-15T13:19:57.178Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -189,6 +190,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 10,
       "createdAt": "2026-09-15T13:21:01.904Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -228,6 +230,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 30,
       "createdAt": "2026-09-15T13:21:41.049Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -286,6 +289,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 40,
       "createdAt": "2026-09-15T13:22:41.135Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -358,6 +362,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 50,
       "createdAt": "2026-09-15T13:51:00.424Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -399,6 +404,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 60,
       "createdAt": "2026-09-15T13:54:00.099Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -438,6 +444,7 @@
         "notes": ""
       },
       "publishedBy": null,
+      "rank": 70,
       "createdAt": "2026-09-15T13:54:34.481Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -989,6 +996,17 @@
       "opId": "o_mu2qgz1snyo80f",
       "type": "update",
       "text": "a modifié icon de « Partenariat Nolt »"
+    },
+    {
+      "id": "a_2026-09-15T14:28:50.015Z_null_update",
+      "at": "2026-09-15T14:28:50.015Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": null,
+      "type": "update",
+      "text": "a réordonné la liste"
     }
   ]
 }

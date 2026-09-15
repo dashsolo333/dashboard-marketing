@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:05:11.924Z",
+  "updatedAt": "2026-09-15T14:05:18.063Z",
   "stages": [
     {
       "id": "idea",
@@ -424,7 +424,7 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "create",
+      "stageId": "review",
       "campaignId": "",
       "links": [],
       "dates": {
@@ -443,7 +443,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:54:43.900Z",
+      "updatedAt": "2026-09-15T14:05:18.063Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -868,6 +868,17 @@
       "opId": "o_mu2p9u4wq53i96",
       "type": "update",
       "text": "a modifié urgent de « Progamme ambassadeur »"
+    },
+    {
+      "id": "a_2026-09-15T14:05:18.063Z_o_mu2qgz1snyo80f_move",
+      "at": "2026-09-15T14:05:18.063Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qgz1snyo80f",
+      "type": "move",
+      "text": "a passé « Partenariat Nolt » en Validation"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:35:32.934Z",
+  "updatedAt": "2026-09-15T15:36:09.448Z",
   "stages": [
     {
       "id": "idea",
@@ -173,7 +173,24 @@
         "publishActual": ""
       },
       "reviews": [],
-      "items": [],
+      "items": [
+        {
+          "id": "i_mu2u3lygbaqkci",
+          "text": "débattre sur premieres itérations claude",
+          "group": "create",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-15T15:36:09.448Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
+        }
+      ],
       "results": {
         "channels": {},
         "notes": ""
@@ -189,7 +206,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:33:45.962Z",
+      "updatedAt": "2026-09-15T15:36:09.448Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1276,6 +1293,17 @@
       "opId": "o_mu2ssqsnr4lxsp",
       "type": "delete",
       "text": "a supprimé « Linkedin 2 »"
+    },
+    {
+      "id": "a_2026-09-15T15:36:09.448Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:36:09.448Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a ajouté la tâche « débattre sur premieres itérations claude » à « Communiqué de presse »"
     }
   ]
 }

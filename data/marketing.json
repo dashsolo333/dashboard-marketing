@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:05:19.294Z",
+  "updatedAt": "2026-09-15T14:16:14.352Z",
   "stages": [
     {
       "id": "idea",
@@ -92,7 +92,7 @@
       "id": "o_mu2p8g6yehanyo",
       "title": "Motion design",
       "description": "",
-      "icon": "",
+      "icon": "design",
       "kind": "video",
       "channels": [],
       "urgent": false,
@@ -138,7 +138,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:48:18.023Z",
+      "updatedAt": "2026-09-15T14:16:14.352Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -890,6 +890,17 @@
       "opId": "o_mu2qgz1snyo80f",
       "type": "move",
       "text": "a passé « Partenariat Nolt » en Création"
+    },
+    {
+      "id": "a_2026-09-15T14:16:14.352Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-09-15T14:16:14.352Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a modifié icon de « Motion design »"
     }
   ]
 }

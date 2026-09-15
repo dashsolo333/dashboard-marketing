@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:51:28.345Z",
+  "updatedAt": "2026-09-15T13:51:30.127Z",
   "stages": [
     {
       "id": "idea",
@@ -311,7 +311,7 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "scheduled",
+      "stageId": "brief",
       "campaignId": "",
       "links": [],
       "dates": {
@@ -330,7 +330,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:51:28.345Z",
+      "updatedAt": "2026-09-15T13:51:30.127Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -656,6 +656,17 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "move",
       "text": "a passé « Brochure France Indépendants » en Programmé"
+    },
+    {
+      "id": "a_2026-09-15T13:51:30.127Z_o_mu2qcdvs663q78_move",
+      "at": "2026-09-15T13:51:30.127Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "move",
+      "text": "a passé « Brochure France Indépendants » en Brief"
     }
   ]
 }

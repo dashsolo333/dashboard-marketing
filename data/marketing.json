@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:58:39.084Z",
+  "updatedAt": "2026-09-15T14:59:02.634Z",
   "stages": [
     {
       "id": "idea",
@@ -262,7 +262,7 @@
       "campaignId": "",
       "links": [],
       "dates": {
-        "publishPlanned": "2026-09-12",
+        "publishPlanned": "2026-10-03",
         "publishActual": ""
       },
       "reviews": [],
@@ -295,7 +295,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:58:39.084Z",
+      "updatedAt": "2026-09-15T14:59:02.634Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1176,6 +1176,17 @@
     {
       "id": "a_2026-09-15T14:58:39.084Z_o_mu2pbypbydw99g_update",
       "at": "2026-09-15T14:58:39.084Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2pbypbydw99g",
+      "type": "update",
+      "text": "a modifié dates de « Vidéo Tiktok 1 »"
+    },
+    {
+      "id": "a_2026-09-15T14:59:02.634Z_o_mu2pbypbydw99g_update",
+      "at": "2026-09-15T14:59:02.634Z",
       "by": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"

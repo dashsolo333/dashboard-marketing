@@ -3,7 +3,7 @@ import { h, icon, avatar, fmtDay, fmtDayFull, relTime, today } from './dom.js';
 import { stageStepper } from './gauge.js';
 import { emojiPicker } from './emoji.js';
 import { KINDS, newId } from '../model/doc.js';
-import { updateOp, deleteOp, duplicateOp, lastVerdict, checklistProgress } from '../model/ops.js';
+import { updateOp, deleteOp, duplicateOp } from '../model/ops.js';
 import { renderChecklist } from './checklist.js';
 import { stageIndex, canMoveTo } from '../model/stages.js';
 import { opTimeline } from '../model/timeline.js';
@@ -21,8 +21,6 @@ export function renderOpPage(ctx, op) {
   const gate = nextStage ? canMoveTo(doc, op, nextStage.id) : { ok: false };
   const campaign = doc.campaigns.find((c) => c.id === op.campaignId);
   const people = knownPeople(doc, ctx.store.state.user);
-  const last = lastVerdict(op);
-  const tasks = checklistProgress(op);
   const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
 
   return h('article', { class: 'fpage' },
@@ -59,12 +57,7 @@ export function renderOpPage(ctx, op) {
 
     h('section', { class: 'fpage-hero glass stage-panel' },
       h('div', { class: 'stage-panel-left' },
-        stageStepper(doc, op, (id) => ctx.move(op.id, id)),
-        h('div', { class: 'stage-facts' },
-          fact('Étape', `${idx + 1} / ${doc.stages.length} · ${doc.stages[idx]?.label || '—'}`),
-          fact('Checklist', tasks.total ? `${tasks.done} / ${tasks.total} faites` : 'aucune tâche', tasks.total && tasks.done === tasks.total ? 'done' : ''),
-          fact('Validation', last ? `${last.verdict === 'ok' ? 'validé' : 'refusé'} par ${last.by?.login || '—'} · ${fmtDay(last.at)}` : 'pas encore', last ? (last.verdict === 'ok' ? 'done' : 'late') : ''),
-          fact('Responsable', op.owner || '—'))),
+        stageStepper(doc, op, (id) => ctx.move(op.id, id))),
       nextStage && !ro ? h('div', { class: 'fpage-next' },
         h('button', { type: 'button', class: 'btn btn-cta', onClick: () => ctx.move(op.id, nextStage.id) }, `Passer en ${nextStage.label}`, icon('arrow')),
         !gate.ok ? h('span', { class: 'hint' }, gate.reason) : null) : null),
@@ -107,10 +100,6 @@ function knownPeople(doc, user) {
   for (const a of doc.activity) if (a.by?.login) set.add(a.by.login);
   set.delete('anonyme');
   return [...set].sort();
-}
-
-function fact(label, value, tone = '') {
-  return h('div', { class: `fact${tone ? ` is-${tone}` : ''}` }, h('span', { class: 'fact-label' }, label), h('b', {}, value));
 }
 
 function person(label, who, at) {

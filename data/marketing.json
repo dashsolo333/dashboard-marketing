@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:36:09.448Z",
+  "updatedAt": "2026-09-15T15:36:34.081Z",
   "stages": [
     {
       "id": "idea",
@@ -152,7 +152,7 @@
     },
     {
       "id": "o_mu2paoc9nqvk3w",
-      "title": "Communiqué de presse",
+      "title": "Communiqué de presse [lancement v1]",
       "description": "",
       "icon": "📰",
       "kind": "article",
@@ -175,15 +175,15 @@
       "reviews": [],
       "items": [
         {
-          "id": "i_mu2u3lygbaqkci",
-          "text": "débattre sur premieres itérations claude",
           "group": "create",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mu2u3lygbaqkci",
+          "text": "débattre sur premieres itérations claude",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-09-15T15:36:09.448Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -206,7 +206,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:36:09.448Z",
+      "updatedAt": "2026-09-15T15:36:34.081Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1304,6 +1304,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a ajouté la tâche « débattre sur premieres itérations claude » à « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T15:36:34.081Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:36:34.081Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié title de « Communiqué de presse »"
     }
   ]
 }

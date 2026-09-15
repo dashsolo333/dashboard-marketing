@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:40:59.868Z",
+  "updatedAt": "2026-09-15T15:41:19.335Z",
   "stages": [
     {
       "id": "idea",
@@ -189,6 +189,22 @@
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
           }
+        },
+        {
+          "id": "i_mu2ua92f1hzgvp",
+          "text": "utiliser notes pour contexte (hors itw)",
+          "group": "create",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-15T15:41:19.335Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
         }
       ],
       "results": {
@@ -206,7 +222,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:40:59.868Z",
+      "updatedAt": "2026-09-15T15:41:19.335Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1348,6 +1364,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié caption de « Communiqué Lancement v1 [cloture béta] »"
+    },
+    {
+      "id": "a_2026-09-15T15:41:19.335Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:41:19.335Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a ajouté la tâche « utiliser notes pour contexte (hors itw) » à « Communiqué Lancement v1 [cloture béta] »"
     }
   ]
 }

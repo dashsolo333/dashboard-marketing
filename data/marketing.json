@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:52:04.515Z",
+  "updatedAt": "2026-09-15T13:52:16.666Z",
   "stages": [
     {
       "id": "idea",
@@ -335,6 +335,22 @@
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
           }
+        },
+        {
+          "id": "i_mu2qe0pmlcpzhk",
+          "text": "Définir une date d'envoi",
+          "group": "brief",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-15T13:52:16.666Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
         }
       ],
       "results": {
@@ -347,7 +363,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:52:04.515Z",
+      "updatedAt": "2026-09-15T13:52:16.666Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -695,6 +711,17 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "update",
       "text": "a ajouté la tâche « Lister toutes les adresses des indépendants » à « Brochure France Indépendants »"
+    },
+    {
+      "id": "a_2026-09-15T13:52:16.666Z_o_mu2qcdvs663q78_update",
+      "at": "2026-09-15T13:52:16.666Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "update",
+      "text": "a ajouté la tâche « Définir une date d'envoi » à « Brochure France Indépendants »"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:47:23.767Z",
+  "updatedAt": "2026-09-15T14:47:25.875Z",
   "stages": [
     {
       "id": "idea",
@@ -308,7 +308,7 @@
       "icon": "📰",
       "kind": "campaign",
       "channels": [],
-      "urgent": false,
+      "urgent": true,
       "owner": "dashsolo333",
       "rubric": "",
       "caption": "",
@@ -368,7 +368,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:47:23.767Z",
+      "updatedAt": "2026-09-15T14:47:25.875Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1141,8 +1141,19 @@
       "text": "a modifié urgent de « Brochure France Indépendants »"
     },
     {
-      "id": "a_2026-09-15T14:47:23.767Z_o_mu2qcdvs663q78_update",
-      "at": "2026-09-15T14:47:23.767Z",
+      "id": "a_2026-09-15T14:47:25.707Z_o_mu2qcdvs663q78_update",
+      "at": "2026-09-15T14:47:25.707Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "update",
+      "text": "a modifié urgent de « Brochure France Indépendants »"
+    },
+    {
+      "id": "a_2026-09-15T14:47:25.875Z_o_mu2qcdvs663q78_update",
+      "at": "2026-09-15T14:47:25.875Z",
       "by": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"

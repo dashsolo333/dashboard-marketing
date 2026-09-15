@@ -15,9 +15,9 @@ connectée. Même architecture que `futnow-features-dashboard`.
   (sans date) et l'agenda de la semaine.
 - **Tableau** kanban par étape (glisser-déposer), **Liste** triable avec checklist `x/x`,
   ordre manuel en glissant les lignes par leur poignée (enregistré pour toute l'équipe),
-  actions groupées (étape, campagne, urgence, suppression), **Gantt** (une barre par coup
+  actions groupées (étape, urgence, suppression), **Gantt** (une barre par coup
   de la création à la publication, repères validation et publication, ligne d'aujourd'hui),
-  **Campagnes**, **Canaux**, **Journal**.
+  **Canaux**, **Journal**.
 - **Pipeline** Idée → Brief → Création → Validation → Programmé → Publié, modulable dans
   les réglages. Entrer en **Publié** exige un **GO** (forçable, journalisé) et date la
   publication automatiquement.
@@ -31,8 +31,6 @@ connectée. Même architecture que `futnow-features-dashboard`.
   Rubrique (« Best-of du lundi »…), responsable, **durée de travail estimée** (h / J / S),
   drapeau **Urgent**, bouton **Dupliquer**
   (copie prête pour la semaine suivante).
-- **Campagnes** : objectif chiffré (cible / réalisé, barre), fenêtre, coups rattachés avec
-  date et étape, résultats cumulés.
 - **Canaux** : par canal, ce qui sort cette semaine, dans les 30 jours, les coups
   sans date, le rythme des 8 dernières semaines et les prochaines sorties. Un canal sans
   rien de prévu ressort en orange.
@@ -62,7 +60,7 @@ npm run seed -- --force   # régénérer data/marketing.json avec le jeu de dém
 npm run seed -- --force --empty   # repartir d'un document vide
 ```
 
-Raccourcis : `n` nouveau coup · `/` recherche · `1`–`7` vues · `Échap` fermer / désélectionner.
+Raccourcis : `n` nouveau coup · `/` recherche · `1`–`6` vues · `Échap` fermer / désélectionner.
 
 ## Mise en ligne
 

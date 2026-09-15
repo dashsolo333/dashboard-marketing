@@ -3,16 +3,14 @@ import { CONFIG } from '../config.js';
 import { renameStage, recolorStage, addStage, removeStage, moveStage, setGate } from '../model/stages.js';
 import { addChannel, renameChannel, removeChannel, moveChannel } from '../model/channels.js';
 import { newId } from '../model/doc.js';
-import { addCampaign, updateCampaign, removeCampaign } from '../model/campaigns.js';
 
 const TABS = [
   { id: 'account', label: 'Compte' }, { id: 'pipeline', label: 'Pipeline' }, { id: 'channels', label: 'Canaux' },
-  { id: 'campaigns', label: 'Campagnes' },
 ];
 
 export function renderSettings(ctx) {
   const tab = ctx.settingsTab || 'account';
-  const body = { account: renderAccount, pipeline: renderPipeline, channels: renderChannels, campaigns: renderCampaignsSettings }[tab] || renderAccount;
+  const body = { account: renderAccount, pipeline: renderPipeline, channels: renderChannels }[tab] || renderAccount;
   return h('div', { class: 'overlay', onClick: (e) => { if (e.target === e.currentTarget) ctx.closeModal(); } },
     h('div', { class: 'modal modal-wide glass', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'settings-title' },
       h('div', { class: 'modal-head' },
@@ -101,29 +99,3 @@ function renderChannels(ctx) {
     } }, icon('plus'), 'Ajouter un canal'));
 }
 
-function renderCampaignsSettings(ctx) {
-  const doc = ctx.doc;
-  const ro = !ctx.canWrite();
-  const update = (id, patch, label) => ctx.act(label, (d) => updateCampaign(d, id, patch));
-  const campaigns = [...doc.campaigns].sort((a, b) => (a.startAt || '9999').localeCompare(b.startAt || '9999'));
-  const field = (c, key, props, label) => h('input', { class: 'input', value: c[key] || '', disabled: ro, 'aria-label': label, title: label, ...props, onChange: (e) => update(c.id, { [key]: e.target.value.trim() }, `a modifié la campagne ${c.name}`) });
-  return h('div', { style: { display: 'grid', gap: '16px' } },
-    h('p', { class: 'hint' }, 'Une campagne = un objectif chiffré et une fenêtre de temps qui regroupent plusieurs coups (rentrée, lancement d’une feature, tournoi…). Le réalisé se met à jour depuis la vue Campagnes.'),
-    h('div', { class: 'settings-list' }, campaigns.length ? campaigns.map((c) => h('div', { class: 'settings-row settings-row-campaign' },
-      field(c, 'icon', { class: 'input input-emoji', maxlength: 4, placeholder: '✦' }, 'Icône'),
-      h('div', { style: { display: 'grid', gap: '6px' } },
-        h('input', { class: 'input', value: c.name, disabled: ro, 'aria-label': 'Nom', onChange: (e) => { if (e.target.value.trim()) update(c.id, { name: e.target.value.trim() }, `a renommé la campagne ${c.name}`); } }),
-        h('div', { class: 'goal-fields' },
-          field(c, 'goal', { placeholder: 'Objectif (ex. ligues créées)' }, 'Objectif'),
-          h('input', { class: 'input', type: 'number', min: 0, value: c.target || '', placeholder: 'Cible', disabled: ro, 'aria-label': 'Cible', title: 'Cible chiffrée', onChange: (e) => update(c.id, { target: e.target.value }, `a fixé la cible de la campagne ${c.name}`) })),
-        h('div', { class: 'goal-fields' },
-          h('input', { class: 'input', type: 'date', value: c.startAt || '', disabled: ro, 'aria-label': 'Début', title: 'Début', onChange: (e) => update(c.id, { startAt: e.target.value }, `a daté la campagne ${c.name}`) }),
-          h('input', { class: 'input', type: 'date', value: c.endAt || '', disabled: ro, 'aria-label': 'Fin', title: 'Fin', onChange: (e) => update(c.id, { endAt: e.target.value }, `a fixé la fin de la campagne ${c.name}`) }))),
-      h('button', { type: 'button', class: 'btn btn-ghost btn-sm btn-icon', disabled: ro, 'aria-label': 'Supprimer', onClick: () => { if (confirm(`Supprimer la campagne ${c.name} ? Les coups restent, sans campagne.`)) ctx.act(`a supprimé la campagne ${c.name}`, (d) => removeCampaign(d, c.id)); } }, icon('trash'))))
-      : h('div', { class: 'dim' }, 'Aucune campagne. Crée la première (ex. Rentrée 2026).')),
-    ro ? null : h('button', { type: 'button', class: 'btn', style: { justifySelf: 'start' }, onClick: () => {
-      const name = prompt('Nom de la campagne');
-      if (!name?.trim()) return;
-      ctx.act(`a créé la campagne ${name.trim()}`, (d) => addCampaign(d, { id: newId('c'), name: name.trim() }));
-    } }, icon('plus'), 'Nouvelle campagne'));
-}

@@ -24,11 +24,6 @@ export function tasksChip(op) {
   return h('span', { class: `badge ${done === total ? 'badge-ok' : 'badge-neutral'}`, title: 'Checklist' }, `${done}/${total}`);
 }
 
-export function campaignChip(doc, op) {
-  const c = doc.campaigns.find((x) => x.id === op.campaignId);
-  return c ? h('span', { class: 'chip chip-campaign', title: 'Campagne' }, c.icon ? `${c.icon} ` : '', c.name) : null;
-}
-
 export function urgentBadge(op) {
   return op.urgent ? h('span', { class: 'badge badge-urgent' }, '🔥 Urgent') : null;
 }
@@ -75,7 +70,6 @@ export function renderCard(ctx, op) {
     verdictBadge(op),
     effortChip(op),
     tasksChip(op),
-    campaignChip(doc, op),
     avatar(op.updatedBy, 20)));
   return el;
 }

@@ -19,7 +19,6 @@ export function renderOpPage(ctx, op) {
   const idx = stageIndex(doc, op.stageId);
   const nextStage = doc.stages[idx + 1] || null;
   const gate = nextStage ? canMoveTo(doc, op, nextStage.id) : { ok: false };
-  const campaign = doc.campaigns.find((c) => c.id === op.campaignId);
   const people = knownPeople(doc, ctx.store.state.user);
   const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
 
@@ -28,7 +27,6 @@ export function renderOpPage(ctx, op) {
       h('button', { type: 'button', class: 'btn btn-ghost btn-sm', onClick: ctx.closeOp }, '← Retour'),
       h('span', { class: 'dim' }, '·'),
       publishPill(op, t),
-      campaign ? [h('span', { class: 'dim' }, '·'), h('span', { class: 'chip chip-campaign' }, campaign.icon ? `${campaign.icon} ` : '', campaign.name)] : null,
       h('span', { style: { marginLeft: 'auto' }, class: 'hint' }, `modifié ${relTime(op.updatedAt)} par ${op.updatedBy?.login || '—'}`),
       ro ? null : h('button', { type: 'button', class: 'btn btn-sm', title: 'Créer une copie prête pour la semaine suivante', onClick: () => {
         const id = newId('o');
@@ -46,7 +44,6 @@ export function renderOpPage(ctx, op) {
         h('div', { class: 'drawer-meta' },
           h('input', { class: 'input input-pill', list: 'rubric-list', value: op.rubric, placeholder: 'Rubrique (Best-of du lundi…)', disabled: ro, 'aria-label': 'Rubrique', dataset: { key: `rubric:${op.id}` }, onChange: (e) => patch({ rubric: e.target.value.trim() }, `a classé « ${op.title} » dans la rubrique ${e.target.value.trim() || '—'}`) }),
           h('datalist', { id: 'rubric-list' }, rubrics.map((r) => h('option', { value: r }))),
-          pillSelect([{ id: '', label: 'Sans campagne' }, ...doc.campaigns.map((c) => ({ id: c.id, label: `${c.icon ? `${c.icon} ` : ''}${c.name}` }))], op.campaignId, ro, (v) => patch({ campaignId: v }, `a rattaché « ${op.title} » à une campagne`)),
           pillSelect([{ id: '', label: 'Sans responsable' }, ...people.map((p) => ({ id: p, label: `Resp. ${p}` }))], op.owner, ro, (v) => patch({ owner: v }, v ? `a confié « ${op.title} » à ${v}` : `a retiré le responsable de « ${op.title} »`)),
           effortInput(op.effort, { disabled: ro }, (v) => patch({ effort: v }, v.value ? `a estimé « ${op.title} » à ${formatEffort(normalizeEffort(v))}` : `a retiré l’estimation de « ${op.title} »`)),
           h('button', { type: 'button', class: `toggle toggle-xs toggle-urgent`, 'aria-pressed': op.urgent ? 'true' : 'false', disabled: ro, onClick: () => patch({ urgent: !op.urgent }, op.urgent ? `a retiré l’urgence de « ${op.title} »` : `a marqué « ${op.title} » urgent`) }, '🔥 Urgent')),

@@ -13,7 +13,6 @@ const COLS = [
   { id: 'publish', label: 'Publication', get: (o) => (opDay(o) || '9999') + (o.publishTime || '') },
   { id: 'verdict', label: 'Validation', get: (o) => (o.reviews.at(-1)?.verdict || 'zz') },
   { id: 'tasks', label: 'Checklist', get: (o) => { const p = checklistProgress(o); return p.total ? p.done / p.total : -1; } },
-  { id: 'campaign', label: 'Campagne', get: (o, doc) => doc.campaigns.find((c) => c.id === o.campaignId)?.name || 'zz' },
   { id: 'effort', label: 'Durée', get: (o) => effortHours(o.effort) || 1e9 },
   { id: 'owner', label: 'Resp.', get: (o) => o.owner || 'zz' },
   { id: 'updated', label: 'Mis à jour', get: (o) => o.updatedAt },
@@ -48,7 +47,6 @@ export function renderList(ctx) {
       h('tbody', {}, ops.map((o) => {
         const stage = stageById(doc, o.stageId);
         const selected = sel.has(o.id);
-        const campaign = doc.campaigns.find((c) => c.id === o.campaignId);
         const tr = h('tr', { class: `${selected ? 'is-selected' : ''}${o.urgent ? ' is-urgent' : ''}`, dataset: { id: o.id },
           onDragstart: (e) => { e.dataTransfer.setData('text/plain', `row:${o.id}`); e.dataTransfer.effectAllowed = 'move'; tr.classList.add('is-dragging'); },
           onDragend: () => { tr.classList.remove('is-dragging'); tr.draggable = false; clearDropMarks(tr.parentElement); },
@@ -71,7 +69,6 @@ export function renderList(ctx) {
           h('td', {}, dateCell(o, t)),
           h('td', {}, verdictBadge(o) || h('span', { class: 'dim' }, '—')),
           h('td', {}, tasksCell(checklistProgress(o))),
-          h('td', { class: 'muted td-campaign', title: campaign?.name || '' }, campaign ? `${campaign.icon ? `${campaign.icon} ` : ''}${campaign.name}` : '—'),
           h('td', { class: 'muted td-effort' }, formatEffort(o.effort) || '—'),
           h('td', { class: 'muted' }, o.owner || '—'),
           h('td', {}, h('div', { class: 'td-updated' }, avatar(o.updatedBy, 20), h('span', { class: 'muted' }, relTime(o.updatedAt)))));
@@ -91,7 +88,6 @@ function renderBulkBar(ctx, ops) {
   return h('div', { class: 'bulkbar glass', role: 'toolbar', 'aria-label': 'Actions groupées' },
     h('b', { class: 'bulkbar-count' }, `${n} sélectionné${n > 1 ? 's' : ''}`),
     pick('Passer à l’étape…', doc.stages, (v) => ctx.bulkMove(ids, v)),
-    pick('Campagne…', [{ id: '__none', label: 'Sans campagne' }, ...doc.campaigns.map((c) => ({ id: c.id, label: c.name }))], (v) => ctx.bulkUpdate(ids, { campaignId: v === '__none' ? '' : v }, 'la campagne')),
     pick('Urgence…', [{ id: 'on', label: '🔥 Marquer urgent' }, { id: 'off', label: 'Retirer l’urgence' }], (v) => ctx.bulkUpdate(ids, { urgent: v === 'on' }, 'l’urgence')),
     h('button', { type: 'button', class: 'btn btn-sm btn-danger', onClick: () => ctx.bulkDelete(ids) }, icon('trash'), 'Supprimer'),
     h('button', { type: 'button', class: 'btn btn-sm btn-ghost', style: { marginLeft: 'auto' }, onClick: ctx.clearSelection }, 'Tout désélectionner', h('span', { class: 'dim' }, ' · Échap')),

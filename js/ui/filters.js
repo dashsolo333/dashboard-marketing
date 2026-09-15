@@ -11,7 +11,6 @@ export function matches(op, filters, doc) {
   }
   if (filters.channel && !op.channels.includes(filters.channel)) return false;
   if (filters.stage && op.stageId !== filters.stage) return false;
-  if (filters.campaign && op.campaignId !== filters.campaign) return false;
   if (filters.late && !isLate(op, today())) return false;
   if (filters.urgent && !(op.urgent && op.stageId !== doc.gates.finalStageId)) return false;
   if (filters.unscheduled && !(op.stageId !== doc.gates.finalStageId && !op.dates.publishPlanned)) return false;
@@ -28,5 +27,5 @@ export function visibleOps(doc, filters) {
 }
 
 export function hasActiveFilter(filters) {
-  return Boolean(filters.q || filters.channel || filters.stage || filters.campaign || filters.late || filters.week || filters.urgent || filters.unscheduled);
+  return Boolean(filters.q || filters.channel || filters.stage || filters.late || filters.week || filters.urgent || filters.unscheduled);
 }

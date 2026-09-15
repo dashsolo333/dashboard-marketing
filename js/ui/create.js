@@ -7,7 +7,7 @@ import { createOp } from '../model/ops.js';
 /** Fiche vierge : un coup créé à la main, au stade idée (ou pré-daté depuis le calendrier). */
 export function renderCreate(ctx, preset = {}) {
   const doc = ctx.doc;
-  let title; let desc; let iconValue = preset.icon || ''; let effort = null; let campaign; let date; let time; let rubric;
+  let title; let desc; let iconValue = preset.icon || ''; let effort = null; let date; let time; let rubric;
   const channels = new Set((preset.channels || []).filter((id) => doc.channels.some((c) => c.id === id)));
   const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
   const submit = (e) => {
@@ -15,7 +15,7 @@ export function renderCreate(ctx, preset = {}) {
     const id = newId('o');
     const ok = ctx.act(`a créé « ${title.value.trim()} »`, (d) => createOp(d, {
       id, title: title.value, description: desc.value.trim(), icon: iconValue, effort, channels: [...channels],
-      rubric: rubric.value.trim(), campaignId: campaign.value, owner: ctx.store.state.user?.login || '',
+      rubric: rubric.value.trim(), owner: ctx.store.state.user?.login || '',
       dates: { publishPlanned: date.value }, publishTime: time.value, ...ctx.meta(),
     }));
     if (ok) { ctx.closeModal(); ctx.openOp(id); }
@@ -36,8 +36,7 @@ export function renderCreate(ctx, preset = {}) {
         h('div', { class: 'field' }, h('label', { for: 'c-rubric' }, 'Rubrique'), rubric = h('input', { id: 'c-rubric', class: 'input', list: 'rubric-list', placeholder: 'Best-of du lundi, Sondage…' }), h('datalist', { id: 'rubric-list' }, rubrics.map((r) => h('option', { value: r })))),
         h('div', { class: 'field' }, h('label', { for: 'c-date' }, 'Publication'), date = h('input', { id: 'c-date', class: 'input', type: 'date', value: preset.publishPlanned || '' })),
         h('div', { class: 'field' }, h('label', { for: 'c-time' }, 'Heure'), time = h('input', { id: 'c-time', class: 'input', type: 'time', value: '' })),
-        h('div', { class: 'field' }, h('label', { for: 'c-effort' }, 'Durée estimée'), effortInput(null, { id: 'c-effort' }, (v) => { effort = v; })),
-        h('div', { class: 'field' }, h('label', { for: 'c-campaign' }, 'Campagne'), campaign = h('select', { id: 'c-campaign', class: 'select' }, h('option', { value: '' }, 'Aucune'), doc.campaigns.map((c) => h('option', { value: c.id }, c.name))))),
+        h('div', { class: 'field' }, h('label', { for: 'c-effort' }, 'Durée estimée'), effortInput(null, { id: 'c-effort' }, (v) => { effort = v; }))),
       h('div', { class: 'field', style: { marginTop: '12px' } }, h('label', { for: 'c-desc' }, 'L’idée en une phrase'), desc = h('textarea', { id: 'c-desc', class: 'textarea', placeholder: 'Le brief viendra après.' })),
       h('div', { class: 'modal-actions' },
         h('button', { type: 'button', class: 'btn', onClick: ctx.closeModal }, 'Annuler'),

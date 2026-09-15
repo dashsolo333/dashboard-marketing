@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:22:53.031Z",
+  "updatedAt": "2026-09-15T13:23:18.616Z",
   "stages": [
     {
       "id": "idea",
@@ -207,7 +207,7 @@
     },
     {
       "id": "o_mu2pbypbydw99g",
-      "title": "Tiktok",
+      "title": "Vidéo Tiktok 1",
       "description": "",
       "icon": "",
       "kind": "post",
@@ -240,7 +240,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:22:53.031Z",
+      "updatedAt": "2026-09-15T13:23:18.616Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -379,6 +379,17 @@
       "opId": "o_mu2pbypbydw99g",
       "type": "move",
       "text": "a passé « Tiktok » en Idée"
+    },
+    {
+      "id": "a_2026-09-15T13:23:18.616Z_o_mu2pbypbydw99g_update",
+      "at": "2026-09-15T13:23:18.616Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2pbypbydw99g",
+      "type": "update",
+      "text": "a modifié title de « Tiktok »"
     }
   ]
 }

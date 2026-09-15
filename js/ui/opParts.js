@@ -89,8 +89,9 @@ export function renderContent(ctx, op, ro) {
   const asset = op.assetUrl;
   return h('section', { class: 'panel glass' },
     h('div', { class: 'section-head' }, h('h3', {}, 'Contenu'), h('span', { class: 'hint' }, 'ce qui part réellement en ligne')),
-    h('div', { class: 'field' }, h('label', { for: 'op-caption' }, 'Légende / texte du post'),
-      h('textarea', { id: 'op-caption', class: 'textarea caption', placeholder: 'Le texte tel qu’il sera publié. Emoji bienvenus.', disabled: ro, dataset: { key: `caption:${op.id}` }, onChange: (e) => patch({ caption: e.target.value }, `a écrit la légende de « ${op.title} »`) }, op.caption),
+    h('div', { class: 'field' }, h('label', {}, 'Légende / texte du post'),
+      inlineText({ key: `caption:${op.id}`, value: op.caption, placeholder: 'Le texte tel qu’il sera publié. Emoji bienvenus.', disabled: ro, className: 'caption',
+        onSave: (v) => patch({ caption: v }, `a écrit la légende de « ${op.title} »`) }),
       op.caption ? h('span', { class: 'hint counter' }, `${op.caption.length} caractères`) : null),
     h('div', { class: 'grid-2', style: { marginTop: '12px' } },
       h('div', { class: 'field' }, h('label', { for: 'op-hashtags' }, 'Hashtags'), h('input', { id: 'op-hashtags', class: 'input', value: op.hashtags, placeholder: '#futnow #five', disabled: ro, dataset: { key: `hashtags:${op.id}` }, onChange: (e) => patch({ hashtags: e.target.value }, `a modifié les hashtags de « ${op.title} »`) })),
@@ -140,7 +141,8 @@ export function renderResults(ctx, op, ro) {
           RESULT_FIELDS.map((f) => h('td', {}, h('input', { class: 'input input-metric', type: 'number', min: 0, inputmode: 'numeric', value: op.results.channels[c.id]?.[f.id] || '', placeholder: '0', disabled: ro, 'aria-label': `${f.label} ${c.label}`, dataset: { key: `res:${c.id}:${f.id}:${op.id}` }, onChange: (e) => save(c.id, f.id, e.target.value) }))))),
         chans.length > 1 ? h('tr', { class: 'results-total' }, h('td', {}, 'Total'), RESULT_FIELDS.map((f) => h('td', {}, totals[f.id] ? new Intl.NumberFormat('fr-FR').format(totals[f.id]) : h('span', { class: 'dim' }, '—')))) : null)))
       : h('p', { class: 'hint' }, 'Coche au moins un canal pour saisir des résultats.'),
-    h('textarea', { class: 'textarea', style: { marginTop: '10px', minHeight: '56px' }, placeholder: 'Ce qu’on retient : ce qui a marché, à refaire, à éviter…', disabled: ro, dataset: { key: `resnotes:${op.id}` }, onChange: (e) => ctx.act(`a annoté les résultats de « ${op.title} »`, (d) => setResults(d, op.id, { notes: e.target.value.trim() }, ctx.meta())) }, op.results.notes || ''));
+    h('div', { style: { marginTop: '10px' } }, inlineText({ key: `resnotes:${op.id}`, value: op.results.notes || '', placeholder: 'Ce qu’on retient : ce qui a marché, à refaire, à éviter…', disabled: ro,
+      onSave: (v) => ctx.act(`a annoté les résultats de « ${op.title} »`, (d) => setResults(d, op.id, { notes: v.trim() }, ctx.meta())) })));
 }
 
 export function addLink(ctx, op) {

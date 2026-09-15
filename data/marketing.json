@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:17:31.957Z",
+  "updatedAt": "2026-09-15T14:17:51.161Z",
   "stages": [
     {
       "id": "idea",
@@ -414,7 +414,7 @@
       "id": "o_mu2qgz1snyo80f",
       "title": "Partenariat Nolt",
       "description": "",
-      "icon": "",
+      "icon": "🤝",
       "kind": "partnership",
       "channels": [],
       "urgent": false,
@@ -443,7 +443,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:05:19.294Z",
+      "updatedAt": "2026-09-15T14:17:51.161Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -978,6 +978,17 @@
       "opId": "o_mu2qg8irrw74i4",
       "type": "update",
       "text": "a modifié icon de « Articles Linkedin »"
+    },
+    {
+      "id": "a_2026-09-15T14:17:51.161Z_o_mu2qgz1snyo80f_update",
+      "at": "2026-09-15T14:17:51.161Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qgz1snyo80f",
+      "type": "update",
+      "text": "a modifié icon de « Partenariat Nolt »"
     }
   ]
 }

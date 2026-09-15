@@ -55,7 +55,7 @@ export function renderCard(ctx, op) {
     onDragend: () => el.classList.remove('is-dragging'),
   },
   h('div', { class: 'card-top' },
-    h('span', { class: 'card-icon' }, op.icon || '•'),
+    op.icon ? h('span', { class: 'card-icon' }, op.icon) : null,
     h('div', { style: { flex: 1, minWidth: 0 } },
       h('div', { class: 'card-title' }, op.title),
       h('div', { class: 'card-sub' }, op.rubric || kindById(op.kind).label, channelDots(doc, op)))),

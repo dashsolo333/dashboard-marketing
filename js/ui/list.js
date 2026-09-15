@@ -7,7 +7,6 @@ import { visibleOps } from './filters.js';
 
 const COLS = [
   { id: 'title', label: 'Coup', get: (o) => o.title.toLowerCase() },
-  { id: 'kind', label: 'Format', get: (o) => (o.rubric || kindById(o.kind).label).toLowerCase() },
   { id: 'channels', label: 'Canaux', get: (o) => o.channels.length },
   { id: 'stage', label: 'Étape', get: (o, doc) => doc.stages.findIndex((s) => s.id === o.stageId) },
   { id: 'publish', label: 'Publication', get: (o) => (opDay(o) || '9999') + (o.publishTime || '') },
@@ -21,7 +20,7 @@ const COLS = [
 export function renderList(ctx) {
   const doc = ctx.doc;
   const sort = ctx.sort || { col: 'publish', dir: 1 };
-  const col = COLS.find((c) => c.id === sort.col) || COLS[4];
+  const col = COLS.find((c) => c.id === sort.col) || COLS.find((c) => c.id === 'publish');
   const ops = [...visibleOps(doc, ctx.filters)].sort((a, b) => {
     const va = col.get(a, doc); const vb = col.get(b, doc);
     return (va > vb ? 1 : va < vb ? -1 : 0) * sort.dir;
@@ -50,16 +49,18 @@ export function renderList(ctx) {
           onKeydown: (e) => { if (e.key === 'Enter') ctx.openOp(o.id); if (e.key === ' ' && canSelect) { e.preventDefault(); ctx.toggleSelect(o.id); } } },
           h('td', { class: 'td-check', onClick: (e) => e.stopPropagation() },
             h('input', { type: 'checkbox', class: 'check', 'aria-label': `Sélectionner ${o.title}`, checked: selected, disabled: !canSelect, onChange: (e) => ctx.toggleSelect(o.id, e.target.checked) })),
-          h('td', {}, h('div', { class: 'cell-title' }, h('span', {}, o.icon || '•'), o.title, o.urgent ? h('span', { class: 'badge badge-urgent' }, '🔥') : null)),
-          h('td', { class: 'muted' }, o.rubric ? [o.rubric, h('span', { class: 'dim' }, ` · ${kindById(o.kind).label}`)] : kindById(o.kind).label),
+          h('td', {}, h('div', { class: 'cell-title' },
+            h('span', { class: 'cell-title-icon' }, o.icon || ''),
+            h('div', { class: 'cell-title-text', title: o.title }, h('b', {}, o.title), h('small', {}, o.rubric ? `${o.rubric} · ${kindById(o.kind).label}` : kindById(o.kind).label)),
+            o.urgent ? h('span', { class: 'badge badge-urgent', title: 'Urgent' }, '🔥') : null)),
           h('td', {}, channelDots(doc, o, { max: 5 }) || h('span', { class: 'dim' }, '—')),
           h('td', {}, h('span', { class: 'chip chip-stage', style: { '--dot': stage?.color } }, h('i', { class: 'chip-dot' }), stage?.label)),
           h('td', {}, dateCell(o, t)),
           h('td', {}, verdictBadge(o) || h('span', { class: 'dim' }, '—')),
           h('td', {}, tasksCell(checklistProgress(o))),
-          h('td', { class: 'muted' }, campaign ? `${campaign.icon ? `${campaign.icon} ` : ''}${campaign.name}` : '—'),
+          h('td', { class: 'muted td-campaign', title: campaign?.name || '' }, campaign ? `${campaign.icon ? `${campaign.icon} ` : ''}${campaign.name}` : '—'),
           h('td', { class: 'muted' }, o.owner || '—'),
-          h('td', {}, h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px' } }, avatar(o.updatedBy, 20), h('span', { class: 'muted' }, relTime(o.updatedAt)))));
+          h('td', {}, h('div', { class: 'td-updated' }, avatar(o.updatedBy, 20), h('span', { class: 'muted' }, relTime(o.updatedAt)))));
       })),
     ),
     !ops.length ? h('div', { class: 'empty' }, h('b', {}, 'Aucun coup'), 'Change les filtres ou crée un coup.') : null),

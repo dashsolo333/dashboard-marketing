@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:51:00.424Z",
+  "updatedAt": "2026-09-15T13:51:15.744Z",
   "stages": [
     {
       "id": "idea",
@@ -302,7 +302,7 @@
       "title": "Brochure France",
       "description": "Envoyer la brochure à tous les indépendants",
       "icon": "",
-      "kind": "post",
+      "kind": "campaign",
       "channels": [],
       "urgent": false,
       "owner": "dashsolo333",
@@ -330,7 +330,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:51:00.424Z",
+      "updatedAt": "2026-09-15T13:51:15.744Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -623,6 +623,17 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "create",
       "text": "a créé « Brochure France »"
+    },
+    {
+      "id": "a_2026-09-15T13:51:15.744Z_o_mu2qcdvs663q78_update",
+      "at": "2026-09-15T13:51:15.744Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "update",
+      "text": "a modifié kind de « Brochure France »"
     }
   ]
 }

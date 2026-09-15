@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:36:54.485Z",
+  "updatedAt": "2026-09-15T14:37:08.465Z",
   "stages": [
     {
       "id": "idea",
@@ -328,15 +328,12 @@
           "group": "brief",
           "due": "",
           "note": "",
-          "doneAt": "2026-09-15T14:36:54.485Z",
-          "doneBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          },
+          "doneAt": "",
+          "doneBy": null,
           "id": "i_mu2qdrc3ie4jkp",
           "text": "Lister toutes les adresses des indépendants",
-          "status": "done",
-          "done": true,
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-09-15T13:52:04.515Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -371,7 +368,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:36:54.485Z",
+      "updatedAt": "2026-09-15T14:37:08.465Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1065,6 +1062,17 @@
       "opId": "o_mu2qcdvs663q78",
       "type": "update",
       "text": "a passé « Lister toutes les adresses des indépendants » faite sur « Brochure France Indépendants »"
+    },
+    {
+      "id": "a_2026-09-15T14:37:08.465Z_o_mu2qcdvs663q78_update",
+      "at": "2026-09-15T14:37:08.465Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "update",
+      "text": "a passé « Lister toutes les adresses des indépendants » à faire sur « Brochure France Indépendants »"
     }
   ]
 }

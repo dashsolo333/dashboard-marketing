@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:28:54.201Z",
+  "updatedAt": "2026-09-15T14:35:37.834Z",
   "stages": [
     {
       "id": "idea",
@@ -216,7 +216,7 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "idea",
+      "stageId": "create",
       "campaignId": "",
       "links": [],
       "dates": {
@@ -236,7 +236,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:17:16.732Z",
+      "updatedAt": "2026-09-15T14:35:37.834Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1018,6 +1018,28 @@
       "opId": null,
       "type": "update",
       "text": "a réordonné la liste"
+    },
+    {
+      "id": "a_2026-09-15T14:35:37.002Z_o_mu2paoc9nqvk3w_move",
+      "at": "2026-09-15T14:35:37.002Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "move",
+      "text": "a passé « Communiqué de presse » en Brief"
+    },
+    {
+      "id": "a_2026-09-15T14:35:37.834Z_o_mu2paoc9nqvk3w_move",
+      "at": "2026-09-15T14:35:37.834Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "move",
+      "text": "a passé « Communiqué de presse » en Création"
     }
   ]
 }

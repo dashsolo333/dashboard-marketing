@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:21:01.904Z",
+  "updatedAt": "2026-09-15T13:21:06.509Z",
   "stages": [
     {
       "id": "idea",
@@ -132,7 +132,7 @@
       "title": "Progamme ambassadeur",
       "description": "",
       "icon": "",
-      "kind": "post",
+      "kind": "campaign",
       "channels": [],
       "urgent": false,
       "owner": "dashsolo333",
@@ -160,7 +160,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:21:01.904Z",
+      "updatedAt": "2026-09-15T13:21:06.509Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -222,6 +222,17 @@
       "opId": "o_mu2p9u4wq53i96",
       "type": "create",
       "text": "a créé « Progamme ambassadeur »"
+    },
+    {
+      "id": "a_2026-09-15T13:21:06.509Z_o_mu2p9u4wq53i96_update",
+      "at": "2026-09-15T13:21:06.509Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p9u4wq53i96",
+      "type": "update",
+      "text": "a modifié kind de « Progamme ambassadeur »"
     }
   ]
 }

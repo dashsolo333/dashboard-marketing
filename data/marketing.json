@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:22:51.457Z",
+  "updatedAt": "2026-09-15T13:22:53.031Z",
   "stages": [
     {
       "id": "idea",
@@ -221,7 +221,7 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "brief",
+      "stageId": "idea",
       "campaignId": "",
       "links": [],
       "dates": {
@@ -240,7 +240,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:22:51.457Z",
+      "updatedAt": "2026-09-15T13:22:53.031Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -368,6 +368,17 @@
       "opId": "o_mu2pbypbydw99g",
       "type": "move",
       "text": "a passé « Tiktok » en Brief"
+    },
+    {
+      "id": "a_2026-09-15T13:22:53.031Z_o_mu2pbypbydw99g_move",
+      "at": "2026-09-15T13:22:53.031Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2pbypbydw99g",
+      "type": "move",
+      "text": "a passé « Tiktok » en Idée"
     }
   ]
 }

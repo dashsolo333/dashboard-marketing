@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:17:20.779Z",
+  "updatedAt": "2026-09-15T14:17:25.694Z",
   "stages": [
     {
       "id": "idea",
@@ -301,7 +301,7 @@
       "id": "o_mu2qcdvs663q78",
       "title": "Brochure France Indépendants",
       "description": "Envoyer la brochure à tous les indépendants",
-      "icon": "",
+      "icon": "📰",
       "kind": "campaign",
       "channels": [],
       "urgent": false,
@@ -363,7 +363,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:52:16.666Z",
+      "updatedAt": "2026-09-15T14:17:25.694Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -956,6 +956,17 @@
       "opId": "o_mu2pbypbydw99g",
       "type": "update",
       "text": "a modifié icon de « Vidéo Tiktok 1 »"
+    },
+    {
+      "id": "a_2026-09-15T14:17:25.694Z_o_mu2qcdvs663q78_update",
+      "at": "2026-09-15T14:17:25.694Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2qcdvs663q78",
+      "type": "update",
+      "text": "a modifié icon de « Brochure France Indépendants »"
     }
   ]
 }

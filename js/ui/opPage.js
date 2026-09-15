@@ -1,6 +1,7 @@
 // Page pleine largeur d'un coup : étape + checklist, contenu, validation, résultats.
 import { h, icon, avatar, fmtDay, fmtDayFull, relTime, today } from './dom.js';
 import { stageStepper } from './gauge.js';
+import { emojiPicker } from './emoji.js';
 import { KINDS, newId } from '../model/doc.js';
 import { updateOp, deleteOp, duplicateOp, lastVerdict, checklistProgress } from '../model/ops.js';
 import { renderChecklist } from './checklist.js';
@@ -40,7 +41,7 @@ export function renderOpPage(ctx, op) {
       h('button', { type: 'button', onClick: () => ctx.openSettings() }, 'Se connecter')) : null,
 
     h('header', { class: 'fpage-head' },
-      h('div', { class: 'drawer-icon fpage-icon' }, h('input', { 'aria-label': 'Icône', value: op.icon || '', maxlength: 4, placeholder: '✦', disabled: ro, onChange: (e) => patch({ icon: e.target.value.trim() }) })),
+      emojiPicker({ value: op.icon || '', size: 'lg', disabled: ro, onPick: (v) => patch({ icon: v }, v ? `a donné l’icône ${v} à « ${op.title} »` : `a retiré l’icône de « ${op.title} »`) }),
       h('div', { class: 'fpage-title' },
         h('input', { class: 'input input-title fpage-title-input', value: op.title, 'aria-label': 'Titre', disabled: ro, dataset: { key: `title:${op.id}` },
           onChange: (e) => { if (e.target.value.trim()) patch({ title: e.target.value.trim() }, `a renommé « ${op.title} » en « ${e.target.value.trim()} »`); else e.target.value = op.title; } }),

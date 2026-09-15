@@ -1,3 +1,4 @@
+import { emojiPicker } from './emoji.js';
 import { h, icon, fmtDay } from './dom.js';
 import { KINDS, newId } from '../model/doc.js';
 import { createOp } from '../model/ops.js';
@@ -5,14 +6,14 @@ import { createOp } from '../model/ops.js';
 /** Fiche vierge : un coup créé à la main, au stade idée (ou pré-daté depuis le calendrier). */
 export function renderCreate(ctx, preset = {}) {
   const doc = ctx.doc;
-  let title; let kind; let iconEl; let desc; let campaign; let date; let time; let rubric;
+  let title; let kind; let desc; let iconValue = preset.icon || ''; let campaign; let date; let time; let rubric;
   const channels = new Set((preset.channels || []).filter((id) => doc.channels.some((c) => c.id === id)));
   const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
   const submit = (e) => {
     e.preventDefault();
     const id = newId('o');
     const ok = ctx.act(`a créé « ${title.value.trim()} »`, (d) => createOp(d, {
-      id, title: title.value, description: desc.value.trim(), icon: iconEl.value.trim(), kind: kind.value, channels: [...channels],
+      id, title: title.value, description: desc.value.trim(), icon: iconValue, kind: kind.value, channels: [...channels],
       rubric: rubric.value.trim(), campaignId: campaign.value, owner: ctx.store.state.user?.login || '',
       dates: { publishPlanned: date.value }, publishTime: time.value, ...ctx.meta(),
     }));
@@ -27,7 +28,7 @@ export function renderCreate(ctx, preset = {}) {
     h('form', { class: 'modal glass', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'create-title', onSubmit: submit },
       h('div', { class: 'modal-head' }, h('h2', { id: 'create-title' }, preset.publishPlanned ? `Nouveau coup le ${fmtDay(preset.publishPlanned)}` : 'Nouveau coup'), h('button', { type: 'button', class: 'btn btn-ghost btn-icon', 'aria-label': 'Fermer', onClick: ctx.closeModal }, icon('close'))),
       h('div', { style: { display: 'grid', gridTemplateColumns: '64px 1fr', gap: '12px' } },
-        h('div', { class: 'field' }, h('label', { for: 'c-icon' }, 'Icône'), iconEl = h('input', { id: 'c-icon', class: 'input', placeholder: '✦', maxlength: 4, style: { textAlign: 'center', fontSize: '18px' } })),
+        h('div', { class: 'field' }, h('span', { class: 'field-label' }, 'Icône'), emojiPicker({ value: iconValue, size: 'md', onPick: (v) => { iconValue = v; } })),
         h('div', { class: 'field' }, h('label', { for: 'c-title' }, 'Titre'), title = h('input', { id: 'c-title', class: 'input', required: true, placeholder: 'Ex. Reel lancement Ligues, Newsletter #2, Tournoi…', autofocus: true }))),
       h('div', { class: 'field', style: { marginTop: '12px' } }, h('span', { class: 'field-label' }, 'Canaux'), h('div', { class: 'toggle-row' }, doc.channels.map(channelBtn))),
       h('div', { class: 'modal-grid', style: { marginTop: '12px' } },

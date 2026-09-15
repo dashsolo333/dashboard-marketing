@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { emptyDoc } from '../js/model/doc.js';
+import { emptyDoc, formatEffort, normalizeEffort, effortHours } from '../js/model/doc.js';
 import {
   createOp, updateOp, moveOp, addReview, deleteOp, lastVerdict, isLate, opById, setResults, duplicateOp, opDay, setOrder, byRank,
 } from '../js/model/ops.js';
@@ -122,4 +122,15 @@ test('setOrder assigns manual ranks in the given order and journals once', () =>
   assert.deepEqual([...d.ops].sort(byRank).map((o) => o.id), ['o3', 'o1', 'o2']);
   // Idempotent : même ordre → même document, pas de nouvelle entrée
   assert.equal(setOrder(d, ['o3', 'o1'], { by: who, at: now }), d);
+});
+
+test('effort: value + unit normalised, formatted as « x h / x J / x S », sortable in hours', () => {
+  let d = withOne();
+  assert.deepEqual(opById(d, 'o1').effort, { value: null, unit: 'h' });
+  assert.equal(formatEffort(opById(d, 'o1').effort), '');
+  d = updateOp(d, 'o1', { effort: { value: 2.5, unit: 'd' } }, { by: who, at: now });
+  assert.equal(formatEffort(opById(d, 'o1').effort), '2,5 J');
+  assert.equal(effortHours(opById(d, 'o1').effort), 20);
+  assert.deepEqual(normalizeEffort({ value: '3', unit: 'w' }), { value: 3, unit: 'w' });
+  assert.deepEqual(normalizeEffort({ value: -1, unit: 'zz' }), { value: null, unit: 'h' });
 });

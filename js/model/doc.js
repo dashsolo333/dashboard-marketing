@@ -30,6 +30,32 @@ export const KINDS = [
   { id: 'other', label: 'Autre' },
 ];
 
+/** Durée de travail estimée : valeur + unité (heures, jours, semaines). */
+export const EFFORT_UNITS = [
+  { id: 'h', short: 'h', label: 'heures', hours: 1 },
+  { id: 'd', short: 'J', label: 'jours', hours: 8 },
+  { id: 'w', short: 'S', label: 'semaines', hours: 40 },
+];
+
+export function normalizeEffort(e) {
+  const value = Number(e?.value);
+  const unit = EFFORT_UNITS.some((u) => u.id === e?.unit) ? e.unit : 'h';
+  return { value: Number.isFinite(value) && value > 0 ? Math.round(value * 10) / 10 : null, unit };
+}
+
+/** « 3 h », « 2 J », « 1 S » ; '' si aucune estimation. */
+export function formatEffort(e) {
+  if (!e || e.value === null) return '';
+  const u = EFFORT_UNITS.find((x) => x.id === e.unit) || EFFORT_UNITS[0];
+  return `${String(e.value).replace('.', ',')} ${u.short}`;
+}
+
+/** Équivalent en heures, pour trier. */
+export function effortHours(e) {
+  if (!e || e.value === null) return 0;
+  return e.value * (EFFORT_UNITS.find((x) => x.id === e.unit)?.hours || 1);
+}
+
 export const RESULT_FIELDS = [
   { id: 'views', label: 'Vues' },
   { id: 'likes', label: 'Likes' },
@@ -126,6 +152,7 @@ export function normalizeOp(o, knownChannels = null) {
     items: Array.isArray(o.items) ? o.items.map(normalizeItem) : [],
     results: normalizeResults(o.results, new Set(channels)),
     publishedBy: o.publishedBy || null,
+    effort: normalizeEffort(o.effort),
     rank: Number.isFinite(o.rank) ? o.rank : null, // ordre manuel de la liste (null = jamais classé)
     createdAt: o.createdAt || '',
     createdBy: o.createdBy || null,

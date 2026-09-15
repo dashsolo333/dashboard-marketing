@@ -1,6 +1,7 @@
 import { h, icon, avatar, fmtDay, relTime, today } from './dom.js';
 import { stageById } from '../model/stages.js';
 import { isLate, checklistProgress, opDay, byRank } from '../model/ops.js';
+import { formatEffort, effortHours } from '../model/doc.js';
 import { verdictBadge, channelDots, channelNames } from './card.js';
 import { visibleOps } from './filters.js';
 
@@ -13,6 +14,7 @@ const COLS = [
   { id: 'verdict', label: 'Validation', get: (o) => (o.reviews.at(-1)?.verdict || 'zz') },
   { id: 'tasks', label: 'Checklist', get: (o) => { const p = checklistProgress(o); return p.total ? p.done / p.total : -1; } },
   { id: 'campaign', label: 'Campagne', get: (o, doc) => doc.campaigns.find((c) => c.id === o.campaignId)?.name || 'zz' },
+  { id: 'effort', label: 'Durée', get: (o) => effortHours(o.effort) || 1e9 },
   { id: 'owner', label: 'Resp.', get: (o) => o.owner || 'zz' },
   { id: 'updated', label: 'Mis à jour', get: (o) => o.updatedAt },
 ];
@@ -70,6 +72,7 @@ export function renderList(ctx) {
           h('td', {}, verdictBadge(o) || h('span', { class: 'dim' }, '—')),
           h('td', {}, tasksCell(checklistProgress(o))),
           h('td', { class: 'muted td-campaign', title: campaign?.name || '' }, campaign ? `${campaign.icon ? `${campaign.icon} ` : ''}${campaign.name}` : '—'),
+          h('td', { class: 'muted td-effort' }, formatEffort(o.effort) || '—'),
           h('td', { class: 'muted' }, o.owner || '—'),
           h('td', {}, h('div', { class: 'td-updated' }, avatar(o.updatedBy, 20), h('span', { class: 'muted' }, relTime(o.updatedAt)))));
         return tr;

@@ -104,6 +104,7 @@ export function icon(name) {
     left: 'M15 18l-6-6 6-6',
     note: 'M4 4h16v12l-4 4H4zM8 9h8M8 13h5',
     right: 'M9 6l6 6-6 6',
+  clock: 'M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z',
   grip: 'M9 6h.01M9 12h.01M9 18h.01M15 6h.01M15 12h.01M15 18h.01',
   copy: 'M8 8h12v12H8zM16 8V4H4v12h4',
   };

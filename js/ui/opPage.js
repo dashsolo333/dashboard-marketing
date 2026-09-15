@@ -2,13 +2,13 @@
 import { h, icon, avatar, fmtDay, fmtDayFull, relTime, today } from './dom.js';
 import { stageStepper } from './gauge.js';
 import { emojiPicker } from './emoji.js';
-import { newId } from '../model/doc.js';
+import { newId, formatEffort, normalizeEffort } from '../model/doc.js';
 import { updateOp, deleteOp, duplicateOp } from '../model/ops.js';
 import { renderChecklist } from './checklist.js';
 import { stageIndex, canMoveTo } from '../model/stages.js';
 import { opTimeline } from '../model/timeline.js';
 import { renderJournal } from './journal.js';
-import { pillSelect, inlineText, renderPublication, renderContent, renderValidation, renderResults, renderLinks } from './opParts.js';
+import { pillSelect, inlineText, effortInput, renderPublication, renderContent, renderValidation, renderResults, renderLinks } from './opParts.js';
 import { publishPill } from './card.js';
 
 export function renderOpPage(ctx, op) {
@@ -48,6 +48,7 @@ export function renderOpPage(ctx, op) {
           h('datalist', { id: 'rubric-list' }, rubrics.map((r) => h('option', { value: r }))),
           pillSelect([{ id: '', label: 'Sans campagne' }, ...doc.campaigns.map((c) => ({ id: c.id, label: `${c.icon ? `${c.icon} ` : ''}${c.name}` }))], op.campaignId, ro, (v) => patch({ campaignId: v }, `a rattaché « ${op.title} » à une campagne`)),
           pillSelect([{ id: '', label: 'Sans responsable' }, ...people.map((p) => ({ id: p, label: `Resp. ${p}` }))], op.owner, ro, (v) => patch({ owner: v }, v ? `a confié « ${op.title} » à ${v}` : `a retiré le responsable de « ${op.title} »`)),
+          effortInput(op.effort, { disabled: ro }, (v) => patch({ effort: v }, v.value ? `a estimé « ${op.title} » à ${formatEffort(normalizeEffort(v))}` : `a retiré l’estimation de « ${op.title} »`)),
           h('button', { type: 'button', class: `toggle toggle-xs toggle-urgent`, 'aria-pressed': op.urgent ? 'true' : 'false', disabled: ro, onClick: () => patch({ urgent: !op.urgent }, op.urgent ? `a retiré l’urgence de « ${op.title} »` : `a marqué « ${op.title} » urgent`) }, '🔥 Urgent')),
         h('div', { class: 'toggle-row', style: { marginTop: '10px' } }, doc.channels.map((c) => h('button', {
           type: 'button', class: 'toggle toggle-xs toggle-channel', 'aria-pressed': op.channels.includes(c.id) ? 'true' : 'false', disabled: ro, style: { '--ch': c.color },

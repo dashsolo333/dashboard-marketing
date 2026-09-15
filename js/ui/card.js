@@ -1,3 +1,4 @@
+import { formatEffort } from '../model/doc.js';
 import { h, icon, avatar, fmtDay, today } from './dom.js';
 import { isLate, lastVerdict, checklistProgress } from '../model/ops.js';
 
@@ -46,6 +47,11 @@ export function channelNames(doc, op) {
   return op.channels.map((id) => doc.channels.find((c) => c.id === id)?.label).filter(Boolean).join(' · ');
 }
 
+export function effortChip(op) {
+  const txt = formatEffort(op.effort);
+  return txt ? h('span', { class: 'chip chip-xs chip-effort', title: 'Durée de travail estimée' }, icon('clock'), txt) : null;
+}
+
 export function renderCard(ctx, op) {
   const doc = ctx.doc;
   const done = op.stageId === doc.gates.finalStageId; // un coup publié ne se déplace plus (comme dans le calendrier)
@@ -67,6 +73,7 @@ export function renderCard(ctx, op) {
     publishPill(op),
     urgentBadge(op),
     verdictBadge(op),
+    effortChip(op),
     tasksChip(op),
     campaignChip(doc, op),
     avatar(op.updatedBy, 20)));

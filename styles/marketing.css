@@ -378,3 +378,17 @@
 /* Validation prévue */
 .validation .milestone-row { margin-bottom: 12px; }
 .validation.is-review-late { border-color: rgba(248,113,113,.45); }
+
+/* ---------- Durée de travail estimée ---------- */
+.effort-ctl { display: inline-flex; align-items: center; gap: 4px; height: 32px; padding: 0 6px 0 10px; border-radius: var(--r-pill); border: 1px solid var(--hairline); background: var(--glass); color: var(--ink-3); }
+.effort-ctl .ico { width: 14px; height: 14px; flex: none; }
+.effort-num { width: 58px; min-height: 26px; height: 26px; padding: 0 6px; text-align: right; font-variant-numeric: tabular-nums; border: 0; background: transparent; color: var(--ink); }
+.effort-num::-webkit-outer-spin-button, .effort-num::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.effort-num { -moz-appearance: textfield; appearance: textfield; }
+.effort-num:focus { background: rgba(0,0,0,.3); box-shadow: none; }
+.effort-unit { min-height: 26px; height: 26px; min-width: 58px; padding: 0 26px 0 10px; font-size: 13px; font-weight: 600; border: 0; background-color: transparent; color: var(--ink-2); }
+.field .effort-ctl { height: 42px; width: 100%; justify-content: flex-start; }
+.field .effort-num { flex: 1; text-align: left; }
+.chip-effort { color: var(--ink-2); }
+.chip-effort .ico { width: 12px; height: 12px; margin-right: 2px; }
+.td-effort { font-variant-numeric: tabular-nums; }

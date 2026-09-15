@@ -1,6 +1,6 @@
 // Pièces de la fiche coup : publication, contenu, validation, résultats par canal, liens.
 import { h, icon, avatar, fmtDay, relTime, today } from './dom.js';
-import { newId, RESULT_FIELDS } from '../model/doc.js';
+import { newId, RESULT_FIELDS, EFFORT_UNITS } from '../model/doc.js';
 import { updateOp, addReview, removeReview, setResults, lastVerdict } from '../model/ops.js';
 import { milestoneStatus, shiftDay } from '../model/milestones.js';
 
@@ -54,6 +54,16 @@ export function inlineText({ key, value = '', placeholder = '', disabled = false
   };
   if (editingKeys.has(key) && !disabled) edit(); else wrap.append(view());
   return wrap;
+}
+
+/** Saisie de la durée estimée : nombre + unité (h / J / S). onChange reçoit { value, unit }. */
+export function effortInput(effort, { disabled = false, id = '' } = {}, onChange) {
+  let num; let unit;
+  const emit = () => onChange({ value: num.value === '' ? null : Number(num.value), unit: unit.value });
+  num = h('input', { id: id || null, class: 'input effort-num', type: 'number', min: 0, step: 0.5, inputmode: 'decimal', placeholder: '—', value: effort?.value ?? '', disabled, 'aria-label': 'Durée estimée', onChange: emit });
+  unit = h('select', { class: 'select effort-unit', disabled, 'aria-label': 'Unité de durée', onChange: emit },
+    EFFORT_UNITS.map((u) => h('option', { value: u.id, selected: u.id === (effort?.unit || 'h'), title: u.label }, u.short)));
+  return h('span', { class: 'effort-ctl', title: 'Durée de travail estimée' }, icon('clock'), num, unit);
 }
 
 /** Publication : date + heure prévues, date réelle, état lisible, raccourcis. */

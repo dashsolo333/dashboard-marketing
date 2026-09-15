@@ -28,7 +28,8 @@ connectée. Même architecture que `futnow-features-dashboard`.
   **publication** (date + heure, raccourcis +1 j / +1 sem), **validation** avec date
   prévue et décision en un clic (Valider / Refuser avec commentaire, qui et quand), **résultats par canal** (vues, likes,
   commentaires, partages, clics, inscriptions + total), liens, frise, historique.
-  Rubrique (« Best-of du lundi »…), responsable, drapeau **Urgent**, bouton **Dupliquer**
+  Rubrique (« Best-of du lundi »…), responsable, **durée de travail estimée** (h / J / S),
+  drapeau **Urgent**, bouton **Dupliquer**
   (copie prête pour la semaine suivante).
 - **Campagnes** : objectif chiffré (cible / réalisé, barre), fenêtre, coups rattachés avec
   date et étape, résultats cumulés.

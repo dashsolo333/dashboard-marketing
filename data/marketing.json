@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:15:51.780Z",
+  "updatedAt": "2026-09-15T15:17:26.675Z",
   "stages": [
     {
       "id": "idea",
@@ -507,6 +507,46 @@
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
       "updatedAt": "2026-09-15T15:02:40.630Z",
+      "updatedBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      }
+    },
+    {
+      "id": "o_mu2tfjmbxj7trl",
+      "title": "Bannière snapchat F8",
+      "description": "",
+      "icon": "🎬",
+      "kind": "video",
+      "channels": [],
+      "urgent": false,
+      "owner": "dashsolo333",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
+      "stageId": "idea",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "rank": null,
+      "createdAt": "2026-09-15T15:17:26.675Z",
+      "createdBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "updatedAt": "2026-09-15T15:17:26.675Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1360,6 +1400,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié caption de « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T15:17:26.675Z_o_mu2tfjmbxj7trl_create",
+      "at": "2026-09-15T15:17:26.675Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2tfjmbxj7trl",
+      "type": "create",
+      "text": "a créé « Bannière snapchat F8 »"
     }
   ]
 }

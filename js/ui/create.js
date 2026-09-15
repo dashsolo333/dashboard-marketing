@@ -6,7 +6,7 @@ import { createOp } from '../model/ops.js';
 export function renderCreate(ctx, preset = {}) {
   const doc = ctx.doc;
   let title; let kind; let iconEl; let desc; let campaign; let date; let time; let rubric;
-  const channels = new Set();
+  const channels = new Set((preset.channels || []).filter((id) => doc.channels.some((c) => c.id === id)));
   const rubrics = [...new Set(doc.ops.map((o) => o.rubric).filter(Boolean))].sort();
   const submit = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ export function renderCreate(ctx, preset = {}) {
     if (ok) { ctx.closeModal(); ctx.openOp(id); }
   };
   const channelBtn = (c) => {
-    const b = h('button', { type: 'button', class: 'toggle toggle-channel', 'aria-pressed': 'false', style: { '--ch': c.color },
+    const b = h('button', { type: 'button', class: 'toggle toggle-channel', 'aria-pressed': channels.has(c.id) ? 'true' : 'false', style: { '--ch': c.color },
       onClick: () => { const on = !channels.has(c.id); if (on) channels.add(c.id); else channels.delete(c.id); b.setAttribute('aria-pressed', on ? 'true' : 'false'); } }, `${c.icon} ${c.label}`);
     return b;
   };

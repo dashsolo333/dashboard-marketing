@@ -22,22 +22,28 @@ function renderChannel(ctx, s, max, t) {
   return h('section', { class: `channel-card glass${dry ? ' is-dry' : ''}`, style: { '--ch': s.channel.color } },
     h('header', { class: 'channel-head' },
       h('span', { class: 'channel-icon' }, s.channel.icon),
-      h('div', { class: 'channel-name' }, h('h2', {}, s.channel.label), h('span', { class: 'muted' }, s.last ? `dernière publication ${fmtDay(s.last)}` : 'jamais publié')),
-      dry ? h('span', { class: 'badge badge-late' }, 'rien de prévu') : null,
-      h('button', { type: 'button', class: 'btn btn-ghost btn-sm', onClick: () => ctx.setFilter({ channel: s.channel.id }, { view: 'calendar' }) }, 'Calendrier', icon('arrow'))),
+      h('div', { class: 'channel-name' },
+        h('h2', {}, s.channel.label),
+        h('span', { class: 'channel-sub' },
+          h('span', { class: 'muted' }, s.last ? `dernière publication ${fmtDay(s.last)}` : 'jamais publié'),
+          dry ? h('span', { class: 'badge badge-late' }, 'rien de prévu') : null)),
+      h('button', { type: 'button', class: 'btn btn-ghost btn-sm channel-cal', title: 'Voir ce canal dans le calendrier', onClick: () => ctx.setFilter({ channel: s.channel.id }, { view: 'calendar' }) }, 'Calendrier', icon('arrow'))),
     h('div', { class: 'channel-figures' },
       figure(s.week, 'cette semaine'),
       figure(s.month, 'ce mois'),
       figure(s.next30, '30 prochains jours'),
       figure(s.unscheduled, 'sans date', s.unscheduled > 0 ? 'is-warn' : '')),
-    h('div', { class: 'spark', role: 'img', 'aria-label': `Publications par semaine : ${s.weeks.join(', ')}` },
+    s.weeks.every((n) => !n) ? h('div', { class: 'spark is-empty' }, 'Aucune publication sur les 8 dernières semaines')
+      : h('div', { class: 'spark', role: 'img', 'aria-label': `Publications par semaine : ${s.weeks.join(', ')}` },
       s.weeks.map((n, i) => h('div', { class: `spark-col${i === s.weeks.length - 1 ? ' is-current' : ''}`, title: `Semaine du ${fmtDay(s.weekStarts[i])} : ${n}` },
         h('i', { style: { height: `${Math.max(4, (n / max) * 100)}%` } }), h('span', {}, n || '')))),
     upcoming.length ? h('div', { class: 'channel-next' }, upcoming.map((o) => h('button', { type: 'button', class: 'agenda-item', onClick: () => ctx.openOp(o.id) },
       h('span', { class: 'agenda-time' }, fmtDay(opDay(o))),
       h('span', { class: 'agenda-title' }, `${o.icon ? `${o.icon} ` : ''}${o.title}`),
       h('span', { class: 'chip chip-stage chip-xs', style: { '--dot': stageById(doc, o.stageId)?.color } }, h('i', { class: 'chip-dot' }), stageById(doc, o.stageId)?.label))))
-      : h('p', { class: 'hint' }, ctx.canWrite() ? 'Rien à venir. Crée un coup sur ce canal.' : 'Rien à venir.'));
+      : h('div', { class: 'channel-empty' },
+        h('span', { class: 'hint' }, 'Rien à venir.'),
+        ctx.canWrite() ? h('button', { type: 'button', class: 'btn btn-sm', onClick: () => ctx.openCreate({ channels: [s.channel.id] }) }, icon('plus'), 'Créer un coup') : null));
 }
 
 function figure(value, label, tone = '') {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:26:56.981Z",
+  "updatedAt": "2026-09-15T13:47:31.480Z",
   "stages": [
     {
       "id": "idea",
@@ -149,7 +149,24 @@
         "publishActual": ""
       },
       "reviews": [],
-      "items": [],
+      "items": [
+        {
+          "id": "i_mu2q7wnsaveb5u",
+          "text": "Brainstrormer idées pour acquisition ambassadeurs",
+          "group": "idea",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-15T13:47:31.480Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
+        }
+      ],
       "results": {
         "channels": {},
         "notes": ""
@@ -160,7 +177,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:21:09.413Z",
+      "updatedAt": "2026-09-15T13:47:31.480Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -401,6 +418,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié caption de « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T13:47:31.480Z_o_mu2p9u4wq53i96_update",
+      "at": "2026-09-15T13:47:31.480Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p9u4wq53i96",
+      "type": "update",
+      "text": "a ajouté la tâche « Brainstrormer idées pour acquisition ambassadeurs » à « Progamme ambassadeur »"
     }
   ]
 }

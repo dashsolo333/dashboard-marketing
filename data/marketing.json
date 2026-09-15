@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:42:21.726Z",
+  "updatedAt": "2026-09-15T15:43:06.484Z",
   "stages": [
     {
       "id": "idea",
@@ -164,7 +164,7 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "idea",
+      "stageId": "brief",
       "campaignId": "",
       "links": [],
       "dates": {
@@ -222,7 +222,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:42:21.726Z",
+      "updatedAt": "2026-09-15T15:43:06.484Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1386,6 +1386,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "update",
       "text": "a modifié caption de « Communiqué Lancement v1 [cloture béta] »"
+    },
+    {
+      "id": "a_2026-09-15T15:43:06.484Z_o_mu2paoc9nqvk3w_move",
+      "at": "2026-09-15T15:43:06.484Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "move",
+      "text": "a passé « Communiqué Lancement v1 [cloture béta] » en Brief"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T13:49:42.487Z",
+  "updatedAt": "2026-09-15T13:49:59.095Z",
   "stages": [
     {
       "id": "idea",
@@ -263,7 +263,24 @@
         "publishActual": ""
       },
       "reviews": [],
-      "items": [],
+      "items": [
+        {
+          "id": "i_mu2qb2k7dmicxp",
+          "text": "Brainstormer tone",
+          "group": "idea",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-15T13:49:59.095Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
+        }
+      ],
       "results": {
         "channels": {},
         "notes": ""
@@ -274,7 +291,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T13:23:18.616Z",
+      "updatedAt": "2026-09-15T13:49:59.095Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -545,6 +562,17 @@
       "opId": "o_mu2paoc9nqvk3w",
       "type": "move",
       "text": "a passé « Communiqué de presse » en Idée"
+    },
+    {
+      "id": "a_2026-09-15T13:49:59.095Z_o_mu2pbypbydw99g_update",
+      "at": "2026-09-15T13:49:59.095Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2pbypbydw99g",
+      "type": "update",
+      "text": "a ajouté la tâche « Brainstormer tone » à « Vidéo Tiktok 1 »"
     }
   ]
 }

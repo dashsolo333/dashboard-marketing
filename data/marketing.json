@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:33:44.386Z",
+  "updatedAt": "2026-09-15T15:33:45.962Z",
   "stages": [
     {
       "id": "idea",
@@ -243,7 +243,7 @@
       "publishedBy": null,
       "effort": {
         "value": 5,
-        "unit": "h"
+        "unit": "d"
       },
       "rank": 30,
       "createdAt": "2026-09-15T13:21:41.049Z",
@@ -251,7 +251,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:33:44.386Z",
+      "updatedAt": "2026-09-15T15:33:45.962Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1482,6 +1482,17 @@
     {
       "id": "a_2026-09-15T15:33:44.386Z_o_mu2paoc9nqvk3w_update",
       "at": "2026-09-15T15:33:44.386Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié effort de « Communiqué de presse »"
+    },
+    {
+      "id": "a_2026-09-15T15:33:45.962Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:33:45.962Z",
       "by": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"

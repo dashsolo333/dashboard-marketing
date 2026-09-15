@@ -86,7 +86,18 @@
       "color": "#fb923c"
     }
   ],
-  "campaigns": [],
+  "campaigns": [
+    {
+      "id": "c_mu2udwbkqfyfgj",
+      "name": "Tiktok",
+      "icon": "",
+      "goal": "",
+      "target": 0,
+      "actual": 0,
+      "startAt": "",
+      "endAt": ""
+    }
+  ],
   "ops": [
     {
       "id": "o_mu2p8g6yehanyo",

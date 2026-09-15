@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T15:21:38.171Z",
+  "updatedAt": "2026-09-15T15:33:44.386Z",
   "stages": [
     {
       "id": "idea",
@@ -134,6 +134,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 40,
       "createdAt": "2026-09-15T13:19:57.178Z",
       "createdBy": {
@@ -192,6 +196,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 20,
       "createdAt": "2026-09-15T13:21:01.904Z",
       "createdBy": {
@@ -233,13 +241,17 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": 5,
+        "unit": "h"
+      },
       "rank": 30,
       "createdAt": "2026-09-15T13:21:41.049Z",
       "createdBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:15:51.780Z",
+      "updatedAt": "2026-09-15T15:33:44.386Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -293,6 +305,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 50,
       "createdAt": "2026-09-15T13:22:41.135Z",
       "createdBy": {
@@ -367,6 +383,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 60,
       "createdAt": "2026-09-15T13:51:00.424Z",
       "createdBy": {
@@ -413,6 +433,10 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 70,
       "createdAt": "2026-09-15T13:54:00.099Z",
       "createdBy": {
@@ -454,6 +478,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 80,
       "createdAt": "2026-09-15T13:54:34.481Z",
       "createdBy": {
@@ -508,6 +536,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 90,
       "createdAt": "2026-09-15T14:59:42.888Z",
       "createdBy": {
@@ -549,6 +581,10 @@
         "notes": ""
       },
       "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
       "rank": 10,
       "createdAt": "2026-09-15T15:17:26.675Z",
       "createdBy": {
@@ -1442,6 +1478,17 @@
       "opId": "o_mu2tfjmbxj7trl",
       "type": "update",
       "text": "a modifié urgent de « Bannière snapchat F8 »"
+    },
+    {
+      "id": "a_2026-09-15T15:33:44.386Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-15T15:33:44.386Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié effort de « Communiqué de presse »"
     }
   ]
 }

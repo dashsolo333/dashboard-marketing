@@ -24,4 +24,5 @@ export const CONFIG = {
   tokenKey: 'ftn.marketing.token',
   userKey: 'ftn.marketing.user',
   viewKey: 'ftn.marketing.view',
+  sortKey: 'ftn.marketing.sort',
 };

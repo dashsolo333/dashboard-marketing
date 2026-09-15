@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { emptyDoc } from '../js/model/doc.js';
 import {
-  createOp, updateOp, moveOp, addReview, deleteOp, lastVerdict, isLate, opById, setResults, duplicateOp, opDay,
+  createOp, updateOp, moveOp, addReview, deleteOp, lastVerdict, isLate, opById, setResults, duplicateOp, opDay, setOrder, byRank,
 } from '../js/model/ops.js';
 
 const who = { login: 'nadir', avatar: 'https://x/y.png' };
@@ -107,4 +107,19 @@ test('activity journal is capped', () => {
   let d = emptyDoc();
   for (let i = 0; i < 620; i += 1) d = createOp(d, { id: `o${i}`, title: `O${i}`, by: who, at: now });
   assert.ok(d.activity.length <= 500);
+});
+
+test('setOrder assigns manual ranks in the given order and journals once', () => {
+  let d = withOne();
+  d = createOp(d, { id: 'o2', title: 'Deux', kind: 'post', channels: [], by: who, at: '2026-09-14T13:00:00.000Z' });
+  d = createOp(d, { id: 'o3', title: 'Trois', kind: 'post', channels: [], by: who, at: '2026-09-14T14:00:00.000Z' });
+  const before = d.activity.length;
+  d = setOrder(d, ['o3', 'o1', 'ghost'], { by: who, at: now });
+  assert.equal(opById(d, 'o3').rank, 10);
+  assert.equal(opById(d, 'o1').rank, 20);
+  assert.equal(opById(d, 'o2').rank, null);
+  assert.equal(d.activity.length, before + 1);
+  assert.deepEqual([...d.ops].sort(byRank).map((o) => o.id), ['o3', 'o1', 'o2']);
+  // Idempotent : même ordre → même document, pas de nouvelle entrée
+  assert.equal(setOrder(d, ['o3', 'o1'], { by: who, at: now }), d);
 });

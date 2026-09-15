@@ -126,6 +126,7 @@ export function normalizeOp(o, knownChannels = null) {
     items: Array.isArray(o.items) ? o.items.map(normalizeItem) : [],
     results: normalizeResults(o.results, new Set(channels)),
     publishedBy: o.publishedBy || null,
+    rank: Number.isFinite(o.rank) ? o.rank : null, // ordre manuel de la liste (null = jamais classé)
     createdAt: o.createdAt || '',
     createdBy: o.createdBy || null,
     updatedAt: o.updatedAt || o.createdAt || '',

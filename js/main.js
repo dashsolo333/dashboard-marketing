@@ -13,10 +13,14 @@ import { renderJournal } from './ui/journal.js';
 import { renderOpPage } from './ui/opPage.js';
 import { renderCreate } from './ui/create.js';
 import { renderSettings } from './ui/settings.js';
-import { moveOp, opById } from './model/ops.js';
+import { moveOp, opById, setOrder } from './model/ops.js';
 import { bulkMove, bulkUpdate, bulkDelete } from './model/bulk.js';
 import { stageById } from './model/stages.js';
 import { startOfWeek, addDays } from './model/calendar.js';
+
+function readSort() {
+  try { const s = JSON.parse(localStorage.getItem(CONFIG.sortKey)); return s && s.col ? s : null; } catch { return null; }
+}
 
 const store = createStore();
 const $ = (id) => document.getElementById(id);
@@ -25,7 +29,7 @@ const ui = {
   view: readHash().view || localStorage.getItem(CONFIG.viewKey) || 'calendar',
   month: readHash().month || today().slice(0, 7),
   filters: {},
-  sort: null,
+  sort: readSort(),
   journalType: '',
   opId: readHash().op || null,
   modal: null, // 'create' | 'settings'
@@ -80,7 +84,11 @@ const ctx = {
     ui.filters = ui.filters.kpi === key ? {} : { q: ui.filters.q, channel: ui.filters.channel, kpi: key, ...filter };
     render();
   },
-  setSort(s) { ui.sort = s; renderMain(); },
+  setSort(s) { ui.sort = s; try { localStorage.setItem(CONFIG.sortKey, JSON.stringify(s)); } catch { /* stockage indisponible */ } renderMain(); },
+  /** Glisser-déposer dans la liste : enregistre l'ordre et bascule la liste en tri manuel. */
+  reorder(ids) {
+    if (ctx.act('a réordonné la liste', (d) => setOrder(d, ids, ctx.meta()))) ctx.setSort({ col: 'manual', dir: 1 });
+  },
   setJournalType(t) { ui.journalType = t; renderMain(); },
   openOp(id) { ui.opId = id; writeHash(); render(); window.scrollTo({ top: 0 }); },
   closeOp() { ui.opId = null; writeHash(); render(); },

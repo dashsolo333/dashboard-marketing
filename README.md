@@ -14,6 +14,7 @@ connectée. Même architecture que `futnow-features-dashboard`.
   replanifie. Le « + » d'une case crée un coup déjà daté. À droite : les coups à planifier
   (sans date) et l'agenda de la semaine.
 - **Tableau** kanban par étape (glisser-déposer), **Liste** triable avec checklist `x/x`,
+  ordre manuel en glissant les lignes par leur poignée (enregistré pour toute l'équipe),
   actions groupées (étape, campagne, urgence, suppression), **Campagnes**, **Canaux**,
   **Journal**.
 - **Pipeline** Idée → Brief → Création → Validation → Programmé → Publié, modulable dans

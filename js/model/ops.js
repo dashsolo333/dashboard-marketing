@@ -46,6 +46,24 @@ export function updateOp(doc, id, patch, { by, at }) {
   return journal(out, { type: 'update', opId: id, text: `a modifié ${changed.join(', ')} de « ${o.title} »`, by, at });
 }
 
+/** Ordre manuel : les coups cités prennent les rangs 10, 20, 30… dans cet ordre ; les autres gardent le leur. */
+export function setOrder(doc, ids, { by, at }) {
+  const wanted = ids.filter((id) => doc.ops.some((o) => o.id === id));
+  if (!wanted.length) return doc;
+  const rankOf = new Map(wanted.map((id, i) => [id, (i + 1) * 10]));
+  const ops = doc.ops.map((o) => (rankOf.has(o.id) && o.rank !== rankOf.get(o.id) ? { ...o, rank: rankOf.get(o.id) } : o));
+  if (ops.every((o, i) => o === doc.ops[i])) return doc;
+  return journal({ ...doc, ops }, { type: 'update', opId: null, text: 'a réordonné la liste', by, at });
+}
+
+/** Tri par rang manuel : les coups classés d'abord, puis les autres par date de création. */
+export function byRank(a, b) {
+  if (a.rank !== null && b.rank !== null) return a.rank - b.rank;
+  if (a.rank !== null) return -1;
+  if (b.rank !== null) return 1;
+  return String(a.createdAt).localeCompare(String(b.createdAt));
+}
+
 export function moveOp(doc, id, stageId, { by, at, force = false }) {
   const o = requireOp(doc, id);
   const target = stageById(doc, stageId);

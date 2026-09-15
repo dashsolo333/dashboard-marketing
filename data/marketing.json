@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-15T14:05:06.822Z",
+  "updatedAt": "2026-09-15T14:05:11.924Z",
   "stages": [
     {
       "id": "idea",
@@ -151,7 +151,7 @@
       "icon": "",
       "kind": "ambassador",
       "channels": [],
-      "urgent": true,
+      "urgent": false,
       "owner": "dashsolo333",
       "rubric": "",
       "caption": "",
@@ -194,7 +194,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:05:06.822Z",
+      "updatedAt": "2026-09-15T14:05:11.924Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -850,6 +850,17 @@
     {
       "id": "a_2026-09-15T14:05:06.822Z_o_mu2p9u4wq53i96_update",
       "at": "2026-09-15T14:05:06.822Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p9u4wq53i96",
+      "type": "update",
+      "text": "a modifié urgent de « Progamme ambassadeur »"
+    },
+    {
+      "id": "a_2026-09-15T14:05:11.924Z_o_mu2p9u4wq53i96_update",
+      "at": "2026-09-15T14:05:11.924Z",
       "by": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"

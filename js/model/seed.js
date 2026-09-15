@@ -14,7 +14,6 @@ export function demoDoc({ today }) {
   const day = (n) => addDays(d0, n);
   let d = {
     ...emptyDoc(),
-    game: { weeklyGoal: 3, season: { name: 'Rentrée 2026', startAt: day(-20), endAt: day(100), xpGoal: 1500 } },
     campaigns: [
       { id: 'c_rentree', name: 'Rentrée 2026', icon: '🎒', goal: 'Remplir les créneaux du soir : +30 % de matchs en septembre', startAt: day(-14), endAt: day(30) },
       { id: 'c_ligues', name: 'Lancement Ligues v2', icon: '🏆', goal: '10 ligues créées la première semaine', startAt: day(10), endAt: day(45) },
@@ -29,7 +28,7 @@ export function demoDoc({ today }) {
   const ko = (id, when, notes, by = LEA) => { d = addReview(d, id, { id: `r_${id}_${when}`, verdict: 'ko', notes, by, at: at(when, 12) }); };
   const dates = (id, patch, when = day(-17)) => { d = updateOp(d, id, { dates: patch }, { by: NADIR, at: at(when) }); };
 
-  // Publiés (gagnent des XP)
+  // Publiés
   make('o_reel_rentree', { title: 'Reel « la rentrée c’est le soir »', icon: '🎬', kind: 'video', channels: ['instagram', 'tiktok'], priority: 'p1', campaignId: 'c_rentree', owner: 'lea', description: 'Reel 20 s : ambiance d’un match du soir, montage rapide, CTA « rejoins un match avec ton code ».' }, LEA, day(-20));
   dates('o_reel_rentree', { reviewPlanned: day(-16), publishPlanned: day(-13) }, day(-20));
   move('o_reel_rentree', 'brief', day(-19), LEA); move('o_reel_rentree', 'create', day(-18), LEA); move('o_reel_rentree', 'review', day(-16), LEA);

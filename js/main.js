@@ -4,7 +4,6 @@ import { h, clear } from './ui/dom.js';
 import { toast } from './ui/toast.js';
 import { renderHeader, renderBanner, VIEWS } from './ui/header.js';
 import { renderKpis } from './ui/kpis.js';
-import { renderSeasonStrip, renderSeason } from './ui/season.js';
 import { renderBoard } from './ui/board.js';
 import { renderList } from './ui/list.js';
 import { renderCalendar } from './ui/calendar.js';
@@ -17,7 +16,6 @@ import { renderSettings } from './ui/settings.js';
 import { moveOp, opById } from './model/ops.js';
 import { bulkMove, bulkUpdate, bulkDelete } from './model/bulk.js';
 import { stageById } from './model/stages.js';
-import { levelOf, totalXp } from './model/game.js';
 
 const store = createStore();
 const $ = (id) => document.getElementById(id);
@@ -95,28 +93,15 @@ const ctx = {
     const o = opById(store.state.doc, id);
     if (!o || o.stageId === stageId) return;
     const stage = stageById(store.state.doc, stageId);
-    const before = levelOf(totalXp(store.state.doc));
     try {
       store.apply((d) => moveOp(d, id, stageId, { ...ctx.meta(), force }), `a passé « ${o.title} » en ${stage.label}${force ? ' (forcé)' : ''}`);
-      celebrate(o, stageId, before);
+      if (stageId === store.state.doc.gates.finalStageId) toast(`« ${o.title} » publié 🎉`, { kind: 'ok' });
     } catch (e) {
       if (!ctx.canWrite()) return toast(e.message, { kind: 'error' });
       toast(e.message, { kind: 'error', action: { label: 'Forcer quand même', onClick: () => ctx.move(id, stageId, true) } });
     }
   },
 };
-
-/** Petit moment de fête quand un coup est publié : XP gagnés, niveau franchi. */
-function celebrate(o, stageId, before) {
-  const doc = store.state.doc;
-  if (stageId !== doc.gates.finalStageId) return;
-  const after = levelOf(totalXp(doc));
-  const gained = after.xp - before.xp;
-  if (after.index > before.index) toast(`${after.icon} Niveau ${after.index + 1} · ${after.name} ! « ${o.title} » publié, +${gained} XP`, { kind: 'ok', duration: 7000 });
-  else if (gained > 0) toast(`🎉 « ${o.title} » publié · +${gained} XP${after.next ? ` · encore ${after.remaining} avant ${after.nextName}` : ''}`, { kind: 'ok', duration: 6000 });
-  document.body.classList.add('is-celebrating');
-  setTimeout(() => document.body.classList.remove('is-celebrating'), 1200);
-}
 
 function guardWrite() {
   if (ctx.canWrite()) return true;
@@ -153,9 +138,9 @@ function renderMainNow() {
     ui.opId = null;
     writeHash();
   }
-  kpis.hidden = ui.view === 'focus' || ui.view === 'season';
-  if (!kpis.hidden) kpis.append(renderSeasonStrip(ctx), h('div', { class: 'kpi-row' }, ...(renderKpis(ctx) || [])));
-  const renderers = { board: renderBoard, focus: renderFocus, list: renderList, calendar: renderCalendar, campaigns: renderCampaigns, season: renderSeason, journal: renderJournal };
+  kpis.hidden = ui.view === 'focus';
+  if (!kpis.hidden) kpis.append(h('div', { class: 'kpi-row' }, ...(renderKpis(ctx) || [])));
+  const renderers = { board: renderBoard, focus: renderFocus, list: renderList, calendar: renderCalendar, campaigns: renderCampaigns, journal: renderJournal };
   view.append((renderers[ui.view] || renderBoard)(ctx));
 }
 
@@ -252,7 +237,7 @@ document.addEventListener('keydown', (e) => {
   if (typing) return;
   if (e.key === '/') { e.preventDefault(); $('search-input')?.focus(); }
   if (e.key === 'n') ctx.openCreate();
-  if (/^[1-7]$/.test(e.key)) ctx.setView(VIEWS[Number(e.key) - 1].id);
+  if (/^[1-6]$/.test(e.key)) ctx.setView(VIEWS[Number(e.key) - 1].id);
   if (ui.view === 'focus' && !ui.opId) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       const list = focusList(ctx); if (!list.length) return;

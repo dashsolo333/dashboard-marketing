@@ -1806,14 +1806,5 @@
       "type": "create",
       "text": "a créé « Maillot collector pour les ambassadeurs »"
     }
-  ],
-  "game": {
-    "weeklyGoal": 3,
-    "season": {
-      "name": "Rentrée 2026",
-      "startAt": "2026-08-26",
-      "endAt": "2026-12-24",
-      "xpGoal": 1500
-    }
-  }
+  ]
 }

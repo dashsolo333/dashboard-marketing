@@ -3,16 +3,15 @@ import { CONFIG } from '../config.js';
 import { renameStage, recolorStage, addStage, removeStage, moveStage, setGate } from '../model/stages.js';
 import { addChannel, renameChannel, removeChannel, moveChannel } from '../model/channels.js';
 import { newId } from '../model/doc.js';
-import { LEVELS } from '../model/game.js';
 
 const TABS = [
   { id: 'account', label: 'Compte' }, { id: 'pipeline', label: 'Pipeline' }, { id: 'channels', label: 'Canaux' },
-  { id: 'campaigns', label: 'Campagnes' }, { id: 'game', label: 'Saison & XP' },
+  { id: 'campaigns', label: 'Campagnes' },
 ];
 
 export function renderSettings(ctx) {
   const tab = ctx.settingsTab || 'account';
-  const body = { account: renderAccount, pipeline: renderPipeline, channels: renderChannels, campaigns: renderCampaignsSettings, game: renderGame }[tab] || renderAccount;
+  const body = { account: renderAccount, pipeline: renderPipeline, channels: renderChannels, campaigns: renderCampaignsSettings }[tab] || renderAccount;
   return h('div', { class: 'overlay', onClick: (e) => { if (e.target === e.currentTarget) ctx.closeModal(); } },
     h('div', { class: 'modal modal-wide glass', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'settings-title' },
       h('div', { class: 'modal-head' },
@@ -123,27 +122,4 @@ function renderCampaignsSettings(ctx) {
       if (!name?.trim()) return;
       save(`a créé la campagne ${name.trim()}`, [...doc.campaigns, { id: newId('c'), name: name.trim(), icon: '', goal: '', startAt: '', endAt: '' }]);
     } }, icon('plus'), 'Nouvelle campagne'));
-}
-
-function renderGame(ctx) {
-  const doc = ctx.doc;
-  const ro = !ctx.canWrite();
-  const g = doc.game;
-  const save = (label, patch) => ctx.act(label, (d) => ({ ...d, game: { ...d.game, ...patch, season: { ...d.game.season, ...(patch.season || {}) } } }));
-  return h('div', { style: { display: 'grid', gap: '16px' } },
-    h('p', { class: 'hint' }, 'Les XP, niveaux, séries et badges sont calculés automatiquement à partir des coups publiés. Ici tu règles seulement le rythme visé et la saison en cours.'),
-    h('div', { class: 'grid-2' },
-      h('div', { class: 'field' }, h('label', { for: 'g-weekly' }, 'Objectif de publications par semaine'),
-        h('input', { id: 'g-weekly', class: 'input', type: 'number', min: 0, max: 50, value: g.weeklyGoal, disabled: ro, onChange: (e) => save(`a réglé l’objectif hebdo à ${e.target.value}`, { weeklyGoal: Math.max(0, Number(e.target.value) || 0) }) })),
-      h('div', { class: 'field' }, h('label', { for: 'g-name' }, 'Nom de la saison'),
-        h('input', { id: 'g-name', class: 'input', value: g.season.name, placeholder: 'Rentrée 2026, Q4, Ligues…', disabled: ro, onChange: (e) => save('a nommé la saison', { season: { name: e.target.value.trim() } }) }))),
-    h('div', { class: 'grid-2' },
-      h('div', { class: 'field' }, h('label', { for: 'g-start' }, 'Début'), h('input', { id: 'g-start', class: 'input', type: 'date', value: g.season.startAt, disabled: ro, onChange: (e) => save('a daté le début de saison', { season: { startAt: e.target.value } }) })),
-      h('div', { class: 'field' }, h('label', { for: 'g-end' }, 'Fin'), h('input', { id: 'g-end', class: 'input', type: 'date', value: g.season.endAt, disabled: ro, onChange: (e) => save('a daté la fin de saison', { season: { endAt: e.target.value } }) }))),
-    h('div', { class: 'field' }, h('label', { for: 'g-goal' }, 'Objectif XP de la saison'),
-      h('input', { id: 'g-goal', class: 'input', type: 'number', min: 0, step: 50, value: g.season.xpGoal || '', placeholder: '0 = pas d’objectif', disabled: ro, onChange: (e) => save(`a fixé l’objectif de saison à ${e.target.value} XP`, { season: { xpGoal: Math.max(0, Number(e.target.value) || 0) } }) })),
-    h('div', { class: 'token-help glass' },
-      h('b', {}, 'Les grades'),
-      h('div', { class: 'toggle-row' }, LEVELS.map((l) => h('span', { class: 'chip' }, `${l.icon} ${l.name} · ${l.xp}`))),
-      h('p', { class: 'hint' }, 'Le niveau de l’équipe suit le total d’XP de tous les coups publiés, saison comprise ou non. L’objectif de saison ne compte que les publications dans sa fenêtre.')));
 }

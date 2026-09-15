@@ -17,17 +17,17 @@ export const DEFAULT_CHANNELS = [
   { id: 'field', label: 'Terrain', icon: '⚽', color: '#fb923c' },
 ];
 
-/** Formats de coup : la base d'XP dépend du format. */
+/** Formats de coup. */
 export const KINDS = [
-  { id: 'post', label: 'Post', xp: 10 },
-  { id: 'story', label: 'Story', xp: 5 },
-  { id: 'video', label: 'Vidéo / Reel', xp: 25 },
-  { id: 'article', label: 'Article / Newsletter', xp: 20 },
-  { id: 'campaign', label: 'Campagne', xp: 50 },
-  { id: 'partnership', label: 'Partenariat', xp: 40 },
-  { id: 'event', label: 'Événement', xp: 40 },
-  { id: 'ambassador', label: 'Ambassadeurs', xp: 35 },
-  { id: 'other', label: 'Autre', xp: 10 },
+  { id: 'post', label: 'Post' },
+  { id: 'story', label: 'Story' },
+  { id: 'video', label: 'Vidéo / Reel' },
+  { id: 'article', label: 'Article / Newsletter' },
+  { id: 'campaign', label: 'Campagne' },
+  { id: 'partnership', label: 'Partenariat' },
+  { id: 'event', label: 'Événement' },
+  { id: 'ambassador', label: 'Ambassadeurs' },
+  { id: 'other', label: 'Autre' },
 ];
 
 export const PRIORITIES = [
@@ -46,11 +46,6 @@ export const RESULT_FIELDS = [
   { id: 'signups', label: 'Inscriptions' },
 ];
 
-export const DEFAULT_GAME = {
-  weeklyGoal: 3,
-  season: { name: '', startAt: '', endAt: '', xpGoal: 0 },
-};
-
 export function emptyDoc() {
   return {
     version: DOC_VERSION,
@@ -61,7 +56,6 @@ export function emptyDoc() {
     campaigns: [],
     ops: [],
     activity: [],
-    game: DEFAULT_GAME,
   };
 }
 
@@ -80,7 +74,6 @@ export function normalizeDoc(raw) {
     campaigns: Array.isArray(raw.campaigns) ? raw.campaigns.map(normalizeCampaign) : [],
     ops: Array.isArray(raw.ops) ? raw.ops.map((o) => normalizeOp(o, known)) : [],
     activity: Array.isArray(raw.activity) ? raw.activity : [],
-    game: { ...base.game, ...(raw.game || {}), season: { ...base.game.season, ...(raw.game?.season || {}) } },
   };
 }
 

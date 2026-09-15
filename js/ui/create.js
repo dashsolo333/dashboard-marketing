@@ -30,7 +30,7 @@ export function renderCreate(ctx) {
         h('div', { class: 'field' }, h('label', { for: 'c-title' }, 'Titre'), title = h('input', { id: 'c-title', class: 'input', required: true, placeholder: 'Ex. Reel lancement Ligues, Newsletter #2, Tournoi…', autofocus: true }))),
       h('div', { class: 'field', style: { marginTop: '12px' } }, h('span', { class: 'field-label' }, 'Canaux'), h('div', { class: 'toggle-row' }, doc.channels.map(channelBtn))),
       h('div', { class: 'modal-grid', style: { marginTop: '12px' } },
-        h('div', { class: 'field' }, h('label', { for: 'c-kind' }, 'Format'), kind = h('select', { id: 'c-kind', class: 'select' }, KINDS.map((k) => h('option', { value: k.id, selected: k.id === 'post' }, `${k.label} · ${k.xp} XP`)))),
+        h('div', { class: 'field' }, h('label', { for: 'c-kind' }, 'Format'), kind = h('select', { id: 'c-kind', class: 'select' }, KINDS.map((k) => h('option', { value: k.id, selected: k.id === 'post' }, k.label)))),
         h('div', { class: 'field' }, h('label', { for: 'c-priority' }, 'Priorité'), priority = h('select', { id: 'c-priority', class: 'select' }, PRIORITIES.map((p) => h('option', { value: p.id, selected: p.id === 'p2' }, p.label)))),
         h('div', { class: 'field' }, h('label', { for: 'c-campaign' }, 'Campagne'), campaign = h('select', { id: 'c-campaign', class: 'select' }, h('option', { value: '' }, 'Aucune'), doc.campaigns.map((c) => h('option', { value: c.id }, c.name)))),
         h('div', { class: 'field' }, h('label', { for: 'c-stage' }, 'Étape de départ'), stage = h('select', { id: 'c-stage', class: 'select' }, doc.stages.filter((s) => s.id !== doc.gates.finalStageId).map((s) => h('option', { value: s.id }, s.label))))),

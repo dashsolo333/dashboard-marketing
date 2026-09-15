@@ -3,7 +3,6 @@ import { h, icon, avatar, fmtDay, today } from './dom.js';
 import { newId, RESULT_FIELDS } from '../model/doc.js';
 import { updateOp, addReview, removeReview, setResults } from '../model/ops.js';
 import { milestoneStatus, shiftDay } from '../model/milestones.js';
-import { xpBreakdown, isPublished, XP_RULES } from '../model/game.js';
 
 export function isSafeUrl(url) {
   try { return ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; }
@@ -94,25 +93,15 @@ export function renderReviews(ctx, op, ro) {
     h('div', { style: { display: 'flex', justifyContent: 'flex-end' } }, h('button', { type: 'submit', class: 'btn btn-cta btn-sm' }, icon('check'), 'Enregistrer la validation'))));
 }
 
-/** Résultats après publication : chiffres bruts + XP dérivés. */
+/** Résultats après publication : chiffres bruts. */
 export function renderResults(ctx, op, ro) {
-  const doc = ctx.doc;
-  const published = isPublished(doc, op);
-  const b = xpBreakdown(doc, op);
+  const published = op.stageId === ctx.doc.gates.finalStageId;
   const save = (field, value) => ctx.act(`a mis à jour les résultats de « ${op.title} »`, (d) => setResults(d, op.id, { [field]: value }, ctx.meta()));
-  const nextTier = [...XP_RULES.results].reverse().find((t) => (op.results.views || 0) < t.min);
   return h('section', { class: 'panel glass results' },
-    h('div', { class: 'section-head' }, h('h3', {}, 'Résultats'), published ? h('span', { class: 'xp-chip xp-chip-lg' }, `+${b.total} XP`) : h('span', { class: 'hint' }, 'à remplir après publication')),
+    h('div', { class: 'section-head' }, h('h3', {}, 'Résultats'), published ? null : h('span', { class: 'hint' }, 'à remplir après publication')),
     h('div', { class: 'results-grid' }, RESULT_FIELDS.map((f) => h('div', { class: 'field result-field' },
       h('label', { for: `res-${f.id}` }, f.label),
       h('input', { id: `res-${f.id}`, class: 'input', type: 'number', min: 0, step: 1, inputmode: 'numeric', value: op.results[f.id] || '', placeholder: '0', disabled: ro, dataset: { key: `res:${f.id}:${op.id}` },
         onChange: (e) => save(f.id, e.target.value) })))),
-    h('textarea', { class: 'textarea', style: { marginTop: '10px', minHeight: '56px' }, placeholder: 'Ce qu’on retient : ce qui a marché, à refaire, à éviter…', disabled: ro, dataset: { key: `resnotes:${op.id}` }, onChange: (e) => save('notes', e.target.value.trim()) }, op.results.notes || ''),
-    published ? h('div', { class: 'xp-breakdown' },
-      part('Format', b.base), part('Multicanal', b.channels), part('À l’heure', b.onTime), part('Résultats', b.results),
-      nextTier ? h('span', { class: 'hint' }, `+${nextTier.xp} XP dès ${nextTier.label}`) : null) : null);
-}
-
-function part(label, xp) {
-  return h('span', { class: `xp-part${xp ? ' is-on' : ''}` }, h('b', {}, `+${xp}`), ` ${label}`);
+    h('textarea', { class: 'textarea', style: { marginTop: '10px', minHeight: '56px' }, placeholder: 'Ce qu’on retient : ce qui a marché, à refaire, à éviter…', disabled: ro, dataset: { key: `resnotes:${op.id}` }, onChange: (e) => save('notes', e.target.value.trim()) }, op.results.notes || ''));
 }

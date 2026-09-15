@@ -6,7 +6,6 @@ export const VIEWS = [
   { id: 'list', label: 'Liste' },
   { id: 'calendar', label: 'Calendrier' },
   { id: 'campaigns', label: 'Campagnes' },
-  { id: 'season', label: 'Saison' },
   { id: 'journal', label: 'Journal' },
 ];
 

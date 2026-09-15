@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Dashboard d'équipe des coups marketing Futnow, gamifié (GitHub Pages + JSON versionné).",
+  "description": "Dashboard d'équipe des coups marketing Futnow (GitHub Pages + JSON versionné).",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "test:coverage": "node --test --experimental-test-coverage tests/*.test.mjs",

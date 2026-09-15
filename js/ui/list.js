@@ -1,8 +1,7 @@
 import { h, icon, avatar, fmtDay, relTime, today } from './dom.js';
 import { PRIORITIES, kindById } from '../model/doc.js';
 import { gaugeOf, stageById } from '../model/stages.js';
-import { isLate } from '../model/ops.js';
-import { xpOf } from '../model/game.js';
+import { isLate, checklistProgress } from '../model/ops.js';
 import { verdictBadge, channelDots } from './card.js';
 import { visibleOps } from './filters.js';
 
@@ -15,7 +14,7 @@ const COLS = [
   { id: 'publish', label: 'Publication', get: (o) => o.dates.publishActual || o.dates.publishPlanned || '9999' },
   { id: 'verdict', label: 'Validation', get: (o) => (o.reviews.at(-1)?.verdict || 'zz') },
   { id: 'owner', label: 'Resp.', get: (o) => o.owner || 'zz' },
-  { id: 'xp', label: 'XP', get: (o, doc) => xpOf(doc, o) },
+  { id: 'tasks', label: 'Checklist', get: (o) => { const p = checklistProgress(o); return p.total ? p.done / p.total : -1; } },
   { id: 'updated', label: 'Mis à jour', get: (o) => o.updatedAt },
 ];
 
@@ -48,7 +47,7 @@ export function renderList(ctx) {
         const g = gaugeOf(doc, o);
         const late = isLate(o, t);
         const selected = sel.has(o.id);
-        const xp = xpOf(doc, o);
+        const tasks = checklistProgress(o);
         return h('tr', { class: selected ? 'is-selected' : '', onClick: (e) => { if (e.shiftKey && canSelect) { e.preventDefault(); ctx.toggleSelect(o.id); } else ctx.openOp(o.id); }, tabindex: 0,
           onKeydown: (e) => { if (e.key === 'Enter') ctx.openOp(o.id); if (e.key === ' ' && canSelect) { e.preventDefault(); ctx.toggleSelect(o.id); } } },
           h('td', { class: 'td-check', onClick: (e) => e.stopPropagation() },
@@ -61,7 +60,7 @@ export function renderList(ctx) {
           h('td', {}, dateCell(o.dates.publishPlanned, o.dates.publishActual, late.publish)),
           h('td', {}, verdictBadge(o) || h('span', { class: 'dim' }, '—')),
           h('td', { class: 'muted' }, o.owner || '—'),
-          h('td', {}, xp ? h('span', { class: 'xp-chip' }, `+${xp}`) : h('span', { class: 'dim' }, '—')),
+          h('td', {}, tasksCell(tasks)),
           h('td', {}, h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px' } }, avatar(o.updatedBy, 20), h('span', { class: 'muted' }, relTime(o.updatedAt)))));
       })),
     ),
@@ -83,6 +82,14 @@ function renderBulkBar(ctx, ops) {
     h('button', { type: 'button', class: 'btn btn-sm btn-danger', onClick: () => ctx.bulkDelete(ids) }, icon('trash'), 'Supprimer'),
     h('button', { type: 'button', class: 'btn btn-sm btn-ghost', style: { marginLeft: 'auto' }, onClick: ctx.clearSelection }, 'Tout désélectionner', h('span', { class: 'dim' }, ' · Échap')),
     ops.length > n ? h('button', { type: 'button', class: 'btn btn-sm btn-ghost', onClick: () => ctx.setSelection(ops.map((o) => o.id)) }, `Sélectionner les ${ops.length} visibles`) : null);
+}
+
+function tasksCell({ done, total }) {
+  if (!total) return h('span', { class: 'dim' }, '—');
+  const pct = Math.round((done / total) * 100);
+  return h('div', { class: 'cell-tasks', title: `${done} tâche${done > 1 ? 's' : ''} faite${done > 1 ? 's' : ''} sur ${total}` },
+    h('b', { class: done === total ? 'is-done' : '' }, `${done}/${total}`),
+    h('div', { class: 'bar bar-tasks' }, h('i', { style: { width: `${pct}%` } })));
 }
 
 function dateCell(planned, actual, late) {

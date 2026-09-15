@@ -1,7 +1,7 @@
-// Campagnes : un objectif, une fenêtre, des coups rattachés, XP récoltés.
+// Campagnes : un objectif, une fenêtre, des coups rattachés.
 import { h, icon, fmtDay, today } from './dom.js';
 import { gaugeOf, stageById } from '../model/stages.js';
-import { totalXp } from '../model/game.js';
+import { checklistProgress } from '../model/ops.js';
 import { ringGauge } from './gauge.js';
 import { visibleOps } from './filters.js';
 
@@ -23,7 +23,6 @@ function renderCampaign(ctx, c, ops, t) {
   const doc = ctx.doc;
   const avg = ops.length ? Math.round(ops.reduce((s, o) => s + gaugeOf(doc, o), 0) / ops.length) : 0;
   const published = ops.filter((o) => o.stageId === doc.gates.finalStageId).length;
-  const xp = totalXp(doc, ops);
   const state = c.endAt && c.endAt < t ? 'done' : c.startAt && c.startAt > t ? 'soon' : 'live';
   return h('section', { class: `release glass campaign is-${state}` },
     h('div', { class: 'release-head' },
@@ -33,14 +32,16 @@ function renderCampaign(ctx, c, ops, t) {
         h('b', {}, c.startAt || c.endAt ? `${c.startAt ? fmtDay(c.startAt) : '…'} → ${c.endAt ? fmtDay(c.endAt) : '…'}` : 'sans dates'))),
     h('div', { class: 'release-progress' },
       h('div', { class: 'bar', style: { '--bar': state === 'done' ? '#b5f03a' : '#8b5cf6' } }, h('i', { style: { width: `${avg}%` } })),
-      h('span', {}, `${published}/${ops.length} publié${published > 1 ? 's' : ''} · ${avg} %`, xp ? h('span', { class: 'xp-chip', style: { marginLeft: '8px' } }, `+${xp} XP`) : null)),
+      h('span', {}, `${published}/${ops.length} publié${published > 1 ? 's' : ''} · ${avg} %`)),
     h('div', { class: 'release-list' },
       ops.length ? ops.map((o) => item(ctx, o)) : h('div', { class: 'dim', style: { padding: '6px 10px' } }, 'Aucun coup rattaché. Ouvre une fiche et choisis cette campagne.')));
 }
 
 function item(ctx, o) {
   const stage = stageById(ctx.doc, o.stageId);
+  const t = checklistProgress(o);
   return h('div', { class: 'release-item', onClick: () => ctx.openOp(o.id), role: 'button', tabindex: 0 },
     ringGauge(ctx.doc, o, 26), h('span', { class: 'name' }, `${o.icon ? `${o.icon} ` : ''}${o.title}`),
+    t.total ? h('span', { class: `badge ${t.done === t.total ? 'badge-ok' : 'badge-neutral'}`, title: 'Checklist' }, `${t.done}/${t.total}`) : null,
     h('span', { class: 'chip chip-stage', style: { '--dot': stage?.color } }, h('i', { class: 'chip-dot' }), stage?.label));
 }

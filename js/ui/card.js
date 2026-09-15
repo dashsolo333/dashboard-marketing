@@ -2,7 +2,6 @@ import { h, icon, avatar, fmtDay, today } from './dom.js';
 import { progressRow } from './gauge.js';
 import { isLate, lastVerdict, checklistProgress } from '../model/ops.js';
 import { kindById } from '../model/doc.js';
-import { xpOf, isPublished } from '../model/game.js';
 
 export function datePill(label, planned, actual, late) {
   if (!planned && !actual) return null;
@@ -37,11 +36,6 @@ export function channelDots(doc, op, { max = 4 } = {}) {
     list.length > max ? h('span', { class: 'channel-more' }, `+${list.length - max}`) : null);
 }
 
-export function xpChip(doc, op) {
-  if (!isPublished(doc, op)) return null;
-  return h('span', { class: 'xp-chip', title: 'XP gagnés' }, `+${xpOf(doc, op)} XP`);
-}
-
 export function renderCard(ctx, op) {
   const doc = ctx.doc;
   const late = isLate(op, today());
@@ -64,7 +58,6 @@ export function renderCard(ctx, op) {
     verdictBadge(op),
     tasksChip(op),
     campaignChip(doc, op),
-    xpChip(doc, op),
     avatar(op.updatedBy, 20)));
   return el;
 }

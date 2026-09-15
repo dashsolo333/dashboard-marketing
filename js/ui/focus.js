@@ -4,7 +4,6 @@ import { ringGauge } from './gauge.js';
 import { gaugeOf, stageById, stageIndex } from '../model/stages.js';
 import { isLate, lastVerdict, checklistProgress } from '../model/ops.js';
 import { kindById } from '../model/doc.js';
-import { xpOf } from '../model/game.js';
 import { visibleOps } from './filters.js';
 import { channelDots } from './card.js';
 
@@ -30,7 +29,6 @@ export function renderFocus(ctx) {
   const last = lastVerdict(o);
   const { done, total } = checklistProgress(o);
   const campaign = doc.campaigns.find((c) => c.id === o.campaignId);
-  const xp = xpOf(doc, o);
   const go = (n) => ctx.setFocus(list[(i + n + list.length) % list.length].id);
 
   return h('section', { class: 'focus', style: { '--fc': stage?.color || '#8b8fa8' } },
@@ -49,7 +47,7 @@ export function renderFocus(ctx) {
         h('div', { class: 'focus-ring-center' }, h('div', { class: 'focus-value' }, value, h('span', {}, '%')), h('div', { class: 'focus-stage' }, stage?.label || '—'))),
       h('div', { class: 'focus-info' },
         h('h1', { class: 'focus-title' }, o.icon ? h('span', { class: 'focus-icon' }, o.icon) : null, o.title),
-        h('div', { class: 'focus-channels' }, channelDots(doc, o, { max: 8 }), xp ? h('span', { class: 'xp-chip xp-chip-lg' }, `+${xp} XP`) : null),
+        h('div', { class: 'focus-channels' }, channelDots(doc, o, { max: 8 })),
         o.description ? h('p', { class: 'focus-desc' }, o.description.split('\n')[0]) : null,
         h('ol', { class: 'focus-steps' }, doc.stages.map((s, k) => h('li', {
           class: `focus-step${k < idx ? ' is-done' : ''}${k === idx ? ' is-current' : ''}`, style: { '--sc': s.color },

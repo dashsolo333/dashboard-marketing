@@ -1,8 +1,7 @@
 # Futnow · Marketing
 
 Dashboard d'équipe pour suivre tous les coups marketing Futnow (posts, vidéos, TikTok,
-newsletter, partenariats, programme d'ambassadeurs, événements…) de l'idée à la publication,
-avec une couche de jeu simple : XP, niveaux, série, badges, saison.
+newsletter, partenariats, programme d'ambassadeurs, événements…) de l'idée à la publication.
 
 Page statique hébergée sur GitHub Pages, données dans `data/marketing.json` versionnées
 par Git : chaque modification faite depuis la page devient un commit au nom de la personne
@@ -10,10 +9,10 @@ connectée. Même architecture que `futnow-features-dashboard`.
 
 ## Ce que ça fait
 
-- **Sept vues** : **Tableau** kanban par étape (glisser-déposer), **Avancement** (plein
+- **Six vues** : **Tableau** kanban par étape (glisser-déposer), **Avancement** (plein
   écran, un coup à la fois, flèches ← → et touche `f`), **Liste** triable avec sélection
-  multiple, **Calendrier** éditorial semaine par semaine, **Campagnes** (objectif + fenêtre
-  qui regroupent des coups), **Saison** (niveau, XP, classement, badges), **Journal**.
+  multiple et colonne checklist x/x, **Calendrier** éditorial semaine par semaine,
+  **Campagnes** (objectif + fenêtre qui regroupent des coups), **Journal**.
 - **Pipeline** : Idée → Brief → Création → Validation → Programmé → Publié. Modulable dans
   les réglages (renommer, recolorer, réordonner, ajouter). Deux gardes :
   - entrer en **Validation** date automatiquement la validation ;
@@ -25,12 +24,9 @@ connectée. Même architecture que `futnow-features-dashboard`.
   canaux, format, priorité, campagne, responsable, **checklist** groupée par étape
   (checklist type brief → publié), brief, **validations** GO/KO avec retour, **résultats**
   (vues, likes, clics, inscriptions…), dates cible/réelles, frise, liens, historique.
-- **Jeu** : un coup rapporte ses XP quand il passe en Publié. Base selon le format (story 5,
-  post 10, article 20, vidéo 25, ambassadeurs 35, partenariat / événement 40, campagne 50),
-  +5 XP par canal supplémentaire, +10 XP si publié à la date prévue, +10 / +30 XP dès 1 k /
-  10 k vues. Niveaux football (Recrue → Titulaire → Capitaine → … → GOAT), série de
-  semaines avec publication, objectif hebdo, classement par responsable, dix badges,
-  saison avec objectif XP. Tout est dérivé des données : rien à saisir, rien à tricher.
+- **Suivi** : jauge = position dans le pipeline + avancement dans l'étape ; checklist x/x
+  visible sur les cartes, dans la Liste et dans les Campagnes ; retard en rouge dès qu'une
+  date cible est dépassée.
 
 ## Écrire depuis la page
 
@@ -55,7 +51,7 @@ npm run seed -- --force   # régénérer data/marketing.json avec le jeu de dém
 npm run seed -- --force --empty   # repartir d'un document vide
 ```
 
-Raccourcis : `n` nouveau coup · `/` recherche · `1`–`7` vues · `← →` coup suivant en
+Raccourcis : `n` nouveau coup · `/` recherche · `1`–`6` vues · `← →` coup suivant en
 Avancement · `f` plein écran · `Échap` fermer / désélectionner.
 
 ## Mise en ligne
@@ -69,8 +65,8 @@ Avancement · `f` plein écran · `Échap` fermer / désélectionner.
 
 ```
 index.html            coquille
-styles/               tokens, base, composants, vues, jeu
-js/model/             modèle pur (doc, stages, ops, channels, checklist, game, campaigns…) — testé
+styles/               tokens, base, composants, vues, marketing
+js/model/             modèle pur (doc, stages, ops, channels, checklist, roadmap…) — testé
 js/github.js          API GitHub Contents (lecture ETag, écriture avec sha)
 js/store.js           état + file d'opérations optimistes + rejeu sur conflit
 js/ui/                vues et composants (aucun innerHTML)

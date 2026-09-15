@@ -2,11 +2,10 @@
 import { h, icon, avatar, fmtDay, fmtDayFull, relTime, today } from './dom.js';
 import { bigGauge, stageStepper } from './gauge.js';
 import { KINDS, PRIORITIES } from '../model/doc.js';
-import { updateOp, deleteOp, isLate, lastVerdict } from '../model/ops.js';
+import { updateOp, deleteOp, isLate, lastVerdict, checklistProgress } from '../model/ops.js';
 import { renderChecklist } from './checklist.js';
 import { stageIndex, canMoveTo } from '../model/stages.js';
 import { opTimeline } from '../model/timeline.js';
-import { xpOf, isPublished } from '../model/game.js';
 import { renderJournal } from './journal.js';
 import { pillSelect, milestone, renderLinks, renderReviews, renderResults } from './opParts.js';
 
@@ -22,6 +21,7 @@ export function renderOpPage(ctx, op) {
   const campaign = doc.campaigns.find((c) => c.id === op.campaignId);
   const people = knownPeople(doc, ctx.store.state.user);
   const last = lastVerdict(op);
+  const tasks = checklistProgress(op);
 
   return h('article', { class: 'fpage' },
     h('nav', { class: 'fpage-nav' },
@@ -40,7 +40,7 @@ export function renderOpPage(ctx, op) {
         h('input', { class: 'input input-title fpage-title-input', value: op.title, 'aria-label': 'Titre', disabled: ro, dataset: { key: `title:${op.id}` },
           onChange: (e) => { if (e.target.value.trim()) patch({ title: e.target.value.trim() }, `a renommé « ${op.title} » en « ${e.target.value.trim()} »`); else e.target.value = op.title; } }),
         h('div', { class: 'drawer-meta' },
-          pillSelect(KINDS.map((k) => ({ id: k.id, label: `${k.label} · ${k.xp} XP` })), op.kind, ro, (v) => patch({ kind: v })),
+          pillSelect(KINDS, op.kind, ro, (v) => patch({ kind: v })),
           pillSelect(PRIORITIES, op.priority, ro, (v) => patch({ priority: v })),
           pillSelect([{ id: '', label: 'Sans campagne' }, ...doc.campaigns.map((c) => ({ id: c.id, label: `${c.icon ? `${c.icon} ` : ''}${c.name}` }))], op.campaignId, ro, (v) => patch({ campaignId: v }, `a rattaché « ${op.title} » à une campagne`)),
           pillSelect([{ id: '', label: 'Sans responsable' }, ...people.map((p) => ({ id: p, label: `Resp. ${p}` }))], op.owner, ro, (v) => patch({ owner: v }, v ? `a confié « ${op.title} » à ${v}` : `a retiré le responsable de « ${op.title} »`))),
@@ -56,7 +56,7 @@ export function renderOpPage(ctx, op) {
           fact('Validation', op.dates.reviewActual ? `faite le ${fmtDay(op.dates.reviewActual)}` : op.dates.reviewPlanned ? `cible ${fmtDay(op.dates.reviewPlanned)}` : 'pas de date', late.review),
           fact('Publication', op.dates.publishActual ? `publié le ${fmtDay(op.dates.publishActual)}` : op.dates.publishPlanned ? `cible ${fmtDay(op.dates.publishPlanned)}` : 'pas de date', late.publish),
           fact('Dernier verdict', last ? `${last.verdict === 'ok' ? 'GO' : 'KO'} · ${fmtDay(last.at)}` : 'aucun'),
-          fact('XP', isPublished(doc, op) ? `+${xpOf(doc, op)} gagnés` : `${KINDS.find((k) => k.id === op.kind)?.xp || 0} de base à la publication`))),
+          fact('Checklist', tasks.total ? `${tasks.done} / ${tasks.total} faites` : 'aucune tâche'))),
       h('div', { class: 'fpage-hero-right' },
         stageStepper(doc, op, (id) => ctx.move(op.id, id)),
         op.stageId !== doc.gates.finalStageId ? h('div', { class: 'field', style: { marginTop: '16px' } },
@@ -85,7 +85,7 @@ export function renderOpPage(ctx, op) {
           h('div', { class: 'section-head' }, h('h3', {}, 'Dates')),
           h('div', { class: 'milestones' },
             milestone(ctx, op, { key: 'review', label: 'Validation', hint: 'le GO de l’équipe avant de programmer' }),
-            milestone(ctx, op, { key: 'publish', label: 'Publication', hint: campaign?.endAt ? `campagne jusqu’au ${fmtDay(campaign.endAt)}` : 'mise en ligne · +10 XP si à l’heure' })),
+            milestone(ctx, op, { key: 'publish', label: 'Publication', hint: campaign?.endAt ? `campagne jusqu’au ${fmtDay(campaign.endAt)}` : 'mise en ligne' })),
           renderTimeline(ctx, op, t)),
         renderLinks(ctx, op, ro),
         h('section', { class: 'panel glass' },

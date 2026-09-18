@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T14:33:52.369Z",
+  "updatedAt": "2026-09-18T14:34:12.101Z",
   "stages": [
     {
       "id": "idea",
@@ -147,7 +147,7 @@
       "publishedBy": null,
       "effort": {
         "value": null,
-        "unit": "h"
+        "unit": "d"
       },
       "rank": 40,
       "createdAt": "2026-09-15T13:19:57.178Z",
@@ -155,7 +155,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T14:16:41.387Z",
+      "updatedAt": "2026-09-18T14:34:12.101Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1569,6 +1569,17 @@
       "opId": "o_mu726rz8j8j2pd",
       "type": "update",
       "text": "a modifié icon de « ftn pro articles futsal »"
+    },
+    {
+      "id": "a_2026-09-18T14:34:12.101Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-09-18T14:34:12.101Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a modifié effort de « Motion design »"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T15:12:50.598Z",
+  "updatedAt": "2026-09-18T15:12:53.824Z",
   "stages": [
     {
       "id": "idea",
@@ -154,6 +154,22 @@
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
           }
+        },
+        {
+          "id": "i_mu73l934r56tle",
+          "text": "storyboard",
+          "group": "idea",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-09-18T15:12:53.824Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
         }
       ],
       "results": {
@@ -171,7 +187,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-18T15:12:50.598Z",
+      "updatedAt": "2026-09-18T15:12:53.824Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1662,6 +1678,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a ajouté la tâche « definir ordre des feature et comment elles sont présentées » à « Motion design »"
+    },
+    {
+      "id": "a_2026-09-18T15:12:53.824Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-09-18T15:12:53.824Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a ajouté la tâche « storyboard » à « Motion design »"
     }
   ]
 }

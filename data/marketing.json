@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T14:34:45.539Z",
+  "updatedAt": "2026-09-18T14:35:42.727Z",
   "stages": [
     {
       "id": "idea",
@@ -102,7 +102,7 @@
     {
       "id": "o_mu2p8g6yehanyo",
       "title": "Motion design",
-      "description": "",
+      "description": "Gain crédibilité\n",
       "icon": "🎬",
       "kind": "video",
       "channels": [],
@@ -155,7 +155,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-18T14:34:45.539Z",
+      "updatedAt": "2026-09-18T14:35:42.727Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1602,6 +1602,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a passé « Brainstormer structure motion design avant prod » en cours sur « Motion design »"
+    },
+    {
+      "id": "a_2026-09-18T14:35:42.727Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-09-18T14:35:42.727Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a modifié description de « Motion design »"
     }
   ]
 }

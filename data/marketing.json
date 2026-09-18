@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T14:33:44.924Z",
+  "updatedAt": "2026-09-18T14:33:52.369Z",
   "stages": [
     {
       "id": "idea",
@@ -416,7 +416,7 @@
       "id": "o_mu726rz8j8j2pd",
       "title": "ftn pro articles futsal",
       "description": "",
-      "icon": "",
+      "icon": "📰",
       "kind": "other",
       "channels": [],
       "urgent": false,
@@ -451,7 +451,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-18T14:33:44.924Z",
+      "updatedAt": "2026-09-18T14:33:52.369Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1558,6 +1558,17 @@
       "opId": "o_mu726rz8j8j2pd",
       "type": "update",
       "text": "a modifié urgent de « ftn pro articles futsal »"
+    },
+    {
+      "id": "a_2026-09-18T14:33:52.369Z_o_mu726rz8j8j2pd_update",
+      "at": "2026-09-18T14:33:52.369Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu726rz8j8j2pd",
+      "type": "update",
+      "text": "a modifié icon de « ftn pro articles futsal »"
     }
   ]
 }

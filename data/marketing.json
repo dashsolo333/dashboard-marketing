@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-22T14:13:11.878Z",
+  "updatedAt": "2026-09-22T14:18:04.556Z",
   "stages": [
     {
       "id": "idea",
@@ -243,7 +243,7 @@
       "campaignId": "",
       "links": [],
       "dates": {
-        "reviewPlanned": "",
+        "reviewPlanned": "2026-10-05",
         "publishPlanned": "",
         "publishActual": ""
       },
@@ -297,7 +297,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-15T15:43:06.484Z",
+      "updatedAt": "2026-09-22T14:18:04.556Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1728,6 +1728,17 @@
       "opId": "o_mu2tfjmbxj7trl",
       "type": "delete",
       "text": "a supprimé « Bannière snapchat F8 »"
+    },
+    {
+      "id": "a_2026-09-22T14:18:04.556Z_o_mu2paoc9nqvk3w_update",
+      "at": "2026-09-22T14:18:04.556Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2paoc9nqvk3w",
+      "type": "update",
+      "text": "a modifié dates de « Communiqué Lancement v1 [cloture béta] »"
     }
   ]
 }

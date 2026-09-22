@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-18T15:23:07.059Z",
+  "updatedAt": "2026-09-22T14:13:11.878Z",
   "stages": [
     {
       "id": "idea",
@@ -376,54 +376,6 @@
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
       "updatedAt": "2026-09-15T14:47:27.712Z",
-      "updatedBy": {
-        "login": "dashsolo333",
-        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-      }
-    },
-    {
-      "id": "o_mu2tfjmbxj7trl",
-      "title": "Bannière snapchat F8",
-      "description": "",
-      "icon": "🎬",
-      "kind": "video",
-      "channels": [],
-      "urgent": true,
-      "owner": "dashsolo333",
-      "rubric": "",
-      "caption": "",
-      "hashtags": "",
-      "assetUrl": "",
-      "publishTime": "",
-      "stageId": "published",
-      "campaignId": "",
-      "links": [],
-      "dates": {
-        "reviewPlanned": "",
-        "publishPlanned": "",
-        "publishActual": "2026-09-18"
-      },
-      "reviews": [],
-      "items": [],
-      "results": {
-        "channels": {},
-        "notes": ""
-      },
-      "publishedBy": {
-        "login": "dashsolo333",
-        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-      },
-      "effort": {
-        "value": null,
-        "unit": "h"
-      },
-      "rank": 10,
-      "createdAt": "2026-09-15T15:17:26.675Z",
-      "createdBy": {
-        "login": "dashsolo333",
-        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-      },
-      "updatedAt": "2026-09-18T14:30:53.946Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1765,6 +1717,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a modifié dates de « Motion design »"
+    },
+    {
+      "id": "a_2026-09-22T14:13:11.878Z_o_mu2tfjmbxj7trl_delete",
+      "at": "2026-09-22T14:13:11.878Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2tfjmbxj7trl",
+      "type": "delete",
+      "text": "a supprimé « Bannière snapchat F8 »"
     }
   ]
 }

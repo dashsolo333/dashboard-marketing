@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-22T14:33:02.563Z",
+  "updatedAt": "2026-09-22T14:33:04.154Z",
   "stages": [
     {
       "id": "idea",
@@ -213,7 +213,7 @@
         "value": 6,
         "unit": "d"
       },
-      "rank": 30,
+      "rank": 20,
       "createdAt": "2026-09-15T13:19:57.178Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -291,7 +291,7 @@
         "value": 5,
         "unit": "d"
       },
-      "rank": 20,
+      "rank": 30,
       "createdAt": "2026-09-15T13:21:41.049Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -1787,6 +1787,17 @@
     {
       "id": "a_2026-09-22T14:33:02.563Z_null_update",
       "at": "2026-09-22T14:33:02.563Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": null,
+      "type": "update",
+      "text": "a réordonné la liste"
+    },
+    {
+      "id": "a_2026-09-22T14:33:04.154Z_null_update",
+      "at": "2026-09-22T14:33:04.154Z",
       "by": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"

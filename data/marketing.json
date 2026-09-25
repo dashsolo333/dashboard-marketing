@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-22T14:33:04.154Z",
+  "updatedAt": "2026-09-25T13:05:33.478Z",
   "stages": [
     {
       "id": "idea",
@@ -390,7 +390,7 @@
       "channels": [
         "app"
       ],
-      "urgent": true,
+      "urgent": false,
       "owner": "dashsolo333",
       "rubric": "",
       "caption": "",
@@ -422,7 +422,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-22T14:33:00.312Z",
+      "updatedAt": "2026-09-25T13:05:33.478Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1805,6 +1805,17 @@
       "opId": null,
       "type": "update",
       "text": "a réordonné la liste"
+    },
+    {
+      "id": "a_2026-09-25T13:05:33.478Z_o_mu725frqokmiru_update",
+      "at": "2026-09-25T13:05:33.478Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu725frqokmiru",
+      "type": "update",
+      "text": "a modifié urgent de « Update visuel store »"
     }
   ]
 }

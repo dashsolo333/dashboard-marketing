@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-25T13:05:33.478Z",
+  "updatedAt": "2026-09-25T13:05:38.199Z",
   "stages": [
     {
       "id": "idea",
@@ -213,7 +213,7 @@
         "value": 6,
         "unit": "d"
       },
-      "rank": 20,
+      "rank": 10,
       "createdAt": "2026-09-15T13:19:57.178Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -416,7 +416,7 @@
         "value": 4,
         "unit": "h"
       },
-      "rank": 10,
+      "rank": 20,
       "createdAt": "2026-09-18T14:32:36.374Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -1816,6 +1816,17 @@
       "opId": "o_mu725frqokmiru",
       "type": "update",
       "text": "a modifié urgent de « Update visuel store »"
+    },
+    {
+      "id": "a_2026-09-25T13:05:38.199Z_null_update",
+      "at": "2026-09-25T13:05:38.199Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": null,
+      "type": "update",
+      "text": "a réordonné la liste"
     }
   ]
 }

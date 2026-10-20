@@ -779,15 +779,15 @@
       "reviews": [],
       "items": [
         {
-          "id": "i_mvgtsrnzbb20x8",
-          "text": "1. \"Y rate, Y rate, Y rate\"",
           "group": "idea",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mvgtsrnzbb20x8",
+          "text": "1. \"12eme minute Y rate, 18me minute Y rate, 24eme minute Y rate\"",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-10-20T15:16:12.431Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -810,7 +810,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T15:16:12.431Z",
+      "updatedAt": "2026-10-20T15:16:46.942Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"

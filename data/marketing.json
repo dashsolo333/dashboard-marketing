@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T14:38:18.648Z",
+  "updatedAt": "2026-10-20T14:38:22.440Z",
   "stages": [
     {
       "id": "idea",
@@ -146,12 +146,15 @@
           "group": "idea",
           "due": "",
           "note": "",
-          "doneAt": "",
-          "doneBy": null,
+          "doneAt": "2026-10-20T14:38:21.821Z",
+          "doneBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
           "id": "i_mu73l6licbc62g",
           "text": "definir ordre des feature et comment elles sont présentées",
-          "status": "todo",
-          "done": false,
+          "status": "done",
+          "done": true,
           "createdAt": "2026-09-18T15:12:50.598Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -162,12 +165,15 @@
           "group": "idea",
           "due": "2026-09-22",
           "note": "",
-          "doneAt": "",
-          "doneBy": null,
+          "doneAt": "2026-10-20T14:38:22.440Z",
+          "doneBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
           "id": "i_mu73l934r56tle",
           "text": "storyboard",
-          "status": "todo",
-          "done": false,
+          "status": "done",
+          "done": true,
           "createdAt": "2026-09-18T15:12:53.824Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -222,7 +228,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T14:38:18.648Z",
+      "updatedAt": "2026-10-20T14:38:22.440Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1931,6 +1937,28 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a passé « Brainstormer structure motion design avant prod » faite sur « Motion design »"
+    },
+    {
+      "id": "a_2026-10-20T14:38:21.821Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-20T14:38:21.821Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a passé « definir ordre des feature et comment elles sont présentées » faite sur « Motion design »"
+    },
+    {
+      "id": "a_2026-10-20T14:38:22.440Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-20T14:38:22.440Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a passé « storyboard » faite sur « Motion design »"
     }
   ]
 }

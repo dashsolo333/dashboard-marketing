@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T15:15:45.085Z",
+  "updatedAt": "2026-10-20T15:16:12.431Z",
   "stages": [
     {
       "id": "idea",
@@ -777,7 +777,24 @@
         "publishActual": ""
       },
       "reviews": [],
-      "items": [],
+      "items": [
+        {
+          "id": "i_mvgtsrnzbb20x8",
+          "text": "1. \"Y rate, Y rate, Y rate\"",
+          "group": "idea",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-10-20T15:16:12.431Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
+        }
+      ],
       "results": {
         "channels": {},
         "notes": ""
@@ -793,7 +810,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T15:15:45.085Z",
+      "updatedAt": "2026-10-20T15:16:12.431Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2428,6 +2445,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "create",
       "text": "a créé « script tiktok IRL »"
+    },
+    {
+      "id": "a_2026-10-20T15:16:12.431Z_o_mvgts6kd75jne3_update",
+      "at": "2026-10-20T15:16:12.431Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mvgts6kd75jne3",
+      "type": "update",
+      "text": "a ajouté la tâche « 1. \"Y rate, Y rate, Y rate\" » à « script tiktok IRL »"
     }
   ]
 }

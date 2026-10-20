@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T14:37:13.810Z",
+  "updatedAt": "2026-10-20T14:37:17.924Z",
   "stages": [
     {
       "id": "idea",
@@ -397,13 +397,13 @@
       "hashtags": "",
       "assetUrl": "",
       "publishTime": "",
-      "stageId": "idea",
+      "stageId": "published",
       "campaignId": "",
       "links": [],
       "dates": {
         "reviewPlanned": "",
         "publishPlanned": "2026-09-28",
-        "publishActual": ""
+        "publishActual": "2026-10-20"
       },
       "reviews": [
         {
@@ -432,7 +432,10 @@
         "channels": {},
         "notes": ""
       },
-      "publishedBy": null,
+      "publishedBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
       "effort": {
         "value": 4,
         "unit": "h"
@@ -443,7 +446,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T14:37:13.810Z",
+      "updatedAt": "2026-10-20T14:37:17.924Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1892,6 +1895,17 @@
       "opId": "o_mu725frqokmiru",
       "type": "review",
       "text": "a validé « Update visuel store »"
+    },
+    {
+      "id": "a_2026-10-20T14:37:17.924Z_o_mu725frqokmiru_move",
+      "at": "2026-10-20T14:37:17.924Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu725frqokmiru",
+      "type": "move",
+      "text": "a passé « Update visuel store » en Publié"
     }
   ]
 }

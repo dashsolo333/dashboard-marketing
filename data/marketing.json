@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-28T09:33:58.305Z",
+  "updatedAt": "2026-10-20T14:37:11.090Z",
   "stages": [
     {
       "id": "idea",
@@ -405,7 +405,18 @@
         "publishPlanned": "2026-09-28",
         "publishActual": ""
       },
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "r_mvgsel2qm21fby",
+          "at": "2026-10-20T14:37:11.090Z",
+          "by": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
+          "verdict": "ok",
+          "notes": ""
+        }
+      ],
       "items": [],
       "results": {
         "channels": {},
@@ -422,7 +433,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-09-28T09:33:58.305Z",
+      "updatedAt": "2026-10-20T14:37:11.090Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1849,6 +1860,17 @@
       "opId": "o_mu725frqokmiru",
       "type": "update",
       "text": "a modifié urgent de « Update visuel store »"
+    },
+    {
+      "id": "a_2026-10-20T14:37:11.090Z_o_mu725frqokmiru_review",
+      "at": "2026-10-20T14:37:11.090Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu725frqokmiru",
+      "type": "review",
+      "text": "a validé « Update visuel store »"
     }
   ]
 }

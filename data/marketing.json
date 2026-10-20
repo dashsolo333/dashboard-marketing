@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T14:51:00.660Z",
+  "updatedAt": "2026-10-20T14:51:18.334Z",
   "stages": [
     {
       "id": "idea",
@@ -313,6 +313,22 @@
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
           }
+        },
+        {
+          "id": "i_mvgswqtae4e5xc",
+          "text": "badges ios android",
+          "group": "review",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-10-20T14:51:18.334Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
         }
       ],
       "results": {
@@ -330,7 +346,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T14:51:00.660Z",
+      "updatedAt": "2026-10-20T14:51:18.334Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2149,6 +2165,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a ajouté la tâche « printemps 2027 mode cinéma » à « Motion design »"
+    },
+    {
+      "id": "a_2026-10-20T14:51:18.334Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-20T14:51:18.334Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a ajouté la tâche « badges ios android » à « Motion design »"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T15:19:09.038Z",
+  "updatedAt": "2026-10-20T15:19:39.636Z",
   "stages": [
     {
       "id": "idea",
@@ -809,6 +809,22 @@
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
           }
+        },
+        {
+          "id": "i_mvgtx7jomtm3ua",
+          "text": "3. ?",
+          "group": "idea",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-10-20T15:19:39.636Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
         }
       ],
       "results": {
@@ -826,7 +842,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T15:19:32.955Z",
+      "updatedAt": "2026-10-20T15:19:39.636Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2505,6 +2521,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a modifié title de « script tiktok IRL promo feed »"
+    },
+    {
+      "id": "a_2026-10-20T15:19:39.636Z_o_mvgts6kd75jne3_update",
+      "at": "2026-10-20T15:19:39.636Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mvgts6kd75jne3",
+      "type": "update",
+      "text": "a ajouté la tâche « 3. ? » à « script tiktok IRL promo feed/shotmap »"
     }
   ]
 }

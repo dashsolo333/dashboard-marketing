@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T14:38:28.008Z",
+  "updatedAt": "2026-10-20T14:38:29.720Z",
   "stages": [
     {
       "id": "idea",
@@ -203,12 +203,15 @@
           "group": "idea",
           "due": "",
           "note": "",
-          "doneAt": "",
-          "doneBy": null,
+          "doneAt": "2026-10-20T14:38:29.720Z",
+          "doneBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
           "id": "i_mu73s0lafxbex8",
           "text": "gerer switch irl/meta",
-          "status": "todo",
-          "done": false,
+          "status": "done",
+          "done": true,
           "createdAt": "2026-09-18T15:18:09.406Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -231,7 +234,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T14:38:28.008Z",
+      "updatedAt": "2026-10-20T14:38:29.720Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -1973,6 +1976,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a passé « faire wording » faite sur « Motion design »"
+    },
+    {
+      "id": "a_2026-10-20T14:38:29.720Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-20T14:38:29.720Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a passé « gerer switch irl/meta » faite sur « Motion design »"
     }
   ]
 }

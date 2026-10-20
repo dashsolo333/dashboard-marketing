@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T14:39:02.379Z",
+  "updatedAt": "2026-10-20T14:41:00.668Z",
   "stages": [
     {
       "id": "idea",
@@ -219,15 +219,15 @@
           }
         },
         {
-          "id": "i_mvgsgqhd3h7rl2",
-          "text": "finir gen 11labs",
           "group": "review",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mvgsgqhd3h7rl2",
+          "text": "finir gen 11labs",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-10-20T14:38:51.411Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -235,8 +235,24 @@
           }
         },
         {
+          "group": "review",
+          "due": "",
+          "note": "",
+          "doneAt": "",
+          "doneBy": null,
           "id": "i_mvgsgyy35mmxji",
           "text": "musique à choisir",
+          "status": "todo",
+          "done": false,
+          "createdAt": "2026-10-20T14:39:02.379Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
+        },
+        {
+          "id": "i_mvgsji7wsgn1md",
+          "text": "imessage trashtalk en + du hud",
           "group": "review",
           "due": "",
           "note": "",
@@ -244,7 +260,7 @@
           "done": false,
           "doneAt": "",
           "doneBy": null,
-          "createdAt": "2026-10-20T14:39:02.379Z",
+          "createdAt": "2026-10-20T14:41:00.668Z",
           "createdBy": {
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -266,7 +282,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T14:39:02.379Z",
+      "updatedAt": "2026-10-20T14:41:00.668Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2041,6 +2057,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a ajouté la tâche « musique à choisir » à « Motion design »"
+    },
+    {
+      "id": "a_2026-10-20T14:41:00.668Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-20T14:41:00.668Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a ajouté la tâche « imessage trashtalk en + du hud » à « Motion design »"
     }
   ]
 }

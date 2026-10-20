@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T15:16:12.431Z",
+  "updatedAt": "2026-10-20T15:18:10.983Z",
   "stages": [
     {
       "id": "idea",
@@ -754,7 +754,7 @@
     },
     {
       "id": "o_mvgts6kd75jne3",
-      "title": "script tiktok IRL",
+      "title": "script tiktok IRL promo feed",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -810,7 +810,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T15:16:46.942Z",
+      "updatedAt": "2026-10-20T15:18:10.983Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2456,6 +2456,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a ajouté la tâche « 1. \"Y rate, Y rate, Y rate\" » à « script tiktok IRL »"
+    },
+    {
+      "id": "a_2026-10-20T15:18:10.983Z_o_mvgts6kd75jne3_update",
+      "at": "2026-10-20T15:18:10.983Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mvgts6kd75jne3",
+      "type": "update",
+      "text": "a modifié title de « script tiktok IRL »"
     }
   ]
 }

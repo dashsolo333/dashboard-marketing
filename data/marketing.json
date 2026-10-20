@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T15:07:36.025Z",
+  "updatedAt": "2026-10-20T15:07:46.798Z",
   "stages": [
     {
       "id": "idea",
@@ -649,7 +649,24 @@
         "publishActual": ""
       },
       "reviews": [],
-      "items": [],
+      "items": [
+        {
+          "id": "i_mvgthxims4cyv0",
+          "text": "trouver wording",
+          "group": "idea",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-10-20T15:07:46.798Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
+        }
+      ],
       "results": {
         "channels": {},
         "notes": ""
@@ -665,7 +682,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T15:07:36.025Z",
+      "updatedAt": "2026-10-20T15:07:46.798Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2256,6 +2273,17 @@
       "opId": "o_mvgthp7d7f91cb",
       "type": "create",
       "text": "a créé « Pop up vue feed / shotmap »"
+    },
+    {
+      "id": "a_2026-10-20T15:07:46.798Z_o_mvgthp7d7f91cb_update",
+      "at": "2026-10-20T15:07:46.798Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mvgthp7d7f91cb",
+      "type": "update",
+      "text": "a ajouté la tâche « trouver wording » à « Pop up vue feed / shotmap »"
     }
   ]
 }

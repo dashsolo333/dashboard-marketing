@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T15:08:57.849Z",
+  "updatedAt": "2026-10-20T15:15:45.085Z",
   "stages": [
     {
       "id": "idea",
@@ -747,6 +747,53 @@
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
       "updatedAt": "2026-10-20T15:08:57.849Z",
+      "updatedBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      }
+    },
+    {
+      "id": "o_mvgts6kd75jne3",
+      "title": "script tiktok IRL",
+      "description": "",
+      "icon": "",
+      "kind": "other",
+      "channels": [
+        "tiktok"
+      ],
+      "urgent": false,
+      "owner": "dashsolo333",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
+      "stageId": "idea",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
+      "rank": null,
+      "createdAt": "2026-10-20T15:15:45.085Z",
+      "createdBy": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "updatedAt": "2026-10-20T15:15:45.085Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2370,6 +2417,17 @@
       "opId": "o_mvgtjgc9lgryjl",
       "type": "create",
       "text": "a créé « vidéo motion design pour feature feed tiktok »"
+    },
+    {
+      "id": "a_2026-10-20T15:15:45.085Z_o_mvgts6kd75jne3_create",
+      "at": "2026-10-20T15:15:45.085Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mvgts6kd75jne3",
+      "type": "create",
+      "text": "a créé « script tiktok IRL »"
     }
   ]
 }

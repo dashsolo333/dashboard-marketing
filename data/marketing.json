@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T15:19:39.636Z",
+  "updatedAt": "2026-10-23T08:12:12.543Z",
   "stages": [
     {
       "id": "idea",
@@ -254,12 +254,15 @@
           "group": "review",
           "due": "",
           "note": "",
-          "doneAt": "",
-          "doneBy": null,
+          "doneAt": "2026-10-23T08:12:12.543Z",
+          "doneBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
           "id": "i_mvgsji7wsgn1md",
           "text": "imessage trashtalk en + du hud à la fin",
-          "status": "todo",
-          "done": false,
+          "status": "done",
+          "done": true,
           "createdAt": "2026-10-20T14:41:00.668Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -346,7 +349,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T14:56:12.695Z",
+      "updatedAt": "2026-10-23T08:12:12.543Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -811,15 +814,15 @@
           }
         },
         {
-          "id": "i_mvgtx7jomtm3ua",
-          "text": "3. ?",
           "group": "idea",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mvgtx7jomtm3ua",
+          "text": "3. ?",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-10-20T15:19:39.636Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -2532,6 +2535,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a ajouté la tâche « 3. ? » à « script tiktok IRL promo feed/shotmap »"
+    },
+    {
+      "id": "a_2026-10-23T08:12:12.543Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-23T08:12:12.543Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a passé « imessage trashtalk en + du hud à la fin » faite sur « Motion design »"
     }
   ]
 }

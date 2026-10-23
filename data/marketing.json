@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T08:12:22.977Z",
+  "updatedAt": "2026-10-23T08:12:24.985Z",
   "stages": [
     {
       "id": "idea",
@@ -292,12 +292,15 @@
           "group": "review",
           "due": "",
           "note": "",
-          "doneAt": "",
-          "doneBy": null,
+          "doneAt": "2026-10-23T08:12:24.985Z",
+          "doneBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
           "id": "i_mvgsnz8fx7j5xj",
           "text": "animation the game is real",
-          "status": "todo",
-          "done": false,
+          "status": "done",
+          "done": true,
           "createdAt": "2026-10-20T14:44:29.343Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -352,7 +355,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-23T08:12:22.977Z",
+      "updatedAt": "2026-10-23T08:12:24.985Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2560,6 +2563,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a passé « animation futnow sandisk » faite sur « Motion design »"
+    },
+    {
+      "id": "a_2026-10-23T08:12:24.985Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-10-23T08:12:24.985Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a passé « animation the game is real » faite sur « Motion design »"
     }
   ]
 }

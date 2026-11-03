@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T16:59:02.362Z",
+  "updatedAt": "2026-11-03T17:05:46.698Z",
   "stages": [
     {
       "id": "idea",
@@ -710,7 +710,7 @@
     },
     {
       "id": "o_mw0xmxqys26ghm",
-      "title": "Kakémono ?",
+      "title": "Kakémono",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -747,7 +747,7 @@
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
       },
-      "updatedAt": "2026-11-03T16:59:02.362Z",
+      "updatedAt": "2026-11-03T17:05:46.698Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2591,6 +2591,17 @@
       "opId": "o_mw0xmxqys26ghm",
       "type": "create",
       "text": "a créé « Kakémono ? »"
+    },
+    {
+      "id": "a_2026-11-03T17:05:46.698Z_o_mw0xmxqys26ghm_update",
+      "at": "2026-11-03T17:05:46.698Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mw0xmxqys26ghm",
+      "type": "update",
+      "text": "a modifié title de « Kakémono ? »"
     }
   ]
 }

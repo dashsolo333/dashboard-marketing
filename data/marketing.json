@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:14:44.453Z",
+  "updatedAt": "2026-11-03T15:14:51.813Z",
   "stages": [
     {
       "id": "idea",
@@ -641,7 +641,7 @@
     },
     {
       "id": "o_mvgthp7d7f91cb",
-      "title": "Banner vue feed / shotmap",
+      "title": "Banner vue \"animée\" feed / shotmap",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -713,7 +713,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-03T15:14:44.453Z",
+      "updatedAt": "2026-11-03T15:14:51.813Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2613,6 +2613,17 @@
       "opId": "o_mvgthp7d7f91cb",
       "type": "update",
       "text": "a modifié title de « Pop up vue feed / shotmap »"
+    },
+    {
+      "id": "a_2026-11-03T15:14:51.813Z_o_mvgthp7d7f91cb_update",
+      "at": "2026-11-03T15:14:51.813Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mvgthp7d7f91cb",
+      "type": "update",
+      "text": "a modifié title de « Banner vue feed / shotmap »"
     }
   ]
 }

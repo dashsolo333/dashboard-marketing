@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T17:50:57.097Z",
+  "updatedAt": "2026-11-03T18:01:44.877Z",
   "stages": [
     {
       "id": "idea",
@@ -521,7 +521,7 @@
     },
     {
       "id": "o_mvgtjgc9lgryjl",
-      "title": "vidéo motion design pour feature feed tiktok",
+      "title": "Vidéo features highlights pour gérants",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -561,10 +561,10 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-20T15:08:57.849Z",
+      "updatedAt": "2026-11-03T18:01:44.877Z",
       "updatedBy": {
-        "login": "dashsolo333",
-        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
       }
     },
     {
@@ -2702,6 +2702,17 @@
       "opId": "o_mw0zhp3drg9ob3",
       "type": "create",
       "text": "a créé « Communications Hiroshima (vidéos? supports?) »"
+    },
+    {
+      "id": "a_2026-11-03T18:01:44.877Z_o_mvgtjgc9lgryjl_update",
+      "at": "2026-11-03T18:01:44.877Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mvgtjgc9lgryjl",
+      "type": "update",
+      "text": "a modifié title de « vidéo motion design pour feature feed tiktok »"
     }
   ]
 }

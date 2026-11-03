@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T17:06:01.441Z",
+  "updatedAt": "2026-11-03T17:07:02.307Z",
   "stages": [
     {
       "id": "idea",
@@ -755,7 +755,7 @@
     },
     {
       "id": "o_mw0xvx4172xg3i",
-      "title": "Affiches plastifiées terrains",
+      "title": "Affiches plastifiées terrains (déplacement Marseille?)",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -792,7 +792,7 @@
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
       },
-      "updatedAt": "2026-11-03T17:06:01.441Z",
+      "updatedAt": "2026-11-03T17:07:02.307Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2669,6 +2669,17 @@
       "opId": "o_mw0xvx4172xg3i",
       "type": "create",
       "text": "a créé « Affiches plastifiées terrains »"
+    },
+    {
+      "id": "a_2026-11-03T17:07:02.307Z_o_mw0xvx4172xg3i_update",
+      "at": "2026-11-03T17:07:02.307Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mw0xvx4172xg3i",
+      "type": "update",
+      "text": "a modifié title de « Affiches plastifiées terrains »"
     }
   ]
 }

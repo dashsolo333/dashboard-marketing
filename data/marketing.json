@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:15:36.141Z",
+  "updatedAt": "2026-11-03T16:35:03.338Z",
   "stages": [
     {
       "id": "idea",
@@ -101,7 +101,7 @@
   "ops": [
     {
       "id": "o_mu2p8g6yehanyo",
-      "title": "Motion design",
+      "title": "Retrofit vidéo E3",
       "description": "Obj gain crédibilité\nTone de voix, epic",
       "icon": "🎬",
       "kind": "video",
@@ -355,10 +355,10 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-10-23T08:12:24.985Z",
+      "updatedAt": "2026-11-03T16:35:03.338Z",
       "updatedBy": {
-        "login": "dashsolo333",
-        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
       }
     },
     {
@@ -2657,6 +2657,17 @@
       "opId": "o_mu726rz8j8j2pd",
       "type": "update",
       "text": "a modifié title de « ftn pro articles futsal »"
+    },
+    {
+      "id": "a_2026-11-03T16:35:03.338Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-11-03T16:35:03.338Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a modifié title de « Motion design »"
     }
   ]
 }

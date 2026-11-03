@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T17:25:39.034Z",
+  "updatedAt": "2026-11-03T17:50:57.097Z",
   "stages": [
     {
       "id": "idea",
@@ -748,6 +748,51 @@
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
       },
       "updatedAt": "2026-11-03T17:07:02.307Z",
+      "updatedBy": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      }
+    },
+    {
+      "id": "o_mw0zhp3drg9ob3",
+      "title": "Communications Hiroshima (vidéos? supports?)",
+      "description": "",
+      "icon": "",
+      "kind": "other",
+      "channels": [],
+      "urgent": false,
+      "owner": "TarlyMormont",
+      "rubric": "",
+      "caption": "",
+      "hashtags": "",
+      "assetUrl": "",
+      "publishTime": "",
+      "stageId": "idea",
+      "campaignId": "",
+      "links": [],
+      "dates": {
+        "reviewPlanned": "",
+        "publishPlanned": "",
+        "publishActual": ""
+      },
+      "reviews": [],
+      "items": [],
+      "results": {
+        "channels": {},
+        "notes": ""
+      },
+      "publishedBy": null,
+      "effort": {
+        "value": null,
+        "unit": "h"
+      },
+      "rank": null,
+      "createdAt": "2026-11-03T17:50:57.097Z",
+      "createdBy": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "updatedAt": "2026-11-03T17:50:57.097Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2646,6 +2691,17 @@
       "opId": "o_mu726rz8j8j2pd",
       "type": "delete",
       "text": "a supprimé « FTN PRO articles futsal »"
+    },
+    {
+      "id": "a_2026-11-03T17:50:57.097Z_o_mw0zhp3drg9ob3_create",
+      "at": "2026-11-03T17:50:57.097Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mw0zhp3drg9ob3",
+      "type": "create",
+      "text": "a créé « Communications Hiroshima (vidéos? supports?) »"
     }
   ]
 }

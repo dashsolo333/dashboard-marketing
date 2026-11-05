@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T09:18:33.457Z",
+  "updatedAt": "2026-11-05T09:18:36.761Z",
   "stages": [
     {
       "id": "idea",
@@ -317,12 +317,15 @@
           "group": "review",
           "due": "",
           "note": "",
-          "doneAt": "",
-          "doneBy": null,
+          "doneAt": "2026-11-05T09:18:36.761Z",
+          "doneBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          },
           "id": "i_mvgswd6c8wysku",
           "text": "printemps 2027 mode cinéma",
-          "status": "todo",
-          "done": false,
+          "status": "done",
+          "done": true,
           "createdAt": "2026-10-20T14:51:00.660Z",
           "createdBy": {
             "login": "dashsolo333",
@@ -361,7 +364,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-05T09:18:33.457Z",
+      "updatedAt": "2026-11-05T09:18:36.761Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2797,6 +2800,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a passé « musique à choisir » faite sur « Retrofit vidéo E3 »"
+    },
+    {
+      "id": "a_2026-11-05T09:18:36.761Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-11-05T09:18:36.761Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a passé « printemps 2027 mode cinéma » faite sur « Retrofit vidéo E3 »"
     }
   ]
 }

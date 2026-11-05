@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T09:18:39.577Z",
+  "updatedAt": "2026-11-05T09:18:55.715Z",
   "stages": [
     {
       "id": "idea",
@@ -350,6 +350,22 @@
             "login": "dashsolo333",
             "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
           }
+        },
+        {
+          "id": "i_mw3c2xnnhfo7vh",
+          "text": "Regen 1080p certaines scenes ?",
+          "group": "review",
+          "due": "",
+          "note": "",
+          "status": "todo",
+          "done": false,
+          "doneAt": "",
+          "doneBy": null,
+          "createdAt": "2026-11-05T09:18:55.715Z",
+          "createdBy": {
+            "login": "dashsolo333",
+            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+          }
         }
       ],
       "results": {
@@ -367,7 +383,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-05T09:18:39.577Z",
+      "updatedAt": "2026-11-05T09:18:55.715Z",
       "updatedBy": {
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
@@ -2825,6 +2841,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a passé « badges ios android » faite sur « Retrofit vidéo E3 »"
+    },
+    {
+      "id": "a_2026-11-05T09:18:55.715Z_o_mu2p8g6yehanyo_update",
+      "at": "2026-11-05T09:18:55.715Z",
+      "by": {
+        "login": "dashsolo333",
+        "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
+      },
+      "opId": "o_mu2p8g6yehanyo",
+      "type": "update",
+      "text": "a ajouté la tâche « Regen 1080p certaines scenes ? » à « Retrofit vidéo E3 »"
     }
   ]
 }

@@ -140,15 +140,15 @@
           }
         },
         {
-          "id": "i_mw53tgddd1xqkn",
-          "text": "En faire (une ou plusieurs ?) vidéo linkedin",
           "group": "review",
           "due": "",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mw53tgddd1xqkn",
+          "text": "Proposition de 3 à 4 vidéos Linkedin (sans regen)",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-11-06T15:03:08.834Z",
           "createdBy": {
             "login": "TarlyMormont",
@@ -171,7 +171,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:03:08.834Z",
+      "updatedAt": "2026-11-06T15:07:41.257Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"

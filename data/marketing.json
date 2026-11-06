@@ -125,44 +125,6 @@
       "items": [
         {
           "group": "idea",
-          "due": "2026-09-22",
-          "note": "",
-          "doneAt": "2026-10-20T14:38:22.440Z",
-          "doneBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          },
-          "id": "i_mu73l934r56tle",
-          "text": "storyboard",
-          "status": "done",
-          "done": true,
-          "createdAt": "2026-09-18T15:12:53.824Z",
-          "createdBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          }
-        },
-        {
-          "group": "idea",
-          "due": "2026-09-22",
-          "note": "",
-          "doneAt": "2026-10-20T14:38:28.008Z",
-          "doneBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          },
-          "id": "i_mu73rujz9x7mgj",
-          "text": "faire wording",
-          "status": "done",
-          "done": true,
-          "createdAt": "2026-09-18T15:18:01.583Z",
-          "createdBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          }
-        },
-        {
-          "group": "idea",
           "due": "",
           "note": "",
           "doneAt": "2026-10-20T14:38:29.720Z",
@@ -345,7 +307,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:01:56.775Z",
+      "updatedAt": "2026-11-06T15:01:57.880Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"

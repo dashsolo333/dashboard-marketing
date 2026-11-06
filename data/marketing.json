@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:48:20.663Z",
+  "updatedAt": "2026-11-06T15:49:16.167Z",
   "stages": [
     {
       "id": "idea",
@@ -664,7 +664,7 @@
     },
     {
       "id": "o_mw0zvz81seq540",
-      "title": "Vidéos tiktoks (/ville, features, hook)",
+      "title": "Vidéos tiktoks /ville (hook)",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -701,7 +701,7 @@
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
       },
-      "updatedAt": "2026-11-03T18:02:03.409Z",
+      "updatedAt": "2026-11-06T15:49:16.167Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2908,6 +2908,17 @@
       "opId": "o_mw0xvx4172xg3i",
       "type": "update",
       "text": "a modifié urgent de « Affiches plastifiées terrains (déplacement Marseille?) »"
+    },
+    {
+      "id": "a_2026-11-06T15:49:16.167Z_o_mw0zvz81seq540_update",
+      "at": "2026-11-06T15:49:16.167Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mw0zvz81seq540",
+      "type": "update",
+      "text": "a modifié title de « Vidéos tiktoks (/ville, features, hook) »"
     }
   ]
 }

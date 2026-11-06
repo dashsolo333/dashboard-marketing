@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:43:43.638Z",
+  "updatedAt": "2026-11-06T15:48:00.154Z",
   "stages": [
     {
       "id": "idea",
@@ -419,7 +419,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 30,
+      "rank": 40,
       "createdAt": "2026-10-20T15:08:57.849Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -515,7 +515,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 40,
+      "rank": 30,
       "createdAt": "2026-10-20T15:15:45.085Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -2875,6 +2875,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a modifié title de « Storyboard Tiktok IRL promo shotmap/feed »"
+    },
+    {
+      "id": "a_2026-11-06T15:48:00.154Z_null_update",
+      "at": "2026-11-06T15:48:00.154Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": null,
+      "type": "update",
+      "text": "a réordonné la liste"
     }
   ]
 }

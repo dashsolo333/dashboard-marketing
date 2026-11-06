@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:18:52.381Z",
+  "updatedAt": "2026-11-06T15:42:28.786Z",
   "stages": [
     {
       "id": "idea",
@@ -259,7 +259,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 40,
+      "rank": 50,
       "createdAt": "2026-09-15T13:51:00.424Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -515,7 +515,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 50,
+      "rank": 40,
       "createdAt": "2026-10-20T15:15:45.085Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -2831,6 +2831,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a modifié title de « Script tiktok IRL promo feed/shotmap »"
+    },
+    {
+      "id": "a_2026-11-06T15:42:28.786Z_null_update",
+      "at": "2026-11-06T15:42:28.786Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": null,
+      "type": "update",
+      "text": "a réordonné la liste"
     }
   ]
 }

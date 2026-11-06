@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:18:08.507Z",
+  "updatedAt": "2026-11-06T15:18:25.422Z",
   "stages": [
     {
       "id": "idea",
@@ -280,7 +280,7 @@
       "channels": [
         "app"
       ],
-      "urgent": false,
+      "urgent": true,
       "owner": "dashsolo333",
       "rubric": "",
       "caption": "",
@@ -330,15 +330,15 @@
           }
         },
         {
-          "id": "i_mw54cjpyxdgen5",
-          "text": "Trouver wording SHOTMAP",
           "group": "idea",
           "due": "2026-11-13",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mw54cjpyxdgen5",
+          "text": "Trouver wording SHOTMAP",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-11-06T15:17:59.638Z",
           "createdBy": {
             "login": "TarlyMormont",
@@ -346,15 +346,15 @@
           }
         },
         {
-          "id": "i_mw54cqkbwdlk6o",
-          "text": "Créer WEBP animé SHOTMAP",
           "group": "idea",
           "due": "2026-11-13",
           "note": "",
-          "status": "todo",
-          "done": false,
           "doneAt": "",
           "doneBy": null,
+          "id": "i_mw54cqkbwdlk6o",
+          "text": "Créer WEBP animé SHOTMAP",
+          "status": "todo",
+          "done": false,
           "createdAt": "2026-11-06T15:18:08.507Z",
           "createdBy": {
             "login": "TarlyMormont",
@@ -377,7 +377,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:18:15.367Z",
+      "updatedAt": "2026-11-06T15:18:25.422Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2787,6 +2787,17 @@
       "opId": "o_mvgthp7d7f91cb",
       "type": "update",
       "text": "a ajouté la tâche « Créer WEBP animé SHOTMAP » à « Banner app vue \"animée\" feed / shotmap »"
+    },
+    {
+      "id": "a_2026-11-06T15:18:25.422Z_o_mvgthp7d7f91cb_update",
+      "at": "2026-11-06T15:18:25.422Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mvgthp7d7f91cb",
+      "type": "update",
+      "text": "a modifié urgent de « Banner app vue \"animée\" feed / shotmap »"
     }
   ]
 }

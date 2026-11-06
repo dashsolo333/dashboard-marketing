@@ -129,22 +129,6 @@
           "note": "",
           "doneAt": "",
           "doneBy": null,
-          "id": "i_mw3c2xnnhfo7vh",
-          "text": "Regen 1080p certaines scenes ?",
-          "status": "todo",
-          "done": false,
-          "createdAt": "2026-11-05T09:18:55.715Z",
-          "createdBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          }
-        },
-        {
-          "group": "review",
-          "due": "",
-          "note": "",
-          "doneAt": "",
-          "doneBy": null,
           "id": "i_mw53tgddd1xqkn",
           "text": "Proposition de 3 à 4 vidéos Linkedin (sans regen)",
           "status": "todo",
@@ -187,7 +171,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:09:47.622Z",
+      "updatedAt": "2026-11-06T15:09:56.263Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"

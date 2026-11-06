@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:18:47.542Z",
+  "updatedAt": "2026-11-06T15:18:52.381Z",
   "stages": [
     {
       "id": "idea",
@@ -433,7 +433,7 @@
     },
     {
       "id": "o_mvgts6kd75jne3",
-      "title": "Script tiktok IRL promo feed/shotmap",
+      "title": "Script Tiktok IRL promo feed/shotmap",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -521,7 +521,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:18:47.542Z",
+      "updatedAt": "2026-11-06T15:18:52.381Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2820,6 +2820,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a modifié title de « script tiktok IRL promo feed/shotmap »"
+    },
+    {
+      "id": "a_2026-11-06T15:18:52.381Z_o_mvgts6kd75jne3_update",
+      "at": "2026-11-06T15:18:52.381Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mvgts6kd75jne3",
+      "type": "update",
+      "text": "a modifié title de « Script tiktok IRL promo feed/shotmap »"
     }
   ]
 }

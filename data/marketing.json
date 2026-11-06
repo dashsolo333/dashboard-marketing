@@ -124,25 +124,6 @@
       "reviews": [],
       "items": [
         {
-          "group": "idea",
-          "due": "",
-          "note": "",
-          "doneAt": "2026-10-20T14:38:29.720Z",
-          "doneBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          },
-          "id": "i_mu73s0lafxbex8",
-          "text": "gerer switch irl/meta",
-          "status": "done",
-          "done": true,
-          "createdAt": "2026-09-18T15:18:09.406Z",
-          "createdBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          }
-        },
-        {
           "group": "review",
           "due": "",
           "note": "",
@@ -307,7 +288,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:01:57.880Z",
+      "updatedAt": "2026-11-06T15:01:58.249Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"

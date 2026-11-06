@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T14:58:52.929Z",
+  "updatedAt": "2026-11-06T15:01:42.191Z",
   "stages": [
     {
       "id": "idea",
@@ -377,7 +377,7 @@
         "value": 6,
         "unit": "d"
       },
-      "rank": 30,
+      "rank": 10,
       "createdAt": "2026-09-15T13:19:57.178Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -535,7 +535,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 50,
+      "rank": 20,
       "createdAt": "2026-10-20T15:07:36.025Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -583,7 +583,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 60,
+      "rank": 30,
       "createdAt": "2026-10-20T15:08:57.849Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -679,7 +679,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": 70,
+      "rank": 50,
       "createdAt": "2026-10-20T15:15:45.085Z",
       "createdBy": {
         "login": "dashsolo333",
@@ -724,7 +724,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": null,
+      "rank": 60,
       "createdAt": "2026-11-03T16:59:02.362Z",
       "createdBy": {
         "login": "TarlyMormont",
@@ -769,7 +769,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": null,
+      "rank": 70,
       "createdAt": "2026-11-03T17:06:01.441Z",
       "createdBy": {
         "login": "TarlyMormont",
@@ -814,7 +814,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": null,
+      "rank": 80,
       "createdAt": "2026-11-03T17:50:57.097Z",
       "createdBy": {
         "login": "TarlyMormont",
@@ -859,7 +859,7 @@
         "value": null,
         "unit": "h"
       },
-      "rank": null,
+      "rank": 90,
       "createdAt": "2026-11-03T18:02:03.409Z",
       "createdBy": {
         "login": "TarlyMormont",
@@ -2874,6 +2874,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a modifié urgent de « Retrofit vidéo E3 »"
+    },
+    {
+      "id": "a_2026-11-06T15:01:42.191Z_null_update",
+      "at": "2026-11-06T15:01:42.191Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": null,
+      "type": "update",
+      "text": "a réordonné la liste"
     }
   ]
 }

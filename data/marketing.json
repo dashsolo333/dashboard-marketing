@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:43:12.888Z",
+  "updatedAt": "2026-11-06T15:43:43.638Z",
   "stages": [
     {
       "id": "idea",
@@ -433,7 +433,7 @@
     },
     {
       "id": "o_mvgts6kd75jne3",
-      "title": "Storyboard Tiktok IRL promo shotmap/feed",
+      "title": "Storyboard Tiktok IRL/Motion design shotmap/feed",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -521,7 +521,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:43:12.888Z",
+      "updatedAt": "2026-11-06T15:43:43.638Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2864,6 +2864,17 @@
       "opId": "o_mvgts6kd75jne3",
       "type": "update",
       "text": "a modifié title de « Script Tiktok IRL promo shotmap/feed »"
+    },
+    {
+      "id": "a_2026-11-06T15:43:43.638Z_o_mvgts6kd75jne3_update",
+      "at": "2026-11-06T15:43:43.638Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mvgts6kd75jne3",
+      "type": "update",
+      "text": "a modifié title de « Storyboard Tiktok IRL promo shotmap/feed »"
     }
   ]
 }

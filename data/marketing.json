@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T15:10:02.087Z",
+  "updatedAt": "2026-11-06T15:16:00.982Z",
   "stages": [
     {
       "id": "idea",
@@ -273,7 +273,7 @@
     },
     {
       "id": "o_mvgthp7d7f91cb",
-      "title": "Banner vue \"animée\" feed / shotmap",
+      "title": "Banner app vue \"animée\" feed / shotmap",
       "description": "",
       "icon": "",
       "kind": "other",
@@ -345,7 +345,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-03T15:15:05.942Z",
+      "updatedAt": "2026-11-06T15:16:00.982Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
@@ -2722,6 +2722,17 @@
       "opId": "o_mu2p8g6yehanyo",
       "type": "update",
       "text": "a ajouté la tâche « Regen 1080p certaines scenes ? » à « Retrofit vidéo E3 »"
+    },
+    {
+      "id": "a_2026-11-06T15:16:00.982Z_o_mvgthp7d7f91cb_update",
+      "at": "2026-11-06T15:16:00.982Z",
+      "by": {
+        "login": "TarlyMormont",
+        "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
+      },
+      "opId": "o_mvgthp7d7f91cb",
+      "type": "update",
+      "text": "a modifié title de « Banner vue \"animée\" feed / shotmap »"
     }
   ]
 }

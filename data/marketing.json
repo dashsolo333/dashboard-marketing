@@ -125,25 +125,6 @@
       "items": [
         {
           "group": "idea",
-          "due": "",
-          "note": "",
-          "doneAt": "2026-10-20T14:38:21.821Z",
-          "doneBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          },
-          "id": "i_mu73l6licbc62g",
-          "text": "definir ordre des feature et comment elles sont présentées",
-          "status": "done",
-          "done": true,
-          "createdAt": "2026-09-18T15:12:50.598Z",
-          "createdBy": {
-            "login": "dashsolo333",
-            "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
-          }
-        },
-        {
-          "group": "idea",
           "due": "2026-09-22",
           "note": "",
           "doneAt": "2026-10-20T14:38:22.440Z",
@@ -364,7 +345,7 @@
         "login": "dashsolo333",
         "avatar": "https://avatars.githubusercontent.com/u/266866216?v=4"
       },
-      "updatedAt": "2026-11-06T15:01:53.474Z",
+      "updatedAt": "2026-11-06T15:01:56.775Z",
       "updatedBy": {
         "login": "TarlyMormont",
         "avatar": "https://avatars.githubusercontent.com/u/30619803?v=4"
